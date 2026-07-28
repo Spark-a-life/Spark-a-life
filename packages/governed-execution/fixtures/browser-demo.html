@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WiseGen Governed Browser Demo</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 4rem auto; padding: 0 1rem; }
+    label, input, button, output { display: block; margin: 0.75rem 0; }
+    input { padding: 0.6rem; width: 100%; box-sizing: border-box; }
+    button { padding: 0.7rem 1rem; }
+    output { font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Governed Browser Adapter Demonstration</h1>
+    <label for="name">Name</label>
+    <input id="name" name="name" autocomplete="off">
+    <button id="submit" type="button">Submit</button>
+    <output id="status" aria-live="polite">Not submitted</output>
+  </main>
+  <script>
+    document.querySelector('#submit').addEventListener('click', () => {
+      const name = document.querySelector('#name').value.trim();
+      document.querySelector('#status').textContent = name ? 'Submitted for ' + name : 'Name required';
+    });
+  </script>
+</body>
+</html>

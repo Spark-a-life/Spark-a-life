@@ -1,0 +1,44 @@
+{
+  "version": "1.0",
+  "risk_tiers": {
+    "low": {
+      "human_approval": false,
+      "witness_chain": true,
+      "external_side_effects": false
+    },
+    "medium": {
+      "human_approval": true,
+      "witness_chain": true,
+      "external_side_effects": false
+    },
+    "high": {
+      "human_approval": true,
+      "witness_chain": true,
+      "external_side_effects": false,
+      "second_review": true
+    },
+    "critical": {
+      "decision": "deny",
+      "reason": "Critical actions require a separately authorised control environment."
+    }
+  },
+  "automatic_denials": [
+    "self_permission_expansion",
+    "unapproved_external_side_effect",
+    "unreviewed_canonical_knowledge_promotion",
+    "unbounded_sensitive_data_access",
+    "capability_self_certification"
+  ],
+  "required_fields": [
+    "request_id",
+    "estate",
+    "actor",
+    "purpose",
+    "action",
+    "risk_tier",
+    "capability_id",
+    "data_classification",
+    "external_side_effect",
+    "runtime_id"
+  ]
+}

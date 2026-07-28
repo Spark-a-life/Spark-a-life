@@ -1,0 +1,12 @@
+{
+  "request_id": "MAIE-HOLD-0001",
+  "estate": "MAIE",
+  "actor": "hrbp-sizing-review",
+  "purpose": "Recommend coverage models without recorded human approval.",
+  "action": "coverage_model_recommend",
+  "risk_tier": "high",
+  "capability_id": "maie.coverage-model-recommend",
+  "data_classification": "confidential",
+  "external_side_effect": false,
+  "runtime_id": "local-deterministic"
+}

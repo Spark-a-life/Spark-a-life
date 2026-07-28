@@ -1,0 +1,68 @@
+mission:
+  id: ci-fundraising-local
+  objective: Validate the fundraising mission pipeline with deterministic local execution.
+  programme_summary: Run a compact CI mission that exercises scoring, safeguards, creative pack generation and audit.
+  funding_goal: 100000
+  currency: SGD
+  audience: internal WiseGen builders
+  region: Singapore
+  timeframe: CI run
+organisation:
+  name: WiseGen MAMT Fundraising
+  voice: clear, exacting and implementation-oriented
+  constraints:
+    - No external services may be called.
+governance:
+  jurisdiction: Singapore
+  fundraising_mode: internal
+  public_appeal: false
+  foreign_charitable_purpose: false
+  personal_data_used: false
+  vulnerable_audience: false
+  egress_channels: [internal_memo]
+  donor_acceptance_policy: Internal test mission; no donor acceptance or external outreach is permitted.
+  required_approvals: [captain]
+  disclosure_requirements:
+    - No external disclosure in CI mode.
+  restricted_terms:
+    - guaranteed funding
+fundraising:
+  segments: [responsible AI, education]
+  minimum_fit_score: 0.5
+  use_of_funds: [testing, documentation]
+prospects:
+  - name: CI Foundation
+    type: test funder
+    region: Singapore
+    focus_areas: [responsible AI, education]
+    giving_history: Test history.
+    relationship_signal: warm test signal
+    eligibility_notes: Open for local deterministic validation.
+    restrictions: []
+    estimated_amount: 60000
+    source: local test fixture
+evidence:
+  - id: ev-ci
+    title: CI evidence fixture
+    source: repository example
+    kind: programme design
+    confidence: high
+    permitted_use: [testing]
+claims:
+  - text: This CI mission validates deterministic local execution.
+    evidence_ids: [ev-ci]
+    external_use: false
+risk:
+  maximum_cost_usd: 1
+  maximum_tokens: 50000
+  maximum_runtime_seconds: 300
+  maximum_external_calls: 0
+  maximum_retries: 1
+  maximum_consecutive_similar_actions: 3
+  maximum_destructive_tools: 0
+  human_approval_required: false
+output:
+  adapter: local_deterministic
+  deliverables:
+    - deterministic run artefact
+    - witness-chain audit

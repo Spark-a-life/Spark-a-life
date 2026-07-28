@@ -1,0 +1,25 @@
+tools:
+  prompt_compiler:
+    side_effects: none
+    idempotent: true
+    financial_cost: none
+    destructive: false
+    approval_required: false
+  model_router:
+    side_effects: none
+    idempotent: true
+    financial_cost: none
+    destructive: false
+    approval_required: false
+  external_generation:
+    side_effects: creates_media
+    idempotent: false
+    financial_cost: variable
+    destructive: false
+    approval_required: true
+  deployment_publisher:
+    side_effects: publishes_content
+    idempotent: false
+    financial_cost: none
+    destructive: false
+    approval_required: true

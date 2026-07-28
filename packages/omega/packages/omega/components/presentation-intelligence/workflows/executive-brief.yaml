@@ -1,0 +1,22 @@
+id: executive-brief-v1
+version: 1.0
+stages:
+  - intent
+  - audience
+  - knowledge
+  - reasoning
+  - planning
+  - generation
+  - composition
+  - verification
+  - governance
+  - publication
+required_sections:
+  - Executive Summary
+  - Decision Required
+  - Evidence
+  - Analysis
+  - Options
+  - Recommendation
+  - Risks
+  - Next Steps

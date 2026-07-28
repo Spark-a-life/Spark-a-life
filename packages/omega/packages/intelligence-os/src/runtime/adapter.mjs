@@ -1,0 +1,1 @@
+export class RuntimeAdapter { constructor(definition){this.definition=definition;} get id(){return this.definition.id;} async execute(){throw new Error("RuntimeAdapter.execute must be implemented");} }

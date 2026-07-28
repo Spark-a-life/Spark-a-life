@@ -1,0 +1,6 @@
+node_modules/
+var/evidence-*
+var/trials-*
+var/routing-matrix.json
+var/witness/*.jsonl
+.env

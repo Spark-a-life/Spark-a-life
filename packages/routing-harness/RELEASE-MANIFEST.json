@@ -1,0 +1,118 @@
+{
+  "release": {
+    "name": "WiseGen Model Routing Harness",
+    "version": "1.1.0",
+    "date": "2026-07-28",
+    "owner": "Spark-a-life",
+    "licence": "Apache-2.0"
+  },
+  "capability": {
+    "id": "capability.evaluate.routing",
+    "owner_estate": "GAIE",
+    "risk_ceiling": "low",
+    "witness_chain": "required",
+    "permitted_data_classifications": [
+      "public",
+      "internal"
+    ]
+  },
+  "supersedes": "Model Routing and Benchmarking Playbook harness v1.0",
+  "runtime": {
+    "node": ">=20",
+    "dependencies": "none",
+    "verified_on": "Node.js 22.22.2"
+  },
+  "verification": {
+    "tests": "10 passed",
+    "demo": "completed",
+    "witness_chain": "valid",
+    "config_advisories": 3
+  },
+  "trust_boundary": "Mock evidence is non-certifiable. Live provider adapters are written to documented request shapes but unexecuted in this environment. Verify model ids, structured-output fields and pricing before first certification run.",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "970889a03771add456e4b203a3552e58c4dfc06c6c0864c4acce24bffe79c17b"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "c6b7849c6d852cd0fdb03d09fc0ea935e247a651c130fd85dfcddd4805402f85"
+    },
+    {
+      "path": "VERIFICATION.md",
+      "sha256": "66cc3e2f27f1227b4567db130612edfc89a3949657aa7c55295388a24ec82893"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "6e06aa44c2999d3b25cde7ee8d8516630881bdd63a692d10ade0eaab4a13f049"
+    },
+    {
+      "path": "package.json",
+      "sha256": "ab11e1c466eaf332aaee787af63311d5688c7e828d4dbc4aaf8d8565b43997e3"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "bdd02b22af18d37a84862a29705f9720d5f3cb6503544015aa63f6d25b8d71ce"
+    },
+    {
+      "path": ".env.example",
+      "sha256": "3b2c2b967021632e747b6047efabae98f2c524bdbce96ce6495b32f6f6e498fd"
+    },
+    {
+      "path": "config/harness.config.json",
+      "sha256": "4fb96cd81c4346f4fe5e8103c0171ce78c5352b2fb99cf27fe61e89ef17e2a9d"
+    },
+    {
+      "path": "payloads/extraction-reference.json",
+      "sha256": "6551e52c33abaebd454e45baa4a7b30c079976afd8cde0d8a2b031700d743910"
+    },
+    {
+      "path": "src/cli.mjs",
+      "sha256": "4653ab66f4ba43b988a47e4902d11f1cd28bb01eb9e8629ba2c92db852387161"
+    },
+    {
+      "path": "src/harness.mjs",
+      "sha256": "8d4f4e400b177f505a2e25e7c62a52fcf0fc03f0261a9d84617a4a27a3dbf9fb"
+    },
+    {
+      "path": "src/metrics.mjs",
+      "sha256": "e8b465c3df58ed0e88faf9a3d2c635858987f17e26fd323956466d71f3e271ea"
+    },
+    {
+      "path": "src/providers.mjs",
+      "sha256": "a6344239748004310c4d0386a2a0893e551df6a7c9bf1b026fd4352980af0ab3"
+    },
+    {
+      "path": "src/route.mjs",
+      "sha256": "eae918dc8bc6fd428d9e1c91e2ef9441c5a45d4e40bc473f5c3f29fa4ac42041"
+    },
+    {
+      "path": "src/validate.mjs",
+      "sha256": "d1f15506f4fbf0720652aa575324258e6dc08536fcb825e55b7f1f7f96e3f9c3"
+    },
+    {
+      "path": "src/witness.mjs",
+      "sha256": "6a94bd12d690812b0c131b8f12390d4d12b41698313a3c22ce551adb43f77ea8"
+    },
+    {
+      "path": "tests/harness.test.mjs",
+      "sha256": "728f15164be5fa8fb84fc4d628bdcfe5697b7841a69eddefa827fb8f5e1ec56c"
+    },
+    {
+      "path": "docs/governance/posture.md",
+      "sha256": "85b9f7c7d7e0633e1f9e9a908e9a2a84272e404fcb7277ec2bff06ffc9597831"
+    },
+    {
+      "path": "docs/operations/integration.md",
+      "sha256": "1899f192cbd7fdb838000c01fc9efcebdcb5837c7384586fce0bfaa012bbf475"
+    },
+    {
+      "path": "docs/operations/runbook.md",
+      "sha256": "ca047d913406e05ddb540ecd56e5ee1f8f33e08d374cfc2c2d8c8943c16fec10"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "c5399dd84f951e2214bd251f342c2578a29a8e39c706bdf9569949e348ddfcff"
+    }
+  ]
+}

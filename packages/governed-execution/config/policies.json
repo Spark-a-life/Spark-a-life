@@ -1,0 +1,74 @@
+{
+  "version": "1.0.0",
+  "defaultEffect": "DENY",
+  "rules": [
+    {
+      "id": "deny-account-deletion",
+      "priority": 1000,
+      "description": "Destructive account deletion is prohibited in this reference implementation.",
+      "all": [
+        {"path": "capabilityId", "operator": "equals", "value": "accounts.delete"}
+      ],
+      "effect": "DENY",
+      "reason": "Destructive account deletion is outside the authorised operating boundary."
+    },
+    {
+      "id": "deny-large-demo-transfer",
+      "priority": 900,
+      "description": "Demonstration transfers above S$50,000 are blocked.",
+      "all": [
+        {"path": "capabilityId", "operator": "equals", "value": "payments.transfer"},
+        {"path": "parameters.currency", "operator": "equals", "value": "SGD"},
+        {"path": "parameters.amount", "operator": "gt", "value": 50000}
+      ],
+      "effect": "DENY",
+      "reason": "The requested amount exceeds the configured demonstration risk limit."
+    },
+    {
+      "id": "approve-consequential-transfer",
+      "priority": 800,
+      "description": "Transfers of S$1,000 or more require an independent finance approver.",
+      "all": [
+        {"path": "capabilityId", "operator": "equals", "value": "payments.transfer"},
+        {"path": "parameters.currency", "operator": "equals", "value": "SGD"},
+        {"path": "parameters.amount", "operator": "gte", "value": 1000}
+      ],
+      "effect": "REQUIRE_APPROVAL",
+      "requiredApproverRole": "finance_approver",
+      "approvalTtlSeconds": 300,
+      "reason": "The action is financially consequential and requires independent approval."
+    },
+    {
+      "id": "allow-low-value-transfer",
+      "priority": 700,
+      "description": "Low-value demonstration transfers are permitted for authorised finance operators.",
+      "all": [
+        {"path": "capabilityId", "operator": "equals", "value": "payments.transfer"},
+        {"path": "parameters.currency", "operator": "equals", "value": "SGD"},
+        {"path": "parameters.amount", "operator": "lt", "value": 1000}
+      ],
+      "effect": "ALLOW",
+      "reason": "The action is within the configured low-value operating boundary."
+    },
+    {
+      "id": "allow-note-creation",
+      "priority": 500,
+      "description": "Authorised operators may create demonstration notes.",
+      "all": [
+        {"path": "capabilityId", "operator": "equals", "value": "notes.create"}
+      ],
+      "effect": "ALLOW",
+      "reason": "The action is low consequence and covered by an authorised capability contract."
+    },
+    {
+      "id": "allow-isolated-browser-demo",
+      "priority": 500,
+      "description": "Authorised operators may use the isolated local browser demonstration capability.",
+      "all": [
+        {"path": "capabilityId", "operator": "equals", "value": "demo.browser-form"}
+      ],
+      "effect": "ALLOW",
+      "reason": "The action is constrained to a local allowlisted origin and fixed selectors."
+    }
+  ]
+}

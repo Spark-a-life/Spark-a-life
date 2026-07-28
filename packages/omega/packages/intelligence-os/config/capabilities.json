@@ -1,0 +1,69 @@
+{
+  "registry_version": "1.0",
+  "capabilities": [
+    {
+      "id": "research.source-verification",
+      "version": "1.0.0",
+      "owner_estate": "TAIE",
+      "purpose": "Verify a claim against declared evidence and produce a bounded assessment.",
+      "status": "certified",
+      "permitted_runtimes": [
+        "local-deterministic",
+        "hermes-agent"
+      ],
+      "permitted_data_classifications": [
+        "public",
+        "internal",
+        "restricted"
+      ],
+      "risk_ceiling": "medium",
+      "human_approval_for": [
+        "external_publication",
+        "investment_recommendation"
+      ],
+      "evaluation_suite": "tests/source-verification.test.mjs",
+      "witness_chain": "required"
+    },
+    {
+      "id": "knowledge.promote-candidate",
+      "version": "1.0.0",
+      "owner_estate": "SAIE",
+      "purpose": "Promote validated candidate knowledge into the canonical knowledge store.",
+      "status": "certified",
+      "permitted_runtimes": [
+        "local-deterministic"
+      ],
+      "permitted_data_classifications": [
+        "public",
+        "internal",
+        "confidential"
+      ],
+      "risk_ceiling": "high",
+      "human_approval_for": [
+        "all"
+      ],
+      "evaluation_suite": "tests/knowledge-promotion.test.mjs",
+      "witness_chain": "required"
+    },
+    {
+      "id": "capability.evaluate",
+      "version": "1.0.0",
+      "owner_estate": "GAIE",
+      "purpose": "Evaluate candidate skills and runtime adapters without granting production certification.",
+      "status": "certified",
+      "permitted_runtimes": [
+        "local-deterministic"
+      ],
+      "permitted_data_classifications": [
+        "public",
+        "internal"
+      ],
+      "risk_ceiling": "high",
+      "human_approval_for": [
+        "production_certification"
+      ],
+      "evaluation_suite": "tests/capability-registry.test.mjs",
+      "witness_chain": "required"
+    }
+  ]
+}

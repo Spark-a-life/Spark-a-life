@@ -1,0 +1,21 @@
+claims:
+  require_evidence_for_external_claims: true
+  block_absolute_guarantees: true
+  sensitive_terms:
+    - guaranteed return
+    - risk-free
+    - assured funding
+    - confirmed grant
+    - automatic approval
+privacy:
+  allow_personal_data_in_examples: false
+  externalise_only_approved_contacts: true
+egress:
+  email_send_requires_human_approval: true
+  linkedin_send_requires_human_approval: true
+  data_room_release_requires_human_approval: true
+  crm_write_requires_review: true
+creative:
+  no_unverifiable_impact_claims: true
+  preserve_uk_english: true
+  avoid_model_provider_lock_in: true

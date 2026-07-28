@@ -1,0 +1,12 @@
+{
+  "id": "TAIE",
+  "name": "Trend, Market and Strategic Intelligence Estate",
+  "purpose": "Produce source-grounded market, policy, sector and strategic intelligence.",
+  "default_risk_tier": "medium",
+  "data_ceiling": "restricted",
+  "human_gate": [
+    "investment recommendation",
+    "external publication",
+    "high-consequence strategic decision"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wisegen.local/schemas/policy.schema.json",
+  "title": "Governance Policy",
+  "type": "object",
+  "required": ["version", "defaultEffect", "rules"],
+  "properties": {
+    "version": {"type": "string"},
+    "defaultEffect": {"enum": ["ALLOW", "DENY", "REQUIRE_APPROVAL", "REQUIRE_STEP_UP"]},
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "priority", "all", "effect", "reason"],
+        "properties": {
+          "id": {"type": "string"},
+          "priority": {"type": "integer"},
+          "all": {"type": "array"},
+          "effect": {"enum": ["ALLOW", "DENY", "REQUIRE_APPROVAL", "REQUIRE_STEP_UP"]},
+          "reason": {"type": "string"}
+        }
+      }
+    }
+  }
+}

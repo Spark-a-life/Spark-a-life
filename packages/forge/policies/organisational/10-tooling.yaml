@@ -1,0 +1,25 @@
+# Organisational layer. Owned by the operating entity, inherited by every project.
+layer: organisational
+version: 1.0.0
+owner: spark-a-life
+rules:
+  - id: org.filesystem.sandboxed
+    effect: allow
+    reason: "Build agents may read and write inside the run workspace only."
+    match:
+      actor: [gaie.data-engineer, gaie.backend-engineer, gaie.frontend-engineer, kaie.assurance-engineer, kaie.security-auditor, gaie.adversary, paie.release-engineer]
+      action: [tool:fs_write, tool:fs_read, tool:fs_list, tool:py_compile]
+
+  - id: org.tests.executable
+    effect: allow
+    reason: "Assurance may execute generated tests in a sandboxed interpreter."
+    match:
+      actor: [kaie.assurance-engineer, gaie.adversary]
+      action: tool:run_tests
+
+  - id: org.council.readonly
+    effect: allow
+    reason: "Council roles may read and analyse but not generate production artefacts."
+    match:
+      actor: [kaie.sentinel, kaie.gatekeeper, kaie.policy-steward, paie.telemetrist, paie.contingency, raie.mediator]
+      action: [tool:fs_read, tool:fs_list, capability:verify_claims, capability:audit_values, capability:assemble_gate_packet, capability:review_policy, capability:report_telemetry, capability:prepare_rollback, capability:brief_principal]

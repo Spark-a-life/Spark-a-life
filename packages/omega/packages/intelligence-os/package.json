@@ -1,0 +1,19 @@
+{
+  "name": "wisegen-ape-intelligence-os",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Governance-native operating architecture for human-AI intelligence systems",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "demo": "node src/cli.mjs demo",
+    "verify": "node src/cli.mjs verify",
+    "test": "node --test",
+    "gate": "node src/cli.mjs gate",
+    "registry": "node src/cli.mjs registry",
+    "estates": "node src/cli.mjs estates",
+    "lanes": "node src/cli.mjs lanes"
+  }
+}

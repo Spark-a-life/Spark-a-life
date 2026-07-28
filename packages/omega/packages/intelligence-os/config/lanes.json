@@ -1,0 +1,105 @@
+{
+  "standard": "Full Intentionality by Design",
+  "version": "1.0",
+  "lanes": [
+    {
+      "id": "intent",
+      "name": "Intent and Purpose",
+      "question": "Why should this work exist, for whom, and toward what legitimate outcome?",
+      "required_evidence": [
+        "goal",
+        "beneficiary",
+        "success_condition",
+        "non_goal"
+      ]
+    },
+    {
+      "id": "authority",
+      "name": "Authority and Accountability",
+      "question": "Who may request, approve, execute, intervene and own the outcome?",
+      "required_evidence": [
+        "requester",
+        "owner",
+        "approver",
+        "escalation_path"
+      ]
+    },
+    {
+      "id": "context",
+      "name": "Context and Grounding",
+      "question": "What evidence, assumptions, sources and constraints ground the work?",
+      "required_evidence": [
+        "source_class",
+        "freshness",
+        "assumptions",
+        "uncertainties"
+      ]
+    },
+    {
+      "id": "data",
+      "name": "Data and Knowledge Stewardship",
+      "question": "What information is used, at what classification, under which access and retention rules?",
+      "required_evidence": [
+        "classification",
+        "access_scope",
+        "retention",
+        "provenance"
+      ]
+    },
+    {
+      "id": "capability",
+      "name": "Capability and Tooling",
+      "question": "Which certified capability, runtime, model and tools are fit for purpose?",
+      "required_evidence": [
+        "capability_id",
+        "certification",
+        "runtime",
+        "dependencies"
+      ]
+    },
+    {
+      "id": "risk",
+      "name": "Risk, Safety and Ethics",
+      "question": "What can go wrong, who may be harmed and which controls reduce exposure?",
+      "required_evidence": [
+        "risk_tier",
+        "harm_scenarios",
+        "controls",
+        "residual_risk"
+      ]
+    },
+    {
+      "id": "execution",
+      "name": "Execution and Orchestration",
+      "question": "How will work be decomposed, bounded, observed, interrupted and recovered?",
+      "required_evidence": [
+        "workflow",
+        "checkpoints",
+        "stop_conditions",
+        "recovery"
+      ]
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance and Evidence",
+      "question": "How will correctness, compliance, provenance and reproducibility be demonstrated?",
+      "required_evidence": [
+        "evaluation",
+        "witness_record",
+        "review",
+        "acceptance"
+      ]
+    },
+    {
+      "id": "learning",
+      "name": "Learning and Evolution",
+      "question": "What may be learned, promoted, deprecated or changed after review?",
+      "required_evidence": [
+        "lesson",
+        "promotion_path",
+        "change_owner",
+        "rollback"
+      ]
+    }
+  ]
+}

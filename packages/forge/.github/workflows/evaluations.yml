@@ -1,0 +1,36 @@
+name: evaluations
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  quality-gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Run the demonstrator and enforce the acceptance contract
+        run: |
+          PYTHONPATH=src python -m wisegen_forge.cli demo
+      - name: Assert gates passed and evidence is complete
+        run: |
+          PYTHONPATH=src python - <<'PY'
+          import json, pathlib, sys
+          summary = json.loads(pathlib.Path(".forge/demo/run-summary.json").read_text())
+          ev = summary["evaluation"]
+          assert ev["passed"], f"quality gates failed: {ev}"
+          assert summary["witness"]["ok"], "witness chain broken"
+          print("gates passed:", ev.get("gates_passed"), "witness length:", summary["witness"]["length"])
+          PY
+      - name: Cost regression
+        run: |
+          PYTHONPATH=src python - <<'PY'
+          import json, pathlib
+          summary = json.loads(pathlib.Path(".forge/demo/run-summary.json").read_text())
+          spend = summary["cost"]["total"]["sgd"]
+          cap = 5.00
+          assert spend <= cap, f"demonstrator cost {spend} SGD exceeds regression cap {cap} SGD"
+          print(f"demonstrator cost {spend} SGD within {cap} SGD")
+          PY

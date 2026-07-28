@@ -1,0 +1,21 @@
+{
+  "runtimes": [
+    {
+      "id": "local-deterministic",
+      "provider": "WiseGen",
+      "type": "reference-runtime",
+      "enabled": true,
+      "network_access": false,
+      "authority": "bounded-execution-only"
+    },
+    {
+      "id": "hermes-agent",
+      "provider": "Nous Research",
+      "type": "external-agent-runtime",
+      "enabled": false,
+      "network_access": false,
+      "authority": "bounded-execution-only",
+      "note": "Optional execution substrate. It is not the WiseGen operating system and cannot alter governance policy."
+    }
+  ]
+}

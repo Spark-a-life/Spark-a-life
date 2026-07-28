@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wisegen.local/schemas/action-request.schema.json",
+  "title": "Governed Action Request",
+  "type": "object",
+  "required": ["requestId", "actor", "capabilityId", "operation", "parameters", "idempotencyKey"],
+  "properties": {
+    "requestId": {"type": "string", "minLength": 8, "maxLength": 128},
+    "actor": {
+      "type": "object",
+      "required": ["id", "roles"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "roles": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+      },
+      "additionalProperties": false
+    },
+    "capabilityId": {"type": "string", "minLength": 1},
+    "operation": {"type": "string", "minLength": 1},
+    "targetBaseUrl": {"type": "string", "format": "uri"},
+    "parameters": {"type": "object"},
+    "idempotencyKey": {"type": "string", "minLength": 8, "maxLength": 128},
+    "approvalToken": {"type": "string"},
+    "metadata": {"type": "object"}
+  },
+  "additionalProperties": false
+}

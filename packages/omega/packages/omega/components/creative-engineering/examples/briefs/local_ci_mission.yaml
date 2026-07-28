@@ -1,0 +1,38 @@
+mission:
+  id: ci-local-creative-001
+  objective: Produce a deterministic creative direction for CI validation of the full pipeline.
+  audience: internal WiseGen builders
+  channel: internal review
+  industry: software engineering
+brand:
+  name: WiseGen Creative Engineering
+  voice: clear, exacting and implementation-oriented
+  constraints:
+    - No external services may be called.
+creative:
+  format: text direction
+  style: implementation note
+  message: The pipeline must validate, compile, execute, evaluate and audit without network access.
+  references:
+    - MAMT
+    - Operational Safety
+assets:
+  - id: internal-contract
+    type: text
+    source: repository example
+    consent: owned
+    permitted_use: [testing, documentation]
+risk:
+  maximum_cost_usd: 1
+  maximum_tokens: 100000
+  maximum_runtime_seconds: 300
+  maximum_external_calls: 0
+  maximum_retries: 1
+  maximum_consecutive_similar_actions: 3
+  human_approval_required: false
+output:
+  adapter: local_deterministic
+  deliverables:
+    - deterministic text artefact
+    - evaluation record
+    - witness-chain audit

@@ -1,0 +1,35 @@
+# Local and demonstration estate. Network is internal only by default.
+services:
+  forge:
+    build: .
+    image: wisegen-forge:1.0.0
+    container_name: wisegen-forge
+    environment:
+      FORGE_ESTATE: docker
+      FORGE_NETWORK: deny
+      FORGE_MODEL_PROFILE: deterministic
+      FORGE_BUDGET_SGD: "25.00"
+    volumes:
+      - ./.forge:/app/.forge
+      - ./examples:/app/examples:ro
+    networks: [forge-internal]
+    read_only: false
+    security_opt:
+      - no-new-privileges:true
+    command: ["demo"]
+
+  # Optional sovereign model estate. Enable with: docker compose --profile sovereign up
+  ollama:
+    image: ollama/ollama:latest
+    profiles: ["sovereign"]
+    container_name: forge-ollama
+    volumes:
+      - ollama-models:/root/.ollama
+    networks: [forge-internal]
+
+networks:
+  forge-internal:
+    internal: true
+
+volumes:
+  ollama-models:

@@ -1,0 +1,36 @@
+mission_id: MIS-DEMO-001
+domain: strategy
+objective: Decide whether to adopt the consolidated WiseGen APE Omega control plane for a bounded client pilot.
+desired_outcome: A governed, testable and reversible pilot decision with explicit evidence and stop conditions.
+constraints:
+  - Local-first deterministic execution
+  - No external API calls
+  - No irreversible actions
+success_criteria:
+  - Mission validates against the schema
+  - Eight independent adviser reviews are recorded
+  - Captain approval is present
+  - Witness Chain verifies successfully
+stakeholders: [Captain, client sponsor, delivery lead, governance officer]
+deadline: "2026-08-01"
+assumptions:
+  - id: ASM-001
+    statement: A deterministic pilot is sufficient to validate the governance spine.
+    basis: staged delivery strategy
+    confidence: 0.78
+    impact_if_wrong: high
+    requires_confirmation: false
+evidence:
+  - id: EV-001
+    summary: Four source repositories contain passing reference implementations, except one requiring installation before test collection.
+    source: consolidation preflight
+    quality: direct observation
+claims:
+  - id: CLM-001
+    statement: A shared control plane can reduce duplicated governance logic.
+    classification: EXPERT_JUDGEMENT
+    confidence: 0.75
+    evidence_refs: [EV-001]
+captain:
+  decision: APPROVE_WITH_CONDITIONS
+  allow_declared_assumptions: true

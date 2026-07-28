@@ -1,0 +1,110 @@
+{
+  "portfolio_id": "sample-q3-review",
+  "note": "Illustrative portfolio for exercising the scorer. Values are synthetic. The Corporate Legal unit sits below the minimum cell size and must be excluded rather than scored. Customer Service carries high operational share and must trigger the leakage caution.",
+  "median_unit_size": 340,
+  "units": [
+    {
+      "unit_name": "Commercial",
+      "headcount": 320,
+      "median_unit_size": 340,
+      "evidence_age_quarters": 1,
+      "operational_share": 0.38,
+      "scores": {
+        "change_load": 8.5,
+        "manager_capability_gap": 8.0,
+        "er_intensity": 7.5,
+        "structural_ambiguity": 6.0,
+        "workforce_volatility": 5.0,
+        "industrial_relations_load": 2.0
+      }
+    },
+    {
+      "unit_name": "Manufacturing",
+      "headcount": 780,
+      "median_unit_size": 340,
+      "evidence_age_quarters": 1,
+      "operational_share": 0.30,
+      "scores": {
+        "change_load": 2.0,
+        "manager_capability_gap": 2.0,
+        "er_intensity": 2.0,
+        "structural_ambiguity": 1.5,
+        "workforce_volatility": 2.5,
+        "industrial_relations_load": 4.0
+      }
+    },
+    {
+      "unit_name": "Technology",
+      "headcount": 150,
+      "median_unit_size": 340,
+      "evidence_age_quarters": 1,
+      "operational_share": 0.35,
+      "scores": {
+        "change_load": 6.0,
+        "manager_capability_gap": 5.5,
+        "er_intensity": 3.5,
+        "structural_ambiguity": 6.5,
+        "workforce_volatility": 8.0,
+        "industrial_relations_load": 1.0
+      }
+    },
+    {
+      "unit_name": "Customer service",
+      "headcount": 620,
+      "median_unit_size": 340,
+      "evidence_age_quarters": 2,
+      "operational_share": 0.68,
+      "scores": {
+        "change_load": 6.5,
+        "manager_capability_gap": 5.0,
+        "er_intensity": 4.5,
+        "structural_ambiguity": 4.0,
+        "workforce_volatility": 6.0,
+        "industrial_relations_load": 3.0
+      }
+    },
+    {
+      "unit_name": "Logistics",
+      "headcount": 410,
+      "median_unit_size": 340,
+      "evidence_age_quarters": 1,
+      "operational_share": 0.42,
+      "scores": {
+        "change_load": 9.0,
+        "manager_capability_gap": 5.5,
+        "er_intensity": 8.5,
+        "structural_ambiguity": 5.0,
+        "workforce_volatility": 4.5,
+        "industrial_relations_load": 8.5
+      }
+    },
+    {
+      "unit_name": "Corporate legal",
+      "headcount": 14,
+      "median_unit_size": 340,
+      "evidence_age_quarters": 1,
+      "operational_share": 0.20,
+      "scores": {
+        "change_load": 3.0,
+        "manager_capability_gap": 2.0,
+        "er_intensity": 1.0,
+        "structural_ambiguity": 2.0,
+        "workforce_volatility": 1.5,
+        "industrial_relations_load": 0.5
+      }
+    },
+    {
+      "unit_name": "Regional office",
+      "headcount": 340,
+      "median_unit_size": 340,
+      "evidence_age_quarters": 3,
+      "operational_share": 0.45,
+      "scores": {
+        "change_load": 7.5,
+        "manager_capability_gap": 5.0,
+        "er_intensity": 6.0,
+        "structural_ambiguity": 8.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "request_id": "MAIE-CEILING-0001",
+  "estate": "MAIE",
+  "actor": "hrbp-sizing-review",
+  "purpose": "Ingest individual-level ER case detail for finer-grained scoring.",
+  "action": "demand_signal_harvest",
+  "risk_tier": "medium",
+  "capability_id": "maie.demand-signal-harvest",
+  "data_classification": "highly-confidential",
+  "external_side_effect": false,
+  "runtime_id": "local-deterministic",
+  "human_approved": true
+}

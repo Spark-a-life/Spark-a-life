@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wisegen.local/schemas/execution-result.schema.json",
+  "title": "Governed Execution Result",
+  "type": "object",
+  "required": ["requestId", "durationMs", "disposition", "execution"],
+  "properties": {
+    "requestId": {"type": "string"},
+    "durationMs": {"type": "integer", "minimum": 0},
+    "disposition": {
+      "enum": ["SUCCEEDED", "AWAITING_APPROVAL", "STEP_UP_REQUIRED", "BLOCKED", "STATE_UNCERTAIN", "REJECTED", "FAILED"]
+    },
+    "execution": {
+      "type": "object",
+      "required": ["requestId", "state", "history"]
+    }
+  }
+}

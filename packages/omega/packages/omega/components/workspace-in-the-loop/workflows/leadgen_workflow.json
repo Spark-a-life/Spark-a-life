@@ -1,0 +1,19 @@
+{
+  "workflow_id": "wisegen-leadgen-ranking-v1",
+  "domain": "LeadGen Intelligence",
+  "default_decision_authority": "Captain",
+  "captain_gate": {
+    "risk_threshold": 0.34
+  },
+  "criteria": [
+    {"id": "strategic_fit", "name": "Strategic fit", "weight": 0.16},
+    {"id": "urgency", "name": "Urgency", "weight": 0.12},
+    {"id": "budget_likelihood", "name": "Budget likelihood", "weight": 0.12},
+    {"id": "governance_pain", "name": "Governance pain", "weight": 0.14},
+    {"id": "ai_readiness", "name": "AI readiness", "weight": 0.10},
+    {"id": "trust_pathway", "name": "Trust pathway", "weight": 0.12},
+    {"id": "ethical_fit", "name": "Ethical fit", "weight": 0.10},
+    {"id": "conversion_probability", "name": "Conversion probability", "weight": 0.08},
+    {"id": "lifetime_value", "name": "Lifetime value", "weight": 0.06}
+  ]
+}

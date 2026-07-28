@@ -1,0 +1,37 @@
+# Constitutional layer. Amended by the Captain alone, never by an agent mid-run.
+# A constitutional deny cannot be overridden by any lower layer.
+layer: constitutional
+version: 1.0.0
+owner: captain
+rules:
+  - id: const.no-unattended-production-deploy
+    effect: deny
+    reason: "No agent may deploy to production. Deployment requires a signed manifest bound to a Captain's Gate approval."
+    match:
+      action: capability:deploy_production
+
+  - id: const.no-self-amending-policy
+    effect: deny
+    reason: "No agent may modify policy, including its own authority."
+    match:
+      action: [capability:modify_policy, capability:modify_security_policy, tool:policy_write]
+
+  - id: const.no-approval-by-agent
+    effect: deny
+    reason: "Approval is a human act. An agent may assemble the packet but never sign it."
+    match:
+      actor: [gaie.backend-engineer, gaie.data-engineer, gaie.frontend-engineer, gaie.connector-engineer, gaie.adversary, kaie.assurance-engineer, paie.release-engineer, saie.librarian, taie.solution-lead]
+      action: capability:approve_release
+
+  - id: const.no-network-egress-by-default
+    effect: deny
+    reason: "Outbound network access is denied by default and must be granted explicitly per tool and per actor."
+    match:
+      action: [tool:http_fetch, tool:http_post, capability:network_egress]
+
+  - id: const.restricted-export-needs-approval
+    effect: require_approval
+    reason: "Export of restricted or confidential records requires a recorded human approval."
+    match:
+      action: capability:export_records
+      classification: [restricted, confidential]

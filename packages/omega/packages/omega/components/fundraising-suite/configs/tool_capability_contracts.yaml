@@ -1,0 +1,55 @@
+tools:
+  mission_reader:
+    side_effects: none
+    idempotent: true
+    destructive: false
+    approval_required: false
+    allowed_scopes: [read_mission]
+  strategy_planner:
+    side_effects: none
+    idempotent: true
+    destructive: false
+    approval_required: false
+    allowed_scopes: [read_mission, write_strategy]
+  prospect_registry:
+    side_effects: writes_local_pipeline
+    idempotent: true
+    destructive: false
+    approval_required: false
+    allowed_scopes: [read_prospects, write_prospects]
+  evidence_register:
+    side_effects: writes_local_evidence
+    idempotent: true
+    destructive: false
+    approval_required: false
+    allowed_scopes: [read_evidence, write_evidence]
+  claim_checker:
+    side_effects: none
+    idempotent: true
+    destructive: false
+    approval_required: false
+    allowed_scopes: [read_claims, read_evidence]
+  outreach_builder:
+    side_effects: creates_drafts
+    idempotent: true
+    destructive: false
+    approval_required: true
+    allowed_scopes: [read_mission, read_evidence, write_drafts]
+  external_sender:
+    side_effects: sends_external_message
+    idempotent: false
+    destructive: false
+    approval_required: true
+    allowed_scopes: [send_approved_message]
+  data_room_manifest:
+    side_effects: writes_local_manifest
+    idempotent: true
+    destructive: false
+    approval_required: false
+    allowed_scopes: [read_evidence, write_manifest]
+  deployment_publisher:
+    side_effects: publishes_or_shares
+    idempotent: false
+    destructive: false
+    approval_required: true
+    allowed_scopes: [publish_approved]

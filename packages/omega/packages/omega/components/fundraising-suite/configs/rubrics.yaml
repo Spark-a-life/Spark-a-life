@@ -1,0 +1,12 @@
+rubric:
+  mission_fit: 0.16
+  funder_fit: 0.16
+  evidence_integrity: 0.16
+  financial_logic: 0.12
+  compliance_safety: 0.16
+  narrative_quality: 0.12
+  operational_readiness: 0.12
+approval_thresholds:
+  approve: 0.84
+  revise: 0.62
+  block: 0.00

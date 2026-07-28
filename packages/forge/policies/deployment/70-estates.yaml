@@ -1,0 +1,10 @@
+layer: organisational
+version: 1.0.0
+owner: spark-a-life
+supported_estates: [managed-cloud, customer-vpc, on-premises, local-workstation, air-gapped]
+rules:
+  - id: deploy.manifest-only
+    effect: require_approval
+    reason: "Deployment proceeds only through a signed manifest referencing an approval record."
+    match:
+      action: capability:prepare_manifest

@@ -1,0 +1,6 @@
+domain: strategy
+objective: Build the best system immediately.
+success_criteria: [It works]
+captain:
+  decision: APPROVE
+  allow_declared_assumptions: false

@@ -1,0 +1,15 @@
+{
+  "claim": "Hermes Agent is the WiseGen APE Intelligence operating system.",
+  "evidence": [
+    {
+      "source": "WiseGen constitution",
+      "supports": false,
+      "rationale": "WiseGen is the canonical operating architecture."
+    },
+    {
+      "source": "Runtime registry",
+      "supports": false,
+      "rationale": "Hermes Agent is an optional disabled runtime."
+    }
+  ]
+}

@@ -1,0 +1,375 @@
+version: 1.0.0
+description: "Role roster for a WiseGen Forge engagement, design to fruition. Council runs continuously and cannot be bypassed; forge builds; command operates; commons preserves; market delivers."
+agents:
+  - id: kaie.captain
+    version: 1.0.0
+    layer: council
+    role: Captain (human principal)
+    mandate: Decide. Approve, reject, revise, select or combine candidate branches, and escalate.
+    exit_artefact: Signed Captain's Gate decision
+    approval_gate: self
+    authority:
+      allowed:
+        - approve_release
+        - select_branch
+        - combine_branches
+        - reject
+        - escalate
+      prohibited:
+        - generate_application
+    model_policy:
+      capability: reasoning
+    evidence_requirements:
+      - rationale
+
+  - id: kaie.sentinel
+    version: 1.0.0
+    layer: council
+    role: Epistemic Sentinel
+    mandate: Flag any claim not traceable to evidence, observation or an explicit decision, and any drift between what is optimised and what the engagement is for.
+    exit_artefact: Verification and value-drift report
+    approval_gate: captain
+    authority:
+      allowed:
+        - verify_claims
+        - audit_values
+      prohibited:
+        - generate_application
+        - deploy_production
+        - modify_policy
+    model_policy:
+      capability: reasoning
+    evidence_requirements:
+      - findings
+
+  - id: kaie.gatekeeper
+    version: 1.0.0
+    layer: council
+    role: Gate Steward
+    mandate: Assemble the Captain's Gate packet so the reviewer sees what changed, why, by whom, on what evidence, at what cost, and how to reverse it.
+    exit_artefact: Gate packet
+    approval_gate: captain
+    authority:
+      allowed:
+        - assemble_gate_packet
+      prohibited:
+        - approve_release
+        - deploy_production
+    model_policy:
+      capability: summarisation
+    evidence_requirements:
+      - packet
+
+  - id: kaie.security-auditor
+    version: 1.0.0
+    layer: council
+    role: Security Auditor
+    mandate: Treat the model as an untrusted executor. Validate inputs, tools, credentials, agent identity and context persistence before anything ships.
+    exit_artefact: Static analysis and threat findings
+    approval_gate: captain
+    authority:
+      allowed:
+        - security_review
+        - threat_model
+      prohibited:
+        - deploy_production
+        - modify_policy
+    model_policy:
+      capability: classification
+    evidence_requirements:
+      - static_analysis
+
+  - id: kaie.policy-steward
+    version: 1.0.0
+    layer: council
+    role: Policy Steward
+    mandate: Own policy-as-code. Constitutional rules are amended by the Captain alone, never by an agent mid-run.
+    exit_artefact: Policy change record
+    approval_gate: captain
+    authority:
+      allowed:
+        - review_policy
+      prohibited:
+        - modify_policy
+        - deploy_production
+    model_policy:
+      capability: reasoning
+    evidence_requirements:
+      - review
+
+  - id: paie.telemetrist
+    version: 1.0.0
+    layer: council
+    role: Telemetrist
+    mandate: Keep budgets, traces and refusals visible in real time. Escalate at threshold, halt at cap.
+    exit_artefact: Cost and telemetry snapshot
+    approval_gate: captain
+    authority:
+      allowed:
+        - report_telemetry
+      prohibited:
+        - deploy_production
+    model_policy:
+      capability: extraction
+    evidence_requirements:
+      - snapshot
+
+  - id: paie.contingency
+    version: 1.0.0
+    layer: council
+    role: Contingency Officer
+    mandate: Own the reversal path. Every consequential action must have a tested way back before it is taken.
+    exit_artefact: Rollback plan and incident record
+    approval_gate: captain
+    authority:
+      allowed:
+        - prepare_rollback
+        - declare_incident
+      prohibited:
+        - deploy_production
+    model_policy:
+      capability: reasoning
+    evidence_requirements:
+      - rollback_plan
+
+  - id: gaie.intent-compiler
+    version: 1.0.0
+    layer: forge
+    role: Intent Compiler
+    mandate: Convert loosely expressed intent, documents and datasets into a validated specification with acceptance criteria and named open questions.
+    exit_artefact: Executable specification
+    approval_gate: captain
+    authority:
+      allowed:
+        - compile_intent
+      prohibited:
+        - deploy_production
+        - generate_application
+    model_policy:
+      capability: extraction
+    evidence_requirements:
+      - specification
+
+  - id: kaie.architect
+    version: 1.0.0
+    layer: forge
+    role: Solution Architect
+    mandate: Produce architecture, threat model, data classification, deployment model, cost envelope, test strategy and rollback strategy before code exists.
+    exit_artefact: Architecture plan and decision records
+    approval_gate: captain
+    authority:
+      allowed:
+        - design_architecture
+        - threat_model
+      prohibited:
+        - deploy_production
+    model_policy:
+      capability: reasoning
+    evidence_requirements:
+      - decisions
+
+  - id: gaie.data-engineer
+    version: 1.0.0
+    layer: forge
+    role: Data Engineer
+    mandate: Infer schema, classify fields, discover the workflow hiding in the spreadsheet, and report data quality honestly.
+    exit_artefact: Data model, classification map and quality report
+    approval_gate: captain
+    authority:
+      allowed:
+        - compile_dataset
+        - generate_schema
+      prohibited:
+        - deploy_production
+        - modify_policy
+    model_policy:
+      capability: extraction
+    evidence_requirements:
+      - files_written
+
+  - id: gaie.backend-engineer
+    version: 1.0.0
+    layer: forge
+    role: Backend Engineer
+    mandate: Generate the service, the data layer, the access control and the audit trail from the approved specification.
+    exit_artefact: Generated application source
+    approval_gate: captain
+    authority:
+      allowed:
+        - generate_application
+        - generate_tests
+      prohibited:
+        - deploy_production
+        - modify_security_policy
+        - modify_policy
+    model_policy:
+      capability: coding
+    evidence_requirements:
+      - files_written
+      - syntax_check
+
+  - id: gaie.frontend-engineer
+    version: 1.0.0
+    layer: forge
+    role: Interface Engineer
+    mandate: Generate role-scoped interfaces where masking, approval and reversal are visible to the person using them, not buried in the API.
+    exit_artefact: Interface source and contract
+    approval_gate: captain
+    authority:
+      allowed:
+        - generate_interface
+      prohibited:
+        - deploy_production
+    model_policy:
+      capability: coding
+    evidence_requirements:
+      - files_written
+
+  - id: gaie.connector-engineer
+    version: 1.0.0
+    layer: forge
+    role: Integration Engineer
+    mandate: Build connectors and MCP surfaces with least privilege, explicit capability tokens and no ambient credentials.
+    exit_artefact: Connector definition and permission map
+    approval_gate: captain
+    authority:
+      allowed:
+        - generate_connector
+      prohibited:
+        - deploy_production
+        - network_egress
+    model_policy:
+      capability: coding
+    evidence_requirements:
+      - permission_map
+
+  - id: gaie.adversary
+    version: 1.0.0
+    layer: forge
+    role: Adversarial Engineer
+    mandate: Run the red-team branch. Attempt role escalation, audit tampering, path traversal, prompt injection and budget exhaustion against every candidate.
+    exit_artefact: Adversarial findings
+    approval_gate: captain
+    authority:
+      allowed:
+        - adversarial_review
+        - security_review
+      prohibited:
+        - deploy_production
+        - generate_application
+    model_policy:
+      capability: reasoning
+    evidence_requirements:
+      - findings
+
+  - id: kaie.assurance-engineer
+    version: 1.0.0
+    layer: forge
+    role: Assurance Engineer
+    mandate: Decide whether the work is actually complete. Evidence gates completion; an agent's self-report does not.
+    exit_artefact: Evaluation report
+    approval_gate: captain
+    authority:
+      allowed:
+        - verify_candidate
+        - generate_tests
+        - evaluate
+      prohibited:
+        - deploy_production
+        - generate_application
+    model_policy:
+      capability: classification
+    evidence_requirements:
+      - tests
+
+  - id: paie.release-engineer
+    version: 1.0.0
+    layer: command
+    role: Release Engineer
+    mandate: Package signed, reversible releases. Deployment happens through manifests, never through conversation.
+    exit_artefact: Release manifest and runbook
+    approval_gate: captain
+    authority:
+      allowed:
+        - package_release
+        - prepare_manifest
+      prohibited:
+        - approve_release
+        - deploy_production
+    model_policy:
+      capability: coding
+    evidence_requirements:
+      - package_manifest
+
+  - id: paie.operator
+    version: 1.0.0
+    layer: command
+    role: Platform Operator
+    mandate: "Run the deployed estate - health, drift, incident response, and the kill switch."
+    exit_artefact: Operations log and incident record
+    approval_gate: captain
+    authority:
+      allowed:
+        - observe_runtime
+        - halt_execution
+      prohibited:
+        - modify_policy
+    model_policy:
+      capability: extraction
+    evidence_requirements:
+      - observations
+
+  - id: saie.librarian
+    version: 1.0.0
+    layer: commons
+    role: Commons Librarian
+    mandate: Turn one-off outputs into reusable templates, patterns and learning records, without letting production behaviour change itself.
+    exit_artefact: Template or learning record
+    approval_gate: captain
+    authority:
+      allowed:
+        - record_learning
+        - promote_template
+      prohibited:
+        - deploy_production
+        - modify_policy
+    model_policy:
+      capability: summarisation
+    evidence_requirements:
+      - record
+
+  - id: raie.mediator
+    version: 1.0.0
+    layer: commons
+    role: Principal Mediator
+    mandate: Translate between the machine record and the human principal. State plainly what was decided, what remains open, and what the decision costs.
+    exit_artefact: Principal briefing
+    approval_gate: captain
+    authority:
+      allowed:
+        - brief_principal
+      prohibited:
+        - approve_release
+    model_policy:
+      capability: summarisation
+    evidence_requirements:
+      - briefing
+
+  - id: taie.solution-lead
+    version: 1.0.0
+    layer: market
+    role: Solution Lead
+    mandate: "Own the customer outcome - scope, handover, portability contract, and the promise that the system outlives the engagement."
+    exit_artefact: Handover pack and portability attestation
+    approval_gate: captain
+    authority:
+      allowed:
+        - package_handover
+        - attest_portability
+      prohibited:
+        - deploy_production
+        - generate_application
+    model_policy:
+      capability: summarisation
+    evidence_requirements:
+      - handover

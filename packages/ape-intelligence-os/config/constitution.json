@@ -1,0 +1,45 @@
+{
+  "os": {
+    "name": "WiseGen APE Intelligence OS",
+    "version": "0.1.0",
+    "owner": "Spark-a-life",
+    "tagline": "Where Control Meets Compassion."
+  },
+  "principles": [
+    {
+      "id": "human-before-ai",
+      "statement": "Human dignity, agency, accountability and welfare take precedence over automated convenience."
+    },
+    {
+      "id": "bounded-authority",
+      "statement": "No agent, model, runtime or tool may grant itself authority."
+    },
+    {
+      "id": "evidence-before-trust",
+      "statement": "Outputs become trusted capability or canonical knowledge only through evidence, validation and accountable approval."
+    },
+    {
+      "id": "minimum-necessary-access",
+      "statement": "Every actor receives only the data, tools, context and permissions necessary for the assigned purpose."
+    },
+    {
+      "id": "reversibility",
+      "statement": "Material actions must be interruptible, reviewable and reversible wherever technically and legally feasible."
+    },
+    {
+      "id": "portability",
+      "statement": "Models, tools and runtimes remain replaceable through stable contracts and governed adapters."
+    },
+    {
+      "id": "one-os",
+      "statement": "WiseGen is the canonical operating architecture. Estates and runtimes must not create competing governance systems."
+    }
+  ],
+  "non_delegable_decisions": [
+    "Final accountability for high-impact decisions",
+    "Waiver of legal, ethical or safety controls",
+    "Unreviewed promotion of agent memory into canonical organisational knowledge",
+    "Self-certification of a capability by the agent that created it",
+    "Expansion of an agent's own permissions"
+  ]
+}

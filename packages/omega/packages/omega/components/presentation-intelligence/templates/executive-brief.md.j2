@@ -1,0 +1,52 @@
+# {{ project.title }}
+
+**Owner:** {{ project.owner }}  
+**Decision required:** {{ intent.decision }}
+
+## Executive Summary
+
+{{ sections.executive_summary }}
+
+## Decision Required
+
+{{ intent.decision }}
+
+## Evidence
+
+{% for item in evidence %}
+- **{{ item.id }} | {{ item.title }}:** {{ item.content }}
+{% endfor %}
+
+## Analysis
+
+{% for insight in insights %}
+### {{ insight.claim }}
+
+{{ insight.implication }}
+
+Evidence: {{ insight.evidence_ids | join(", ") }}  
+Confidence: {{ "%.2f"|format(insight.confidence) }}  
+Limitation: {{ insight.limitation }}
+{% endfor %}
+
+## Options
+
+{% for option in sections.options %}
+- {{ option }}
+{% endfor %}
+
+## Recommendation
+
+{{ sections.recommendation }}
+
+## Risks
+
+{% for risk in intent.risks %}
+- {{ risk }}
+{% endfor %}
+
+## Next Steps
+
+{% for step in sections.next_steps %}
+1. {{ step }}
+{% endfor %}

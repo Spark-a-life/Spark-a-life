@@ -1,0 +1,29 @@
+id: internal-tool
+version: 1.0.0
+promoted_from: employee-onboarding demonstrator
+promoted_at: 2026-07-25
+status: active
+
+capabilities:
+  - role-scoped record listing and creation
+  - state transitions with an approval reference
+  - append-only audit history with actor, time and prior value
+  - open-format export, CSV and JSON
+  - field masking driven by data classification
+
+defaults:
+  store: sqlite
+  auth: session token with server-side role resolution
+  audit: append-only table, never updated
+  export: unauthenticated egress disabled by default
+
+acceptance_criteria:
+  - a role without a grant cannot read a restricted field
+  - every write appends to the audit table before the row is updated
+  - a transition without an approval reference is refused
+  - export produces the same record set the caller may read, and no more
+
+notes: >
+  This template encodes the pattern, not the domain. The Data Engineer infers
+  the entity, its columns and their classification from the customer's own
+  spreadsheet at stage 1.

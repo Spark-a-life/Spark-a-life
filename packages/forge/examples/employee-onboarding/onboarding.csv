@@ -1,0 +1,11 @@
+employee_id,full_name,work_email,department,reporting_manager,start_date,monthly_salary_sgd,nric,onboarding_status,laptop_issued,policy_acknowledged,notes
+E-1001,Aisyah Rahman,aisyah.r@example.com.sg,Operations,M-204,2026-07-01,5200.00,S1234567A,Completed,Yes,Yes,Transferred from contract
+E-1002,Marcus Leong,marcus.l@example.com.sg,Finance,M-118,2026-07-07,6100.00,S2345678B,In Progress,Yes,No,
+E-1003,Priya Nair,priya.n@example.com.sg,Operations,M-204,2026-07-14,4800.00,S3456789C,In Progress,No,No,Awaiting laptop stock
+E-1004,Chen Wei Ling,weiling.c@example.com.sg,Engineering,M-071,2026-07-21,7400.00,S4567890D,Awaiting Manager Sign-off,Yes,Yes,
+E-1005,Daniel Ong,daniel.o@example.com.sg,Engineering,M-071,2026-08-04,6900.00,S5678901E,Not Started,No,No,
+E-1006,Farah Ismail,farah.i@example.com.sg,People and Culture,M-302,2026-08-04,5600.00,S6789012F,Not Started,No,No,Second language: Malay
+E-1007,Kumar Selvam,kumar.s@example.com.sg,Operations,M-204,2026-08-11,5000.00,S7890123G,Not Started,No,No,
+E-1008,Rachel Tan Hui Min,rachel.t@example.com.sg,Finance,M-118,2026-08-18,5900.00,S8901234H,Not Started,No,,"Part-time, three days"
+E-1009,Joel Fernandez,joel.f@example.com.sg,Engineering,M-071,2026-08-25,7100.00,S9012345I,Not Started,No,No,
+E-1010,Nurul Huda,nurul.h@example.com.sg,People and Culture,M-302,2026-09-01,5400.00,S0123456J,,No,No,Start date pending visa

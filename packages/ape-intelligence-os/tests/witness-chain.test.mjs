@@ -1,0 +1,2 @@
+import test from "node:test";import assert from "node:assert/strict";import fs from "node:fs";import osmod from "node:os";import path from "node:path";import { WitnessChain } from "../src/witness/chain.mjs";
+test("detects tampering",()=>{const f=path.join(osmod.tmpdir(),`wisegen-${Date.now()}.jsonl`),c=new WitnessChain(f);c.append({eventType:"x",requestId:"r",payload:{a:1}});assert.equal(c.verify().valid,true);const rows=c.read();rows[0].payload.a=2;fs.writeFileSync(f,JSON.stringify(rows[0])+"\n");assert.equal(c.verify().valid,false);fs.unlinkSync(f);});

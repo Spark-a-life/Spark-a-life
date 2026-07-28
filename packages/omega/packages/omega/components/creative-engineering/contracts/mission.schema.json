@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WiseGen Creative Mission Contract",
+  "type": "object",
+  "required": [
+    "mission",
+    "brand",
+    "creative",
+    "assets",
+    "risk",
+    "output"
+  ],
+  "properties": {
+    "mission": {
+      "type": "object",
+      "required": [
+        "id",
+        "objective",
+        "audience",
+        "channel"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "objective": {
+          "type": "string",
+          "minLength": 10
+        },
+        "audience": {
+          "type": "string"
+        },
+        "channel": {
+          "type": "string"
+        },
+        "industry": {
+          "type": "string"
+        }
+      }
+    },
+    "brand": {
+      "type": "object",
+      "required": [
+        "name",
+        "voice",
+        "constraints"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "voice": {
+          "type": "string"
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "creative": {
+      "type": "object",
+      "required": [
+        "format",
+        "style",
+        "message",
+        "references"
+      ],
+      "properties": {
+        "format": {
+          "type": "string"
+        },
+        "style": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "source",
+          "consent",
+          "permitted_use"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "consent": {
+            "type": "string",
+            "enum": [
+              "owned",
+              "licensed",
+              "explicit",
+              "public_unverified",
+              "none"
+            ]
+          },
+          "permitted_use": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "risk": {
+      "type": "object",
+      "required": [
+        "maximum_cost_usd",
+        "maximum_tokens",
+        "maximum_runtime_seconds",
+        "maximum_external_calls",
+        "maximum_retries"
+      ],
+      "properties": {
+        "maximum_cost_usd": {
+          "type": "number",
+          "minimum": 0
+        },
+        "maximum_tokens": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "maximum_runtime_seconds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "maximum_external_calls": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "maximum_retries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "human_approval_required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "output": {
+      "type": "object",
+      "required": [
+        "adapter",
+        "deliverables"
+      ],
+      "properties": {
+        "adapter": {
+          "type": "string"
+        },
+        "deliverables": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

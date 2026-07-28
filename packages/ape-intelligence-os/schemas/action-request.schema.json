@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wisegen.local/schemas/action-request.schema.json",
+  "title": "Captain's Gate Action Request",
+  "type": "object",
+  "required": [
+    "request_id",
+    "estate",
+    "actor",
+    "purpose",
+    "action",
+    "risk_tier",
+    "capability_id",
+    "data_classification",
+    "external_side_effect",
+    "runtime_id"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "estate": {
+      "enum": [
+        "MAIE",
+        "TAIE",
+        "PAIE",
+        "GAIE",
+        "SAIE"
+      ]
+    },
+    "actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "action": {
+      "type": "string",
+      "minLength": 1
+    },
+    "risk_tier": {
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "capability_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "data_classification": {
+      "enum": [
+        "public",
+        "internal",
+        "restricted",
+        "confidential",
+        "highly-confidential"
+      ]
+    },
+    "external_side_effect": {
+      "type": "boolean"
+    },
+    "runtime_id": {
+      "type": "string"
+    },
+    "human_approved": {
+      "type": "boolean"
+    },
+    "approval_reference": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

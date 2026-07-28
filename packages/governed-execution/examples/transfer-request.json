@@ -1,0 +1,17 @@
+{
+  "requestId": "request_transfer_0001",
+  "actor": {
+    "id": "finance.morgan",
+    "roles": ["finance_operator"]
+  },
+  "capabilityId": "payments.transfer",
+  "operation": "submit",
+  "targetBaseUrl": "http://127.0.0.1:8899",
+  "parameters": {
+    "amount": 2500,
+    "currency": "SGD",
+    "beneficiary": "Approved Demonstration Vendor",
+    "purpose": "Governed execution demonstration"
+  },
+  "idempotencyKey": "idem_transfer_0001"
+}

@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "wisegen-caf-os": {
+      "command": "npm",
+      "args": ["run", "mcp"],
+      "cwd": "/absolute/path/to/wisegen-caf-os-v1",
+      "env": {
+        "CAF_PROJECT_ROOT": "/absolute/path/to/caf-runtime/projects",
+        "CAF_PROVIDER_MODE": "mock"
+      }
+    }
+  }
+}

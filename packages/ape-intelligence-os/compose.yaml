@@ -1,0 +1,10 @@
+services:
+  wisegen:
+    build: .
+    working_dir: /app
+    volumes:
+      - ./var:/app/var
+    command: ["node", "src/cli.mjs", "demo"]
+    read_only: true
+    tmpfs:
+      - /tmp

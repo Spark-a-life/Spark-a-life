@@ -1,0 +1,14 @@
+version: 2.0
+full_council:
+  - sceptic
+  - first_principles
+  - opportunity_strategist
+  - outsider
+  - execution_lead
+  - risk_governance
+  - systems_architect
+  - economist
+streamlined_thresholds:
+  low_risk: [sceptic, execution_lead, risk_governance]
+  medium_risk: [sceptic, first_principles, execution_lead, risk_governance, systems_architect]
+  high_risk: full_council

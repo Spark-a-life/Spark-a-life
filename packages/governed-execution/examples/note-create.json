@@ -1,0 +1,15 @@
+{
+  "requestId": "request_note_0001",
+  "actor": {
+    "id": "operator.alex",
+    "roles": ["operator"]
+  },
+  "capabilityId": "notes.create",
+  "operation": "create",
+  "targetBaseUrl": "http://127.0.0.1:8899",
+  "parameters": {
+    "title": "Governed execution",
+    "body": "A verified low-consequence action."
+  },
+  "idempotencyKey": "idem_note_0001"
+}

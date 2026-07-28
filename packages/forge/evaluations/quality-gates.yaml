@@ -1,0 +1,51 @@
+version: 1.0.0
+description: >
+  The acceptance contract applied to every candidate. Blocking gates keep the
+  Captain's Gate packet from becoming ready. Advisory gates inform the decision
+  without blocking it.
+
+gates:
+  - id: artefacts.present
+    blocking: true
+    asks: Did the run produce every artefact the specification requires?
+    failure_means: The generator did not complete, whatever it reported.
+
+  - id: code.compiles
+    blocking: true
+    asks: Does every generated Python module parse and compile?
+    failure_means: Syntactically invalid output reached the gate.
+
+  - id: tests.pass
+    blocking: true
+    asks: Does the generated application pass its own generated test suite?
+    failure_means: The system does not do what its own tests claim.
+
+  - id: acceptance.coverage
+    blocking: true
+    asks: Does every acceptance criterion map to at least one executable check?
+    failure_means: A promise in the specification is untested, so it is unverified.
+
+  - id: provenance.complete
+    blocking: true
+    asks: Does the witness chain verify, and does it cover every expected stage?
+    failure_means: The evidence trail is incomplete or has been altered.
+
+  - id: policy.enforced
+    blocking: false
+    asks: Did the run exercise the policy layer, including at least one refusal?
+    failure_means: Controls may be present but never actually engaged.
+
+  - id: data.quality
+    blocking: false
+    asks: Is the source dataset complete and consistent enough to build on?
+    failure_means: The application will inherit the spreadsheet's defects.
+
+  - id: cost.within_envelope
+    blocking: false
+    asks: Did the run stay inside its approved cost envelope?
+    failure_means: The estimate presented to the Captain was wrong.
+
+thresholds:
+  data_quality_minimum: 0.5
+  cost_regression_ceiling_sgd: 5.00
+  acceptance_coverage_minimum: 1.0

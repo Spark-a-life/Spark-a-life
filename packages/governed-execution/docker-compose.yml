@@ -1,0 +1,26 @@
+services:
+  control-plane:
+    build: .
+    image: wisegen-ape-governed-execution:1.0.0
+    environment:
+      RUNTIME_MODE: demo
+      CONTROL_HOST: 0.0.0.0
+      CONTROL_PORT: 8787
+      CONTROL_API_KEY: demo-control-api-key-rotate-before-use
+      WITNESS_HMAC_KEY: demo-witness-hmac-key-rotate-before-use-32bytes
+      APPROVAL_HMAC_KEY: demo-approval-hmac-key-rotate-before-use-32bytes
+      WITNESS_LOG_PATH: /app/var/witness/witness-chain.jsonl
+      APPROVAL_STORE_PATH: /app/var/approvals/used-nonces.json
+      STATE_STORE_PATH: /app/var/state
+      BROWSER_DEMO_ROOT: /app/fixtures
+      BROWSER_DEMO_FILE: /app/fixtures/browser-demo.html
+      BROWSER_NO_SANDBOX: "1"
+      CHROMIUM_PATH: /usr/bin/chromium
+    ports:
+      - "8787:8787"
+    volumes:
+      - ./var:/app/var
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL

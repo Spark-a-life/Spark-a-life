@@ -1,0 +1,14 @@
+{
+  "request_id": "MAIE-HARVEST-0001",
+  "estate": "MAIE",
+  "actor": "hrbp-sizing-review",
+  "purpose": "Ingest unit-aggregated demand signals for the Q3 HRBP coverage review.",
+  "action": "demand_signal_harvest",
+  "risk_tier": "medium",
+  "capability_id": "maie.demand-signal-harvest",
+  "data_classification": "confidential",
+  "external_side_effect": false,
+  "runtime_id": "local-deterministic",
+  "human_approved": true,
+  "approval_reference": "HRD-2026-Q3-014"
+}

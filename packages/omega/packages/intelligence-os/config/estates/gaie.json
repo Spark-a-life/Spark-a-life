@@ -1,0 +1,12 @@
+{
+  "id": "GAIE",
+  "name": "General Intelligence and Capability Forge Estate",
+  "purpose": "Experiment, evaluate and forge reusable capabilities without direct production authority.",
+  "default_risk_tier": "high",
+  "data_ceiling": "internal",
+  "human_gate": [
+    "production promotion",
+    "permission expansion",
+    "external side effect"
+  ]
+}

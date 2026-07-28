@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wisegen-presentation-intelligence-playbook"
+version = "0.1.0"
+description = "Governance-first presentation intelligence workflows"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["PyYAML>=6.0.1", "jsonschema>=4.21.1", "Jinja2>=3.1.3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.3"]
+
+[project.scripts]
+wisegen-pip = "wisegen_pip.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

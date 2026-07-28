@@ -1,0 +1,18 @@
+{
+  "workflow_id": "wisegen-media-os-evaluation-v1",
+  "domain": "Media OS Video Evaluation",
+  "default_decision_authority": "Captain",
+  "captain_gate": {
+    "risk_threshold": 0.30
+  },
+  "criteria": [
+    {"id": "narrative_clarity", "name": "Narrative clarity", "weight": 0.16},
+    {"id": "visual_coherence", "name": "Visual coherence", "weight": 0.14},
+    {"id": "brand_fit", "name": "Brand fit", "weight": 0.14},
+    {"id": "factuality", "name": "Factuality", "weight": 0.16},
+    {"id": "emotional_effect", "name": "Emotional effect", "weight": 0.10},
+    {"id": "accessibility", "name": "Accessibility", "weight": 0.10},
+    {"id": "reputational_risk", "name": "Reputational risk", "weight": 0.12, "direction": "min"},
+    {"id": "production_efficiency", "name": "Production efficiency", "weight": 0.08}
+  ]
+}

@@ -1,0 +1,16 @@
+# Five-layer defence: input, tool, credential, identity, context persistence.
+layer: organisational
+version: 1.0.0
+owner: spark-a-life
+rules:
+  - id: sec.no-ambient-credentials
+    effect: deny
+    reason: "Agents receive scoped capability tokens, never ambient credentials from the host environment."
+    match:
+      action: [tool:read_env_secret, capability:read_credentials]
+
+  - id: sec.context-rugpull-detection
+    effect: require_approval
+    reason: "A change to an agent definition or tool description mid-engagement requires re-approval before further execution."
+    match:
+      action: capability:reload_agent_definition

@@ -1,0 +1,102 @@
+id: spreadsheet-to-application
+version: 1.0.0
+title: Governed Spreadsheet-to-Application Factory
+status: reference
+description: >
+  Most organisations do not begin with clean APIs. They begin with spreadsheets,
+  email processes and undocumented operating practice. This workflow is the entry
+  point into that reality: an existing sheet becomes a governed, owned application.
+
+inputs:
+  required:
+    - kind: spreadsheet
+      description: The operational sheet the process actually runs on
+    - kind: requirement
+      description: A plain statement of what the application must do
+  optional:
+    - kind: policy_document
+      description: Organisational policy the application must respect
+    - kind: org_chart
+      description: Reporting lines, used to derive roles and approval paths
+
+stages:
+  - stage: 1
+    name: intake
+    lead: gaie.intent-compiler
+    council: [kaie.security-auditor]
+    gate: automatic
+    exit: Immutable intake record with provenance
+  - stage: 2
+    name: intent_compilation
+    lead: gaie.intent-compiler
+    council: [kaie.sentinel]
+    gate: captain
+    exit: Specification with acceptance criteria
+  - stage: 3
+    name: architecture_and_risk
+    lead: kaie.architect
+    council: [kaie.security-auditor, paie.telemetrist]
+    gate: captain
+    exit: Architecture decision record, threat model, cost envelope
+  - stage: 4
+    name: mission_planning
+    lead: kaie.architect
+    council: [paie.telemetrist]
+    gate: automatic
+    exit: Dependency graph
+  - stage: 5
+    name: branchable_execution
+    lead: gaie.backend-engineer
+    supporting: [gaie.data-engineer, gaie.frontend-engineer, gaie.connector-engineer]
+    council: [paie.contingency, paie.telemetrist]
+    gate: automatic
+    exit: Candidate branches, separately costed
+  - stage: 6
+    name: continuous_verification
+    lead: kaie.assurance-engineer
+    supporting: [gaie.adversary]
+    council: [kaie.sentinel, kaie.security-auditor]
+    gate: blocking
+    exit: Evaluation report
+  - stage: 7
+    name: captains_gate
+    lead: kaie.gatekeeper
+    decider: kaie.captain
+    gate: human
+    exit: Signed decision
+  - stage: 8
+    name: deployment
+    lead: paie.release-engineer
+    council: [paie.contingency, kaie.security-auditor]
+    gate: manifest
+    exit: Release manifest and runbook
+  - stage: 9
+    name: operational_learning
+    lead: paie.operator
+    supporting: [saie.librarian, raie.mediator]
+    gate: captain
+    exit: Learning record
+
+quality_gates:
+  blocking:
+    - artefacts.present
+    - code.compiles
+    - tests.pass
+    - acceptance.coverage
+    - provenance.complete
+  advisory:
+    - policy.enforced
+    - data.quality
+    - cost.within_envelope
+
+outputs:
+  - validated process model
+  - role-based web application
+  - database schema and migrations
+  - approval workflow
+  - audit history
+  - policy traceability
+  - test suite
+  - deployment package
+  - evidence bundle
+  - rollback plan

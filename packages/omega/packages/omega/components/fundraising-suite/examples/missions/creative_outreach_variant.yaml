@@ -1,0 +1,72 @@
+mission:
+  id: creative-outreach-variant
+  objective: Produce governed creative outreach variants for a fundraising campaign without external egress.
+  programme_summary: Create a campaign story, LinkedIn draft and visual prompt pack for review.
+  funding_goal: 250000
+  currency: SGD
+  audience: corporate social responsibility leaders and education partners
+  region: Singapore
+  timeframe: 3 months
+organisation:
+  name: Spark-a-life | APE Intelligence
+  voice: concise, warm and strategic
+  constraints:
+    - Draft only; do not publish.
+    - Keep claims evidence-grounded.
+governance:
+  jurisdiction: Singapore
+  fundraising_mode: corporate_sponsorship
+  public_appeal: false
+  foreign_charitable_purpose: false
+  personal_data_used: false
+  vulnerable_audience: false
+  egress_channels: [linkedin, deck, internal_memo]
+  donor_acceptance_policy: Accept sponsorship only when creative conditions preserve evidence integrity and mission fit.
+  required_approvals: [captain, compliance]
+  disclosure_requirements:
+    - Captain Gate approval before publication.
+  restricted_terms:
+    - guaranteed funding
+    - shame
+    - must donate now
+fundraising:
+  segments: [education, responsible AI, workforce transformation]
+  minimum_fit_score: 0.55
+  use_of_funds: [creative development, outreach, programme delivery]
+prospects:
+  - name: CSR Learning Partner
+    type: corporate partner
+    region: Singapore
+    focus_areas: [education, workforce transformation]
+    giving_history: Supports capability-building partnerships.
+    relationship_signal: partner-adjacent
+    eligibility_notes: Requires internal CSR alignment.
+    restrictions: [brand review]
+    estimated_amount: 120000
+    source: supplied example source card
+evidence:
+  - id: ev-story
+    title: Campaign story evidence
+    source: internal story brief
+    kind: programme design
+    confidence: medium
+    permitted_use: [outreach, social_concept]
+claims:
+  - text: The campaign is designed to support practical AI literacy and responsible adoption.
+    evidence_ids: [ev-story]
+    external_use: true
+risk:
+  maximum_cost_usd: 1
+  maximum_tokens: 60000
+  maximum_runtime_seconds: 300
+  maximum_external_calls: 0
+  maximum_retries: 1
+  maximum_consecutive_similar_actions: 3
+  maximum_destructive_tools: 0
+  human_approval_required: true
+output:
+  adapter: local_deterministic
+  deliverables:
+    - creative narrative
+    - outreach draft
+    - visual prompt pack

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wisegen-mamt-fundraising-suite"
+version = "1.5.0"
+description = "WiseGen MAMT fundraising mission team with client-shippable safeguards, creative engineering, governance preflight and witness-chain audit"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Spark-a-life | APE Intelligence"}]
+dependencies = ["PyYAML>=6.0", "jsonschema>=4.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+
+[project.scripts]
+wg-fund = "wisegen_mamt_fundraising.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

@@ -1,0 +1,17 @@
+creative_outputs:
+  outreach_email:
+    audience: funder decision-maker
+    approval_required: true
+    evidence_required: true
+  linkedin_post:
+    audience: public professional network
+    approval_required: true
+    evidence_required: true
+  visual_prompt_pack:
+    audience: creative operator or approved generation surface
+    approval_required: true
+    evidence_required: false
+  board_update:
+    audience: internal board or leadership
+    approval_required: true
+    evidence_required: true

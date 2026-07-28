@@ -1,0 +1,44 @@
+name: release
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Release gate
+        run: ./scripts/verify-release.sh
+      - name: Craft the portable ownership bundle
+        run: |
+          PYTHONPATH=src python -m wisegen_forge.cli demo
+          PYTHONPATH=src python -m wisegen_forge.cli export --run .forge/demo --out dist/portable-bundle.zip
+      - name: Software bill of materials
+        run: |
+          mkdir -p dist
+          PYTHONPATH=src python - <<'PY'
+          import hashlib, json, pathlib
+          files = sorted(p for p in pathlib.Path("src").rglob("*.py"))
+          sbom = {
+            "bomFormat": "CycloneDX", "specVersion": "1.5", "version": 1,
+            "metadata": {"component": {"type": "application", "name": "wisegen-forge", "version": "1.0.0"}},
+            "components": [],
+            "properties": [{"name": "runtime-dependencies", "value": "none"}],
+            "files": [{"path": str(p), "sha256": hashlib.sha256(p.read_bytes()).hexdigest()} for p in files],
+          }
+          pathlib.Path("dist/sbom.json").write_text(json.dumps(sbom, indent=2))
+          print("sbom entries:", len(sbom["files"]))
+          PY
+      - name: Publish artefacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-bundle
+          path: |
+            dist/portable-bundle.zip
+            dist/sbom.json
+            .forge/demo/run-summary.json

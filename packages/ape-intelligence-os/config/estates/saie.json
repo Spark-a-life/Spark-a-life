@@ -1,0 +1,12 @@
+{
+  "id": "SAIE",
+  "name": "Shared Services and Knowledge Commons Estate",
+  "purpose": "Provide governed shared knowledge, infrastructure services and certified reusable components.",
+  "default_risk_tier": "medium",
+  "data_ceiling": "confidential",
+  "human_gate": [
+    "canonical knowledge promotion",
+    "cross-estate policy change",
+    "shared service deployment"
+  ]
+}

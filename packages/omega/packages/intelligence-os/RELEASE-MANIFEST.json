@@ -1,0 +1,287 @@
+{
+  "name": "WiseGen APE Intelligence OS",
+  "version": "0.1.0",
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "92e45ccbba8e27cc0e764d57e7ba6cf36b837b8a0acd7a18ef5f8dfe26462643",
+      "bytes": 264
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "6e4719566ef41ff47f7c78791c5296cd101ebc1dc65dfef60d977f03e511e876",
+      "bytes": 81
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "76fabfd541e5bd3213c5574349544185f77428d020150c5d7bd8c831ad7f9e60",
+      "bytes": 356
+    },
+    {
+      "path": "Dockerfile",
+      "sha256": "ed316bfb60fc9e77e619c684d45fc2aaca72d8c5f64a6bdd2078a6f3fbb3c95b",
+      "bytes": 115
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "3da8f1e4e641520112bc8e2339e26394f44c6a332d804a82a31cefa4ab9b4be1",
+      "bytes": 623
+    },
+    {
+      "path": "README.md",
+      "sha256": "f5b4e9f780d3955a4c149ea3999b825fafeaf7f4a8ca57fe4cc9eb3171a9571a",
+      "bytes": 2745
+    },
+    {
+      "path": "bin/wisegen",
+      "sha256": "101cb960e661280f62729578bb6a6d5d82c37cd23ef0e219658a88a5c44d3a99",
+      "bytes": 159
+    },
+    {
+      "path": "bin/wisegen.ps1",
+      "sha256": "4b5d944b30edc9e454be3e9f147461104aaab4cf35fab5644b99cfc07e74452e",
+      "bytes": 155
+    },
+    {
+      "path": "compose.yaml",
+      "sha256": "504ff311d9901116b6c47d1120330a009d45635063c7e93529bf576c4df7aa90",
+      "bytes": 181
+    },
+    {
+      "path": "config/capabilities.json",
+      "sha256": "b82b886a7ea77faddd858cdac8b8d98dec0178ee965e115ee8c0257945add77b",
+      "bytes": 1932
+    },
+    {
+      "path": "config/constitution.json",
+      "sha256": "f44b4055c6c67f919eed352386f11c2d2dd000da8c383cc91581023f5dd441ec",
+      "bytes": 1678
+    },
+    {
+      "path": "config/estates/gaie.json",
+      "sha256": "c892e4dcfc9215b9347506cdefd9c03ffdd01bb3ddd9377af9dce6dc176a0242",
+      "bytes": 354
+    },
+    {
+      "path": "config/estates/maie.json",
+      "sha256": "01318484415fc50997d913ea4a75c6f8b24764fbe719c8f977a7c20eb2f50066",
+      "bytes": 401
+    },
+    {
+      "path": "config/estates/paie.json",
+      "sha256": "0fdcaef2f7de3bbb69fb5538d16f631dcbd109f7f6c9bc32578d32f5a7b88659",
+      "bytes": 365
+    },
+    {
+      "path": "config/estates/saie.json",
+      "sha256": "21bb319a797869da4832257ec70abc5f73d0d0a9664c317b38253c3e4fc19734",
+      "bytes": 380
+    },
+    {
+      "path": "config/estates/taie.json",
+      "sha256": "7df0542d24b85f005e962ae287dae283d4c566ea4f71e1d6d486248b2809ca8d",
+      "bytes": 362
+    },
+    {
+      "path": "config/lanes.json",
+      "sha256": "5e14fb713aa71972bfee6be26cc9a2ada3eb91e950a86198f40dc5aff06b3073",
+      "bytes": 2782
+    },
+    {
+      "path": "config/policies/captains-gate.json",
+      "sha256": "998a65921d1fe11d2dc2246786cbe2cc2ce5cd792f1b08d3cdb50130ba9d7792",
+      "bytes": 1003
+    },
+    {
+      "path": "config/runtimes.json",
+      "sha256": "7b373c9394477167f33a430d73a58ff67ae7f63200e5abb20fbd34bbd39221b3",
+      "bytes": 570
+    },
+    {
+      "path": "docs/architecture/01-system-definition.md",
+      "sha256": "831991baf2649b26f7021db9770ed8f64a0ce3d58d3153de204b85173025741a",
+      "bytes": 624
+    },
+    {
+      "path": "docs/architecture/02-estates-and-lanes.md",
+      "sha256": "2414d9a91890776f1bd1f1d53708dcde7df600a97a9d92626baf21abaeda0708",
+      "bytes": 400
+    },
+    {
+      "path": "docs/architecture/03-runtime-substrates.md",
+      "sha256": "a25172310c0eba5682cf25a82db4495f105e14928d62707005464d32b7d3d0d9",
+      "bytes": 436
+    },
+    {
+      "path": "docs/governance/capability-lifecycle.md",
+      "sha256": "7c769a108264c4e30b8c346f4688bbb241af7c5a69db0c39e2d01dc854abcb34",
+      "bytes": 368
+    },
+    {
+      "path": "docs/governance/captains-gate.md",
+      "sha256": "81e922098564f82ce597633f28311de5697255cd35cfbf5f2649d09d4517ed18",
+      "bytes": 381
+    },
+    {
+      "path": "docs/governance/knowledge-promotion.md",
+      "sha256": "728d24bb964fbc98ae211131df91f0542817b1c0d7cb68749613741b8b5eb895",
+      "bytes": 348
+    },
+    {
+      "path": "docs/operations/release-checklist.md",
+      "sha256": "422ff54ce74575045c25b2af5ec4f14829a3725389c6384904d2a42f1992b55a",
+      "bytes": 582
+    },
+    {
+      "path": "docs/operations/runbook.md",
+      "sha256": "c334b4097f9a64d6ab50e5edc6ccb9f32a83d2f0474bde95e7afafea900fe40b",
+      "bytes": 1019
+    },
+    {
+      "path": "docs/security/security-controls.md",
+      "sha256": "c09dc7ec48d6b1f093b11d6a62848e1cf192ad391136f6737629905c3328973f",
+      "bytes": 546
+    },
+    {
+      "path": "docs/security/threat-model.md",
+      "sha256": "97de8b63bd75bad55f66c4bf5196e816a80a61c10c6c43928280ab143d2e4666",
+      "bytes": 1255
+    },
+    {
+      "path": "examples/action-request.json",
+      "sha256": "8b11d2b9d352f14b32ed22419d104ebb3856a31450a35ac33e49af1238a8b254",
+      "bytes": 428
+    },
+    {
+      "path": "examples/task.json",
+      "sha256": "e0df5de680aac879ff2215d135e590650d51eb93157011873e8b1f9c498a2820",
+      "bytes": 389
+    },
+    {
+      "path": "package.json",
+      "sha256": "5da99504a9efbb1d453fac02c03553d79cbf9bef2b70dcf716a51fa07f057ae6",
+      "bytes": 527
+    },
+    {
+      "path": "schemas/action-request.schema.json",
+      "sha256": "70a901dbd0b43533c2db51a576d06bf242b9369d39eed2c940e3521a56f22eaf",
+      "bytes": 1449
+    },
+    {
+      "path": "schemas/capability.schema.json",
+      "sha256": "ad7ba9e7eea88f60d99fcfd3077759ccf6096bb06d42eb45b4bdc3b84a4383f7",
+      "bytes": 1110
+    },
+    {
+      "path": "schemas/witness-record.schema.json",
+      "sha256": "7054341ddd7aeff0100ba03efbe3b0df7fad033d11f9dfe5a99ae5c08c5b90f9",
+      "bytes": 709
+    },
+    {
+      "path": "src/cli.mjs",
+      "sha256": "2ec88800f1e78b055a40dd676d097749add602c26391a2fca6cec6b21834cf88",
+      "bytes": 2552
+    },
+    {
+      "path": "src/core/config.mjs",
+      "sha256": "dc2899585cb4fbcba81e40455672bebcc03f0c57d7f42eb44c0ed00517ccf4f2",
+      "bytes": 734
+    },
+    {
+      "path": "src/core/errors.mjs",
+      "sha256": "5d4b65a9945a7d853a736b2a6edaaf4e68e2f3f439b90dbea57499d90e5cde4d",
+      "bytes": 151
+    },
+    {
+      "path": "src/core/system.mjs",
+      "sha256": "8d6f7ed37730f4fdc53aeded0035d312a8fa124d90d3b62cba7573d0f3b44f08",
+      "bytes": 1535
+    },
+    {
+      "path": "src/governance/captains-gate.mjs",
+      "sha256": "780aa38c51edd068acb0f7c80ce7d6287707bc3ab8b968ce8ae6e827fd083d4b",
+      "bytes": 2203
+    },
+    {
+      "path": "src/governance/registry.mjs",
+      "sha256": "e5b78b8ae1f92d01ea7c2e9eba1428f98e408045123956f8df09695054b52ab3",
+      "bytes": 1184
+    },
+    {
+      "path": "src/knowledge/promotion.mjs",
+      "sha256": "2bfae8087bc3799044297323f36252c6485e18fd50a5e66e38a61f8526c94fc0",
+      "bytes": 509
+    },
+    {
+      "path": "src/orchestration/engine.mjs",
+      "sha256": "a69eb5b9dbdb3c43d0ae4072b003bc9d8f1bada6501fcc3c116cd5dd6846c5af",
+      "bytes": 1248
+    },
+    {
+      "path": "src/runtime/adapter.mjs",
+      "sha256": "fa6bad0a9b7b168ca0a7749f9a34084b4fc85d045859118358d0a1fd322d0e99",
+      "bytes": 202
+    },
+    {
+      "path": "src/runtime/factory.mjs",
+      "sha256": "c2f7860077495c36b9671ac6fc4f9e1c31db7c14cf18999336de85b4d2d643a1",
+      "bytes": 407
+    },
+    {
+      "path": "src/runtime/hermes-agent.mjs",
+      "sha256": "6b07269cb93eff0cdf6c2e0c23c6c70e4759b21e803cf3cfd16ef74dabcfda42",
+      "bytes": 256
+    },
+    {
+      "path": "src/runtime/local-deterministic.mjs",
+      "sha256": "c09f1f994114be61c4bd140440909413093eb9c52f7e4e01b2e16c286071fa3f",
+      "bytes": 982
+    },
+    {
+      "path": "src/witness/chain.mjs",
+      "sha256": "12e03511c9c558a16eab052b53f38e3ff760e3f2ec4b93dd26eabbd8878a0b09",
+      "bytes": 1579
+    },
+    {
+      "path": "tests/capability-registry.test.mjs",
+      "sha256": "147340b54307f28c674d180b14f983690a697015cca15acd1450c0c92fa376e1",
+      "bytes": 375
+    },
+    {
+      "path": "tests/captains-gate.test.mjs",
+      "sha256": "9f63e6a6e94e222811b4569919a9da6735f5ca3a03e567b68d77447a6cd0af98",
+      "bytes": 1153
+    },
+    {
+      "path": "tests/knowledge-promotion.test.mjs",
+      "sha256": "8887eb29e2ce85c5b5bac4d416c64746896dcabe693d5fb8cb0e3f9b94b15252",
+      "bytes": 656
+    },
+    {
+      "path": "tests/source-verification.test.mjs",
+      "sha256": "d147934c2b0559a45b439ae052b5c2cb616e7445145413975614cf8272d9df3c",
+      "bytes": 602
+    },
+    {
+      "path": "tests/system-flow.test.mjs",
+      "sha256": "f664110146ed49eaaafab97673419f026d7d6dd0212250357c029463a84d7277",
+      "bytes": 866
+    },
+    {
+      "path": "tests/witness-chain.test.mjs",
+      "sha256": "5052d43c68cadda86bb06339d058db7c0d334eb60f5f4d47af6edf1a63f98a89",
+      "bytes": 561
+    },
+    {
+      "path": "var/witness/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "var/witness/witness-chain.jsonl",
+      "sha256": "65287ca40b4d837cddd01ae62a715c3190d28b3b4464378d1e8e255b66ba03b2",
+      "bytes": 2457
+    }
+  ],
+  "file_count": 56
+}

@@ -1,0 +1,19 @@
+default_risk_budget:
+  maximum_cost_usd: 5
+  maximum_tokens: 300000
+  maximum_runtime_seconds: 1200
+  maximum_external_calls: 0
+  maximum_retries: 3
+  maximum_consecutive_similar_actions: 3
+  maximum_destructive_tools: 0
+circuit_breaker:
+  amber_at_budget_ratio: 0.75
+  red_at_budget_ratio: 0.95
+  black_on_destructive_violation: true
+captain_gate:
+  require_approval_for_external_outreach: true
+  require_approval_for_crm_write: true
+  require_approval_for_data_room_release: true
+  require_approval_for_claim_without_direct_evidence: true
+  fail_closed_on_schema_error: true
+  fail_closed_on_unapproved_adapter: true

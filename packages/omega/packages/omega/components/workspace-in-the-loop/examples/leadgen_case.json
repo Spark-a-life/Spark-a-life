@@ -1,0 +1,56 @@
+{
+  "objective": "Rank clean-slate prospects for Sparkalife APE Intelligence without relying on current clients.",
+  "initiator": "Spark-a-life | APE Intelligence",
+  "decision_authority": "Captain",
+  "constraints": [
+    "No use of current client base",
+    "Prioritise governance-first AI readiness",
+    "Avoid extractive or purely volume-based outreach",
+    "Prefer sectors beyond education and healthcare"
+  ],
+  "assumptions": [
+    "Higher governance pain increases relevance for WiseGen",
+    "Trust pathway is more important than cold lead volume",
+    "Ethical fit protects long-term brand equity"
+  ],
+  "hypotheses": [
+    "Professional services firms will value governed AI workflows for client-facing work",
+    "Manufacturing and logistics firms will value reproducible AI workflows for operational planning",
+    "Creative and media SMEs will value evaluation-led AI video pipelines"
+  ],
+  "evidence": [
+    {"id": "ev1", "source": "Founder strategy", "claim": "WiseGen differentiates through governance, reproducibility, and workspace-in-the-loop reasoning.", "reliability": 0.85, "relevance": 0.95},
+    {"id": "ev2", "source": "Market observation", "claim": "Many organisations experiment with AI tools but lack auditable decision workflows.", "reliability": 0.70, "relevance": 0.90},
+    {"id": "ev3", "source": "Operating constraint", "claim": "LeadGen must start from a clean slate and not depend on current clients.", "reliability": 1.0, "relevance": 1.0}
+  ],
+  "options": [
+    {
+      "id": "lead1",
+      "name": "Mid-sized accounting and advisory firms",
+      "description": "Firms seeking AI-enabled advisory, document review, and client communication governance.",
+      "features": {"strategic_fit": 0.92, "urgency": 0.78, "budget_likelihood": 0.76, "governance_pain": 0.88, "ai_readiness": 0.72, "trust_pathway": 0.66, "ethical_fit": 0.90, "conversion_probability": 0.68, "lifetime_value": 0.82},
+      "evidence_ids": ["ev1", "ev2", "ev3"]
+    },
+    {
+      "id": "lead2",
+      "name": "Manufacturing and logistics SMEs",
+      "description": "Operations-heavy firms needing capacity planning, workflow reproducibility, and auditability.",
+      "features": {"strategic_fit": 0.84, "urgency": 0.74, "budget_likelihood": 0.70, "governance_pain": 0.80, "ai_readiness": 0.58, "trust_pathway": 0.50, "ethical_fit": 0.86, "conversion_probability": 0.55, "lifetime_value": 0.78},
+      "evidence_ids": ["ev1", "ev2"]
+    },
+    {
+      "id": "lead3",
+      "name": "AI video and content agencies",
+      "description": "Agencies needing evaluation, governance, and repeatable production workbenches.",
+      "features": {"strategic_fit": 0.78, "urgency": 0.82, "budget_likelihood": 0.62, "governance_pain": 0.74, "ai_readiness": 0.86, "trust_pathway": 0.46, "ethical_fit": 0.76, "conversion_probability": 0.60, "lifetime_value": 0.66},
+      "evidence_ids": ["ev1", "ev2"]
+    },
+    {
+      "id": "lead4",
+      "name": "Boutique legal and compliance consultancies",
+      "description": "Advisory firms requiring traceable reasoning, evidence registers, and defensible recommendations.",
+      "features": {"strategic_fit": 0.90, "urgency": 0.70, "budget_likelihood": 0.72, "governance_pain": 0.92, "ai_readiness": 0.64, "trust_pathway": 0.54, "ethical_fit": 0.94, "conversion_probability": 0.58, "lifetime_value": 0.80},
+      "evidence_ids": ["ev1", "ev2"]
+    }
+  ]
+}

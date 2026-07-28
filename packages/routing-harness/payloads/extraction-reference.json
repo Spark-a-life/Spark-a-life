@@ -1,0 +1,69 @@
+{
+  "set_id": "extraction-reference-v1",
+  "note": "Reference dataset in the RDB discipline: 10 payloads, each with expert-validated expected values. Extend to 20 before production certification. Semantic accuracy is scored against `expected`.",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "unit_name": { "type": "string" },
+      "change_load_score": { "type": "number" },
+      "er_case_intensity": { "type": "number" },
+      "manager_capability": { "type": "string", "enum": ["low", "medium", "high"] },
+      "coverage_recommendation": { "type": "string", "enum": ["dedicated", "pooled", "shared-services"] },
+      "drivers": { "type": "array", "items": { "type": "string" } }
+    },
+    "required": ["unit_name", "change_load_score", "er_case_intensity", "manager_capability", "coverage_recommendation"]
+  },
+  "system_prompt": "You are a structured extraction engine for organisational demand analysis. Read the unit brief and return ONLY a JSON object matching the schema. No markdown, no preamble, no commentary.",
+  "payloads": [
+    {
+      "id": "UNIT-01",
+      "text": "Commercial unit, 320 staff. Three concurrent reorganisations, ER cases at 4.1 per 100 staff per quarter, most managers newly appointed with limited people experience. Change load assessed at 8.5 of 10. Recommend dedicated HRBP coverage. Drivers: reorganisation volume, manager inexperience.",
+      "expected": { "unit_name": "Commercial", "change_load_score": 8.5, "er_case_intensity": 4.1, "manager_capability": "low", "coverage_recommendation": "dedicated" }
+    },
+    {
+      "id": "UNIT-02",
+      "text": "Manufacturing unit, 780 staff. Stable operations, no active reorganisation, ER cases 0.9 per 100 per quarter, long-tenured capable managers. Change load 2.0 of 10. Recommend shared-services coverage. Drivers: stability, manager experience.",
+      "expected": { "unit_name": "Manufacturing", "change_load_score": 2.0, "er_case_intensity": 0.9, "manager_capability": "high", "coverage_recommendation": "shared-services" }
+    },
+    {
+      "id": "UNIT-03",
+      "text": "Technology unit, 150 staff. Rapid hiring, one leadership transition, ER cases 1.8 per 100 per quarter, managers of mixed capability. Change load 6.0 of 10. Recommend pooled coverage. Drivers: growth pace, leadership transition.",
+      "expected": { "unit_name": "Technology", "change_load_score": 6.0, "er_case_intensity": 1.8, "manager_capability": "medium", "coverage_recommendation": "pooled" }
+    },
+    {
+      "id": "UNIT-04",
+      "text": "Retail operations, 540 staff. Seasonal workforce swings, ER cases 3.2 per 100 per quarter, supervisors experienced. Change load 5.5 of 10. Recommend pooled coverage. Drivers: seasonal volatility, ER volume.",
+      "expected": { "unit_name": "Retail operations", "change_load_score": 5.5, "er_case_intensity": 3.2, "manager_capability": "high", "coverage_recommendation": "pooled" }
+    },
+    {
+      "id": "UNIT-05",
+      "text": "Corporate functions, 95 staff. Low change, ER cases 0.4 per 100 per quarter, senior capable managers. Change load 1.5 of 10. Recommend shared-services coverage. Drivers: small stable population.",
+      "expected": { "unit_name": "Corporate functions", "change_load_score": 1.5, "er_case_intensity": 0.4, "manager_capability": "high", "coverage_recommendation": "shared-services" }
+    },
+    {
+      "id": "UNIT-06",
+      "text": "Logistics unit, 410 staff. Site consolidation underway, union consultation active, ER cases 5.6 per 100 per quarter, managers of medium capability. Change load 9.0 of 10. Recommend dedicated coverage. Drivers: consolidation, industrial relations load.",
+      "expected": { "unit_name": "Logistics", "change_load_score": 9.0, "er_case_intensity": 5.6, "manager_capability": "medium", "coverage_recommendation": "dedicated" }
+    },
+    {
+      "id": "UNIT-07",
+      "text": "Sales unit, 260 staff. New commission model rollout, ER cases 2.7 per 100 per quarter, managers newly promoted, capability low. Change load 7.0 of 10. Recommend dedicated coverage. Drivers: reward change, manager inexperience.",
+      "expected": { "unit_name": "Sales", "change_load_score": 7.0, "er_case_intensity": 2.7, "manager_capability": "low", "coverage_recommendation": "dedicated" }
+    },
+    {
+      "id": "UNIT-08",
+      "text": "Customer service, 620 staff. Automation programme reducing headcount by attrition, ER cases 2.1 per 100 per quarter, managers of medium capability. Change load 6.5 of 10. Recommend pooled coverage. Drivers: automation transition.",
+      "expected": { "unit_name": "Customer service", "change_load_score": 6.5, "er_case_intensity": 2.1, "manager_capability": "medium", "coverage_recommendation": "pooled" }
+    },
+    {
+      "id": "UNIT-09",
+      "text": "Research division, 180 staff. Stable funding, low turnover, ER cases 0.6 per 100 per quarter, highly experienced managers. Change load 2.5 of 10. Recommend shared-services coverage. Drivers: stability.",
+      "expected": { "unit_name": "Research division", "change_load_score": 2.5, "er_case_intensity": 0.6, "manager_capability": "high", "coverage_recommendation": "shared-services" }
+    },
+    {
+      "id": "UNIT-10",
+      "text": "Regional office, 340 staff. Market entry expansion, dual reporting lines being introduced, ER cases 3.8 per 100 per quarter, managers of medium capability. Change load 7.5 of 10. Recommend dedicated coverage. Drivers: expansion, structural ambiguity.",
+      "expected": { "unit_name": "Regional office", "change_load_score": 7.5, "er_case_intensity": 3.8, "manager_capability": "medium", "coverage_recommendation": "dedicated" }
+    }
+  ]
+}

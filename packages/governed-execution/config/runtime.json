@@ -1,0 +1,21 @@
+{
+  "serviceName": "wisegen-ape-governed-execution",
+  "requestBodyLimitBytes": 1048576,
+  "executionTimeoutMs": 15000,
+  "browserTimeoutMs": 15000,
+  "maxRetries": 2,
+  "witnessRedaction": {
+    "sensitiveKeys": [
+      "authorization",
+      "cookie",
+      "set-cookie",
+      "password",
+      "secret",
+      "token",
+      "accessToken",
+      "refreshToken",
+      "apiKey"
+    ],
+    "maxStringLength": 2048
+  }
+}

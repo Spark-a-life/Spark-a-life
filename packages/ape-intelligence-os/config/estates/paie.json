@@ -1,0 +1,12 @@
+{
+  "id": "PAIE",
+  "name": "Personal Agency and Executive Intelligence Estate",
+  "purpose": "Support bounded executive planning, personal command and decision preparation.",
+  "default_risk_tier": "medium",
+  "data_ceiling": "highly-confidential",
+  "human_gate": [
+    "financial transaction",
+    "binding commitment",
+    "sensitive personal disclosure"
+  ]
+}
