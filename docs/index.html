@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WiseGen Forge — Builder's Handbook v2.0 | From Prompt to Pipeline to Organisation</title>
+<meta name="description" content="A builder's guide to the WiseGen governed AI operating architecture — for people who have never called themselves developers, and are about to start building anyway. Covers the Captain Rule, Witness Chain, Skills-as-Pipelines, and the nine-stage governed pipeline.">
+<meta name="author" content="Dr William Siew, Spark-a-life | APE Intelligence">
+<meta name="keywords" content="AI governance, governed AI, accountable AI, Captain Rule, Witness Chain, Skills-as-Pipelines, enterprise AI, human-in-the-loop, audit trail, model-agnostic, WiseGen">
+<link rel="canonical" href="https://spark-a-life.github.io/Spark-a-life/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="WiseGen Forge — Builder's Handbook v2.0">
+<meta property="og:description" content="A builder's guide to governed AI — from prompt to pipeline to organisation. For domain experts, institutional leaders, and consultants who need AI with accountability.">
+<meta property="og:url" content="https://spark-a-life.github.io/Spark-a-life/">
+<meta property="og:site_name" content="Spark-a-life | APE Intelligence">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WiseGen Forge — Builder's Handbook v2.0">
+<meta name="twitter:description" content="Governed AI for organisations. From prompt to pipeline to organisation — with humans accountable for every outcome.">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "WiseGen Forge — Builder's Handbook v2.0",
+  "description": "A builder's guide to the WiseGen governed AI operating architecture — for people who have never called themselves developers, and are about to start building anyway.",
+  "author": {
+    "@type": "Person",
+    "name": "Dr William Siew",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "Spark-a-life | APE Intelligence",
+      "url": "https://github.com/Spark-a-life"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Spark-a-life | APE Intelligence",
+    "url": "https://github.com/Spark-a-life"
+  },
+  "datePublished": "2026-07",
+  "proficiencyLevel": "Beginner",
+  "dependencies": "None — model-agnostic, platform-agnostic, harness-agnostic",
+  "keywords": ["AI governance", "governed AI", "enterprise AI", "accountable AI", "human-in-the-loop"]
+}
+</script>
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #555;
+    --faint: #888;
+    --border: #ddd;
+    --bg: #fff;
+    --panel: #f7f7f5;
+    --accent: #1d4ed8;
+    --accent-soft: #eff6ff;
+    --warn: #92400e;
+    --warn-soft: #fffbeb;
+    --green: #065f46;
+    --green-soft: #ecfdf5;
+    --red: #991b1b;
+    --red-soft: #fef2f2;
+    --mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    --max: 820px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink);
+    background: var(--bg);
+    padding: 0 1rem;
+  }
+  .page { max-width: var(--max); margin: 0 auto; padding: 3rem 0 6rem; }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px); border-bottom: 1px solid var(--border);
+    padding: 0.75rem 0; margin-bottom: 3rem; z-index: 100;
+  }
+  nav .inner { max-width: var(--max); margin: 0 auto; display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
+  nav a { font-size: 0.8rem; text-decoration: none; color: var(--muted); font-weight: 500; letter-spacing: 0.02em; }
+  nav a:hover { color: var(--accent); }
+  nav .brand { font-weight: 700; color: var(--ink); font-size: 0.85rem; margin-right: auto; }
+
+  /* Typography */
+  h1 { font-size: 2.4rem; font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 1rem; }
+  h2 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; margin: 3.5rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--ink); }
+  h3 { font-size: 1.1rem; font-weight: 700; margin: 2rem 0 0.5rem; }
+  h4 { font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 1.5rem 0 0.4rem; }
+  p { margin-bottom: 1rem; color: var(--ink); }
+  p.lead { font-size: 1.15rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.5rem; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  ul, ol { padding-left: 1.4rem; margin-bottom: 1rem; }
+  li { margin-bottom: 0.35rem; }
+  a { color: var(--accent); }
+
+  /* Header block */
+  .hero { padding: 3rem 0 2.5rem; border-bottom: 2px solid var(--ink); margin-bottom: 0; }
+  .hero .eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin-bottom: 0.75rem; }
+  .hero .tagline { font-size: 1.1rem; color: var(--muted); margin-top: 0.75rem; max-width: 600px; }
+  .hero .meta { display: flex; gap: 1.5rem; margin-top: 1.5rem; flex-wrap: wrap; }
+  .hero .meta span { font-size: 0.78rem; color: var(--faint); background: var(--panel); padding: 0.3rem 0.7rem; border-radius: 4px; }
+
+  /* Callouts */
+  .callout { border-left: 3px solid var(--accent); background: var(--accent-soft); padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; }
+  .callout.warn { border-color: #d97706; background: var(--warn-soft); }
+  .callout.ok { border-color: #10b981; background: var(--green-soft); }
+  .callout.stark { border-color: var(--ink); background: var(--panel); }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout .label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.4rem; }
+  .callout.warn .label { color: var(--warn); }
+  .callout.ok .label { color: var(--green); }
+  .callout.stark .label { color: var(--ink); }
+
+  /* Code */
+  code { font-family: var(--mono); font-size: 0.85em; background: var(--panel); padding: 0.15em 0.4em; border-radius: 3px; }
+  pre { font-family: var(--mono); font-size: 0.82rem; background: #0f172a; color: #e2e8f0; padding: 1.25rem 1.5rem; border-radius: 8px; overflow-x: auto; margin: 1.25rem 0; line-height: 1.55; }
+  pre .comment { color: #64748b; }
+  pre .cmd { color: #93c5fd; }
+  pre .str { color: #86efac; }
+  pre .kw { color: #f0abfc; }
+
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+  th { text-align: left; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); padding: 0.5rem 0.75rem; border-bottom: 2px solid var(--border); }
+  td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  .tag { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .tag.model { background: #ede9fe; color: #6d28d9; }
+  .tag.platform { background: #fce7f3; color: #9d174d; }
+  .tag.harness { background: #d1fae5; color: #065f46; }
+
+  /* Pipeline diagram */
+  .pipeline { display: flex; align-items: center; gap: 0; margin: 1.5rem 0; flex-wrap: wrap; }
+  .pipe-step { background: var(--panel); border: 1px solid var(--border); padding: 0.6rem 0.9rem; font-size: 0.82rem; font-weight: 600; border-radius: 6px; white-space: nowrap; }
+  .pipe-arrow { color: var(--faint); padding: 0 0.4rem; font-size: 1.1rem; }
+  .pipe-step.human { background: #fef3c7; border-color: #f59e0b; }
+  .pipe-step.gate { background: var(--red-soft); border-color: #f87171; }
+
+  /* Grid */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.25rem 0; }
+  @media (max-width: 600px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+
+  .card { border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.1rem; }
+  .card h4 { margin-top: 0; }
+  .card p { font-size: 0.88rem; color: var(--muted); margin-bottom: 0; }
+
+  /* Rung ladder */
+  .ladder { display: flex; flex-direction: column; gap: 0; margin: 1.5rem 0; }
+  .rung { display: grid; grid-template-columns: 180px 1fr; border: 1px solid var(--border); margin-top: -1px; }
+  .rung:first-child { border-radius: 8px 8px 0 0; }
+  .rung:last-child { border-radius: 0 0 8px 8px; }
+  .rung .level { padding: 0.9rem 1rem; background: var(--panel); font-size: 0.8rem; font-weight: 700; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--border); }
+  .rung .level .num { font-size: 1.5rem; font-weight: 800; color: var(--accent); line-height: 1; }
+  .rung .detail { padding: 0.9rem 1rem; font-size: 0.87rem; }
+  .rung .detail p { margin-bottom: 0.3rem; color: var(--muted); }
+  .rung .detail strong { color: var(--ink); }
+  @media (max-width: 540px) { .rung { grid-template-columns: 1fr; } .rung .level { border-right: none; border-bottom: 1px solid var(--border); } }
+
+  /* Intentionality grid */
+  .intent-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin: 1.5rem 0; }
+  .intent-cell { background: var(--bg); padding: 1rem; }
+  .intent-cell .quality { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.35rem; }
+  .intent-cell p { font-size: 0.85rem; color: var(--muted); margin: 0; }
+  @media (max-width: 540px) { .intent-grid { grid-template-columns: 1fr; } }
+
+  /* Manifesto */
+  .manifesto { border: 2px solid var(--ink); border-radius: 8px; padding: 2rem 2.25rem; margin: 2rem 0; }
+  .manifesto h3 { margin-top: 0; font-size: 1.3rem; }
+  .manifesto .belief { margin: 1.25rem 0; padding-left: 1.1rem; border-left: 3px solid var(--ink); }
+  .manifesto .belief p { font-size: 1rem; margin: 0; line-height: 1.55; }
+  .manifesto .position { background: var(--ink); color: var(--bg); padding: 1.1rem 1.3rem; border-radius: 6px; margin-top: 1.75rem; }
+  .manifesto .position p { color: var(--bg); margin: 0; font-size: 0.95rem; }
+  .manifesto .closer { margin-top: 1.25rem; font-size: 0.88rem; color: var(--muted); font-style: italic; }
+
+  /* Stack diagram */
+  .stack { display: flex; flex-direction: column; gap: 0; margin: 1.5rem 0; }
+  .stack-layer { padding: 0.75rem 1.1rem; border: 1px solid var(--border); margin-top: -1px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .stack-layer:first-child { border-radius: 8px 8px 0 0; background: #0f172a; color: #e2e8f0; border-color: #0f172a; }
+  .stack-layer:first-child .layer-label, .stack-layer:first-child .layer-desc { color: #94a3b8; }
+  .stack-layer:nth-child(2) { background: #1e3a5f; color: #e2e8f0; border-color: #1e3a5f; }
+  .stack-layer:nth-child(2) .layer-label, .stack-layer:nth-child(2) .layer-desc { color: #93c5fd; }
+  .stack-layer:nth-child(3) { background: var(--accent-soft); }
+  .stack-layer:nth-child(4) { background: var(--panel); }
+  .stack-layer:nth-child(5) { background: var(--green-soft); }
+  .stack-layer:last-child { border-radius: 0 0 8px 8px; }
+  .layer-name { font-weight: 700; font-size: 0.9rem; }
+  .layer-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+  .layer-desc { font-size: 0.78rem; color: var(--muted); text-align: right; max-width: 60%; }
+
+  /* Section numbers */
+  .section-num { font-size: 0.75rem; font-weight: 700; color: var(--faint); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.25rem; }
+
+  hr.light { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+  /* Agnostic badges */
+  .agnostic-bar { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 1rem 0 1.5rem; }
+  .badge { font-size: 0.72rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 999px; border: 1.5px solid; }
+  .badge.h { border-color: #10b981; color: #065f46; background: #ecfdf5; }
+  .badge.p { border-color: #8b5cf6; color: #5b21b6; background: #ede9fe; }
+  .badge.m { border-color: #f59e0b; color: #92400e; background: #fffbeb; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <span class="brand">WiseGen Forge</span>
+    <a href="#audit">Estate Audit</a>
+    <a href="#vision">Vision</a>
+    <a href="#mental-model">Mental Model</a>
+    <a href="#manifesto">Manifesto</a>
+    <a href="#blueprint">Blueprint</a>
+    <a href="#intentionality">Intentionality</a>
+  </div>
+</nav>
+
+<div class="page">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="eyebrow">WiseGen Forge · Builder's Handbook · v2.0</div>
+  <h1>From Prompt<br>to Pipeline<br>to Organisation</h1>
+  <p class="tagline">A builder's guide to the WiseGen estate — for people who have never called themselves developers, and are about to start building anyway.</p>
+  <div class="agnostic-bar">
+    <span class="badge h">Harness-Agnostic</span>
+    <span class="badge p">Platform-Agnostic</span>
+    <span class="badge m">Model-Agnostic</span>
+  </div>
+  <div class="meta">
+    <span>Dr William Siew · Spark-a-life | APE Intelligence</span>
+    <span>Synthesised across 6 artefacts</span>
+    <span>July 2026</span>
+  </div>
+</div>
+
+<div class="callout stark" style="margin-top: 2rem;">
+  <div class="label">How to Read This</div>
+  <p>This is not a product manual. It is a design document for people who want to build intelligent systems — even if they have never written a line of code. Read it front to back once. Then use each section as a reference when you are in the relevant phase of building.</p>
+  <p style="margin:0;">The architecture described here works with any AI model, any deployment platform, and any orchestration harness. That is intentional. Lock-in is a liability.</p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="audit"><span class="section-num">Section 01</span><br>Estate &amp; Architecture Audit</h2>
+<p class="lead">What has been built. Where it comes from. What each piece does.</p>
+
+<p>The WiseGen estate is not a single product. It is a layered architecture — six layers from kernel to application — that has been assembled across multiple artefacts over time. Understanding what exists, and why each layer is there, is the foundation for building anything new on top of it.</p>
+
+<h3>The Six-Layer Stack</h3>
+
+<div class="stack">
+  <div class="stack-layer">
+    <div>
+      <div class="layer-label">Layer 6 — Kernel</div>
+      <div class="layer-name">AI-DOS v0.8.1 · Baseline Assurance</div>
+    </div>
+    <div class="layer-desc">Deterministic operating substrate. Governance anchors. Audit-ready by design.</div>
+  </div>
+  <div class="stack-layer">
+    <div>
+      <div class="layer-label">Layer 5 — Orchestration Intelligence</div>
+      <div class="layer-name">WiseGenForge 1.0 + TAIE / MAIE v0.9</div>
+    </div>
+    <div class="layer-desc">Multi-agent orchestration. Task routing. Intelligence briefing engine.</div>
+  </div>
+  <div class="stack-layer">
+    <div>
+      <div class="layer-label">Layer 4 — Deployment Tiers</div>
+      <div class="layer-name">Beacon / WiseGen Satellite v0.1</div>
+    </div>
+    <div class="layer-desc">Always-on sensing layer. Async signal monitoring. Remote-deployable.</div>
+  </div>
+  <div class="stack-layer">
+    <div>
+      <div class="layer-label">Layer 3 — Skills Library</div>
+      <div class="layer-name">72 Skills across 9 domains</div>
+    </div>
+    <div class="layer-desc">Composable, callable, chain-able units of work. The building blocks.</div>
+  </div>
+  <div class="stack-layer">
+    <div>
+      <div class="layer-label">Layer 2 — Weave Packs</div>
+      <div class="layer-name">SIDweave v0.9.1 + MIDweave SaP Charter</div>
+    </div>
+    <div class="layer-desc">Skills-as-Pipelines (SaP) integration layer. Single-input and multi-input weave patterns.</div>
+  </div>
+  <div class="stack-layer">
+    <div>
+      <div class="layer-label">Layer 1 — Interface</div>
+      <div class="layer-name">Any harness. Any platform. Any model.</div>
+    </div>
+    <div class="layer-desc">Claude Code, Cowork, API, curl, n8n, Make, Zapier. The stack doesn't care.</div>
+  </div>
+</div>
+
+<div class="callout ok">
+  <div class="label">Why Six Layers</div>
+  <p>Each layer answers a different question. Kernel: <em>is this safe and auditable?</em> Orchestration: <em>which agent handles this?</em> Deployment: <em>how does it run continuously?</em> Skills: <em>what can it do?</em> Weave: <em>how do skills connect?</em> Interface: <em>how does a human start it?</em></p>
+  <p style="margin:0;">You don't have to build all six to start. You start at Layer 1 and earn your way down.</p>
+</div>
+
+<h3>The Intellectual Lineage: SaaP → SaP → SID → MID</h3>
+<p>The evolution of the architecture follows a clear progression from concept to composable system:</p>
+
+<div class="pipeline">
+  <div class="pipe-step">Skills-as-a-Product<br><small style="font-weight:400;color:var(--faint)">SaaP — skills as deliverables</small></div>
+  <div class="pipe-arrow">→</div>
+  <div class="pipe-step">Skills-as-Pipelines<br><small style="font-weight:400;color:var(--faint)">SaP — skills that chain</small></div>
+  <div class="pipe-arrow">→</div>
+  <div class="pipe-step">Single-Input Design<br><small style="font-weight:400;color:var(--faint)">SID — one trigger, one output</small></div>
+  <div class="pipe-arrow">→</div>
+  <div class="pipe-step">Multi-Input Design<br><small style="font-weight:400;color:var(--faint)">MID — parallel streams merged</small></div>
+</div>
+
+<p>This is not just a naming convention. Each stage represents a genuine increase in the complexity and capability of what can be built. A builder starts at SaaP (making a skill do something useful) and progresses toward MID (weaving multiple input streams into a single governed output).</p>
+
+<h3>The Nine-Stage Pipeline</h3>
+<p>Every governed pipeline in the WiseGen estate passes through nine stages. Human gates are mandatory — they cannot be automated away.</p>
+
+<div class="pipeline" style="flex-wrap:wrap; gap: 0.4rem;">
+  <div class="pipe-step">1. Sense</div>
+  <div class="pipe-arrow">→</div>
+  <div class="pipe-step human">2. Frame ★</div>
+  <div class="pipe-arrow">→</div>
+  <div class="pipe-step">3. Route</div>
+  <div class="pipe-arrow">→</div>
+  <div class="pipe-step">4. Execute</div>
+  <div class="pipe-arrow">→</div>
+  <div class="pipe-step human">5. Validate ★</div>
+  <div class="pipe-arrow">→</div>
+  <div class="pipe-step">6. Synthesise</div>
+  <div class="pipe-arrow">→</div>
+  <div class="pipe-step human">7. Decide ★</div>
+  <div class="pipe-arrow">→</div>
+  <div class="pipe-step">8. Act</div>
+  <div class="pipe-arrow">→</div>
+  <div class="pipe-step">9. Audit</div>
+</div>
+
+<p style="font-size:0.82rem; color:var(--muted);">★ = mandatory human gate. Cannot be delegated to AI. This is the Captain Rule in operation.</p>
+
+<h3>The Plumb-Line Doctrine — Five Decision Layers</h3>
+<p>Every decision in a governed pipeline is evaluated against five sequential checks. A decision that fails any layer does not proceed.</p>
+
+<table>
+  <thead><tr><th>#</th><th>Layer</th><th>The Question</th><th>Who Checks</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Epistemic</td><td>Is this true? Do we have the evidence?</td><td>Epistemic Guardrail skill</td></tr>
+    <tr><td>2</td><td>Axiological</td><td>Is this what we actually value?</td><td>Axiology Auditor skill</td></tr>
+    <tr><td>3</td><td>Ontological</td><td>What mode are we operating in: Tool, Partner, or Symbiote?</td><td>Ontology Validator</td></tr>
+    <tr><td>4</td><td>Causal</td><td>Will this action actually cause the outcome we want?</td><td>Causal-Predictive Behavioural skill</td></tr>
+    <tr><td>5</td><td>Governance</td><td>Is this sanctioned by the human principal?</td><td>Captain (human)</td></tr>
+  </tbody>
+</table>
+
+<h3>The 72-Skill Library — Domain Map</h3>
+<table>
+  <thead><tr><th>Domain</th><th>Representative Skills</th><th>Pipeline Role</th></tr></thead>
+  <tbody>
+    <tr><td>Research &amp; Evidence</td><td>ROF, Systematic Literature Review, ARDM, RQTAR</td><td>Sense → Frame</td></tr>
+    <tr><td>Prompt Engineering</td><td>PEF 6+1, APEE, Universal Meta-Prompt</td><td>Frame → Route</td></tr>
+    <tr><td>Orchestration</td><td>MAOF, ACO, Multi-Workflow, BLO, MMRO</td><td>Route → Execute</td></tr>
+    <tr><td>Governance &amp; Security</td><td>MGF, ASO, DQO, EG, AA, OV</td><td>Validate → Decide</td></tr>
+    <tr><td>Content &amp; Production</td><td>MPE, VPS v3, SCALE, VPS Cinema, SBV</td><td>Synthesise → Act</td></tr>
+    <tr><td>Knowledge Management</td><td>PMO, CTO, Memory Architect</td><td>Audit → Sense (loop)</td></tr>
+    <tr><td>Human-AI Wisdom</td><td>HAWF, AAP, DIRT, Design Intentionality</td><td>Decide (quality gate)</td></tr>
+    <tr><td>Visualisation</td><td>VO, Canvas, Algorithmic Art, Theme Factory</td><td>Synthesise → Act</td></tr>
+    <tr><td>Domain Specialists</td><td>Finance Pack (7), Exec Ops, HR Curriculum, Marketing</td><td>Domain-specific Execute</td></tr>
+  </tbody>
+</table>
+
+<h3>Five Deployment Estates</h3>
+<div class="grid-2">
+  <div class="card"><h4>1 · Cloud Hosted</h4><p>Model API + Cowork or Claude Code. Fastest to start. Best for individual builders.</p></div>
+  <div class="card"><h4>2 · Browser-Resident</h4><p>Claude in Chrome. Works inside existing web workflows. No new tooling required.</p></div>
+  <div class="card"><h4>3 · Satellite / Beacon</h4><p>WiseGen Satellite v0.1. Always-on async sensing. Deployed independently of the main session.</p></div>
+  <div class="card"><h4>4 · Edge / Private</h4><p>Self-hosted model + local skills. Full data sovereignty. Higher setup cost.</p></div>
+  <div class="card"><h4>5 · Air-Gapped</h4><p>No external network. Regulated industries. Ollama or equivalent. Requires full offline skill packaging.</p></div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="vision"><span class="section-num">Section 02</span><br>The Reimagined Vision</h2>
+<p class="lead">Organisation-as-pipeline. What it means. Why it matters. How to get there.</p>
+
+<h3>What a Pipeline Actually Is</h3>
+<p>In software, a pipeline is a sequence of steps where the output of one step becomes the input of the next. In the WiseGen context, a pipeline is a governed sequence of AI-assisted and human-gated work steps that runs reliably, repeatably, and with an audit trail.</p>
+<p>The difference between a prompt and a pipeline is not technical sophistication. It is <em>intentionality</em>. A prompt is a one-time question. A pipeline is a question that has been designed to be asked the same way, with the same quality controls, every time it is needed.</p>
+
+<div class="pipeline">
+  <div class="pipe-step">Prompt<br><small>Once, manually</small></div>
+  <div class="pipe-arrow">→</div>
+  <div class="pipe-step">Skill<br><small>Reusable instruction set</small></div>
+  <div class="pipe-arrow">→</div>
+  <div class="pipe-step">Workflow<br><small>Skills in sequence</small></div>
+  <div class="pipe-arrow">→</div>
+  <div class="pipe-step">Pipeline<br><small>Workflows with governance</small></div>
+  <div class="pipe-arrow">→</div>
+  <div class="pipe-step">Organisation<br><small>Pipelines at scale</small></div>
+</div>
+
+<h3>The Harness-Agnostic Principle</h3>
+<div class="agnostic-bar">
+  <span class="badge h">Harness-Agnostic</span>
+  <span class="badge p">Platform-Agnostic</span>
+  <span class="badge m">Model-Agnostic</span>
+</div>
+
+<p>The most important architectural decision in WiseGen Forge v2.0 is this: <strong>the methodology is not the tool.</strong></p>
+<p>Every skill, every pipeline pattern, every governance protocol in the WiseGen estate is designed to be portable. It does not matter whether you are running Claude, GPT-4o, Gemini, Mistral, or a local Llama model. It does not matter whether your harness is Claude Code, Cowork, n8n, LangChain, raw API calls, or a bash script. The patterns work the same way because they are grounded in <em>how work gets done well</em> — not in the specific capabilities of any one vendor.</p>
+
+<table>
+  <thead><tr><th>Dimension</th><th>What Varies</th><th>What Stays Constant</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><span class="tag model">Model</span></td>
+      <td>Claude, GPT-4o, Gemini, Llama, Mistral, Qwen…</td>
+      <td>Prompt structure, skill architecture, governance gates</td>
+    </tr>
+    <tr>
+      <td><span class="tag platform">Platform</span></td>
+      <td>claude.ai, OpenAI Playground, HuggingFace, self-hosted…</td>
+      <td>Pipeline logic, output contracts, evidence standards</td>
+    </tr>
+    <tr>
+      <td><span class="tag harness">Harness</span></td>
+      <td>Claude Code, n8n, Make, Zapier, LangChain, raw API…</td>
+      <td>Skill composition, weave patterns, audit trail design</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout warn">
+  <div class="label">Practical Implication</div>
+  <p>When you write a skill, write it as if you don't know which model will run it. When you design a pipeline, design it as if the harness might change. When you choose a platform, choose knowing you might migrate. This is not pessimism — it is professional engineering practice.</p>
+</div>
+
+<h3>The Three-Layer Builder Stack</h3>
+<div class="grid-3">
+  <div class="card"><h4>Intelligence</h4><p>The model. Any LLM. What does the actual generation, reasoning, and synthesis work.</p></div>
+  <div class="card"><h4>Governance</h4><p>The skills and Plumb-Line checks. What makes outputs trustworthy and auditable.</p></div>
+  <div class="card"><h4>Work</h4><p>The pipeline. What connects intelligence and governance to real organisational tasks.</p></div>
+</div>
+
+<h3>The Governed Intermediary Position</h3>
+<p>WiseGen's market position is explicit and deliberate: <strong>the governed intermediary.</strong> Not a raw AI tool (no governance). Not a legacy BPM system (no intelligence). The sweet spot between them — where intelligence is governed, decisions are human-authorised, and pipelines are auditable.</p>
+<p>This is what "as-a-prompt towards as-a-pipeline" means in practice. You start with a well-governed prompt (the intelligence layer). You add repeatability (the workflow layer). You add human gates and audit trails (the governance layer). The result is not just an AI output — it is an organisational capability.</p>
+
+<h3>What TAIE / MAIE Adds</h3>
+<p>TAIE (Task-Aligned Intelligence Engine) and MAIE (Multi-Agent Intelligence Engine) are the orchestration layer for situations where a single model call is not enough. TAIE handles single-thread complex tasks — breaking them into governed sub-tasks and routing to the right skill. MAIE handles parallel execution — running multiple agent streams simultaneously, detecting conflicts, and merging outputs under human oversight.</p>
+<p>Think of TAIE as a senior associate who takes a brief and executes it methodically. MAIE is a project team that works in parallel and synthesises into one deliverable. Both report to the Captain (you).</p>
+
+<h3>What WiseGen Satellite / Beacon Adds</h3>
+<p>The Satellite layer addresses a problem that single-session AI tools cannot solve: <em>continuous organisational awareness.</em> A session-based AI only knows what you tell it right now. An organisation needs to sense signals continuously — market changes, internal metrics, customer signals, risk indicators — and surface them with context.</p>
+<p>Beacon is the always-on sensing pattern. Satellite v0.1 is the first implementation. It runs asynchronously, monitors configured signals, and produces governed intelligence briefs that a human can act on at any cadence — hourly, daily, weekly.</p>
+
+<!-- ============================================================ -->
+<h2 id="mental-model"><span class="section-num">Section 03</span><br>The Builder's Mental Model</h2>
+<p class="lead">Five rungs. You are already on the first one.</p>
+
+<p>There is a common misbelief that building AI systems requires a computer science background. It does not. It requires the ability to think precisely about what you want, why you want it, and how you will know when you have it. This is not a technical skill. It is a reasoning skill. You already have it.</p>
+<p>What you will acquire as you move up the ladder below is not programming ability. It is <em>systems thinking applied to AI-assisted work.</em></p>
+
+<div class="ladder">
+  <div class="rung">
+    <div class="level"><div class="num">1</div>Prompt User</div>
+    <div class="detail">
+      <strong>What you do:</strong> Ask AI good questions. Get useful outputs. Iterate.
+      <p>What you own: the question and the judgment of whether the answer is good.</p>
+      <p>Captain Rule at this rung: you never publish or act on an AI output without reading it first.</p>
+      <p style="color:var(--accent); font-size:0.8rem;">Entry cost: zero. You're already here.</p>
+    </div>
+  </div>
+  <div class="rung">
+    <div class="level"><div class="num">2</div>Skill User</div>
+    <div class="detail">
+      <strong>What you do:</strong> Invoke pre-built skills. Chain them. Use structured prompt frameworks (PEF 6+1) to get consistent outputs.
+      <p>What you own: skill selection and output validation.</p>
+      <p>Captain Rule at this rung: you validate every skill output against its output contract before passing it to the next step.</p>
+      <p style="color:var(--accent); font-size:0.8rem;">Entry cost: 1–2 hours learning the WiseGen skill vocabulary.</p>
+    </div>
+  </div>
+  <div class="rung">
+    <div class="level"><div class="num">3</div>Skill Creator</div>
+    <div class="detail">
+      <strong>What you do:</strong> Write SKILL.md files. Define trigger conditions, output contracts, and governance hooks. Use the Instruction Expansion Engine or Skill Creator Pro to accelerate.
+      <p>What you own: the skill specification and its quality gates.</p>
+      <p>Captain Rule at this rung: every skill you publish has an explicit output contract and at least one epistemic check.</p>
+      <p style="color:var(--accent); font-size:0.8rem;">Entry cost: 1 day. A SKILL.md is structured markdown — no code required.</p>
+    </div>
+  </div>
+  <div class="rung">
+    <div class="level"><div class="num">4</div>Pipeline Architect</div>
+    <div class="detail">
+      <strong>What you do:</strong> Connect skills into SID (single-input) and MID (multi-input) weave patterns. Define the nine-stage pipeline structure. Configure human gates. Wire governance checks.
+      <p>What you own: the pipeline specification and the gate configuration.</p>
+      <p>Captain Rule at this rung: no pipeline ships without a documented human-gate map.</p>
+      <p style="color:var(--accent); font-size:0.8rem;">Entry cost: 1 week of deliberate practice. The SIDweave and MIDweave charters are your templates.</p>
+    </div>
+  </div>
+  <div class="rung">
+    <div class="level"><div class="num">5</div>Organisation Builder</div>
+    <div class="detail">
+      <strong>What you do:</strong> Design the full AI-DOS + WiseGenForge + Satellite stack for an organisation. Define the deployment estate. Commission TAIE/MAIE for intelligence functions. Build the evidence infrastructure. Make the organisation a pipeline.
+      <p>What you own: the architecture and the governance framework.</p>
+      <p>Captain Rule at this rung: every pipeline has an accountable human, an audit trail, and a documented failure protocol.</p>
+      <p style="color:var(--accent); font-size:0.8rem;">Entry cost: variable. Weeks to months depending on organisational scale.</p>
+    </div>
+  </div>
+</div>
+
+<h3>Why Prompts Are Your First Code</h3>
+<p>Code is a precise instruction set for a machine. A well-designed prompt is exactly the same thing — it is a precise instruction set for an AI. The difference is syntax, not concept. When you write a PEF 6+1 prompt with a defined Role, Evidence standard, Framing, Output contract, Negative examples, and Tone, you are writing what is functionally a function definition in a programming language — just in English.</p>
+<p>This is not a metaphor. In the WiseGen architecture, prompts literally become code when they are packaged as skills and invoked programmatically. The path from prompt to pipeline is a path of progressive formalisation, not a category change.</p>
+
+<h3>Evidence Infrastructure Is Memory, Not Bureaucracy</h3>
+<p>One of the most common mistakes builders make is treating documentation and audit trails as overhead. In the WiseGen architecture, they are the opposite: they are the memory that allows pipelines to improve over time, catch errors before they propagate, and enable human oversight without requiring humans to be in every loop.</p>
+<p>A pipeline without evidence infrastructure is a black box. A pipeline with evidence infrastructure is a system you can improve, audit, debug, and trust.</p>
+
+<h3>The Captain Rule — Stated Simply</h3>
+<div class="callout">
+  <div class="label">The Captain Rule</div>
+  <p>The AI is the crew. You are the captain. The crew does the work. The captain is accountable for the outcome. A captain who blames the crew for a crash is still the captain who crashed the ship.</p>
+  <p style="margin:0;">This is not a safety warning. It is a design principle. Build your pipelines so the captain always has a clear view of what is happening and a clear mechanism to intervene.</p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="manifesto"><span class="section-num">Section 04</span><br>The Forge Manifesto</h2>
+
+<div class="manifesto">
+  <h3>What We Believe</h3>
+
+  <div class="belief">
+    <p><strong>We believe that AI adoption is not tool adoption. It is accountable work redesign.</strong> A new tool changes what you can do. Accountable work redesign changes how decisions get made, who owns them, and how you prove it. Most organisations are buying tools when they need redesign.</p>
+  </div>
+
+  <div class="belief">
+    <p><strong>We believe that every methodology starts as a prompt and should graduate to a pipeline.</strong> If you can write it down precisely enough to give to a junior staff member, you can write it precisely enough to give to an AI. If you can give it to an AI consistently, you can make it a skill. If you can make it a skill, you can make it a pipeline. This is the arc of institutional knowledge becoming institutional infrastructure.</p>
+  </div>
+
+  <div class="belief">
+    <p><strong>We believe in harness-agnostic, platform-agnostic, model-agnostic design.</strong> The moment your methodology depends on one vendor's API staying stable, you have made a strategic bet you did not realise you were making. Build on patterns that outlast products. The WiseGen architecture is designed to run on whatever model, platform, or harness is available — today and in three years.</p>
+  </div>
+
+  <div class="belief">
+    <p><strong>We believe that non-developers are not junior builders. They are builders with different entry points.</strong> The person who understands the work — the domain expert, the operations manager, the consultant — is the most important person in any pipeline design conversation. Technical implementation is learnable. Domain knowledge takes years. We build tools that let domain knowledge drive the architecture.</p>
+  </div>
+
+  <div class="belief">
+    <p><strong>We believe that governance is not a tax on speed. It is the foundation of trust.</strong> A pipeline that produces outputs no one trusts runs at zero effective speed. A governed pipeline that produces outputs people rely on runs faster than any ungovernened alternative — because it does not create the rework, the errors, and the incidents that ungoverned systems produce.</p>
+  </div>
+
+  <div class="belief">
+    <p><strong>We believe the organisation-as-pipeline is not a metaphor. It is a design target.</strong> When every significant process in an organisation is a governed, auditable, human-gated pipeline — when institutional knowledge is captured in skills, decisions are documented in evidence, and people are accountable to clear roles rather than vague responsibilities — the organisation becomes something that can learn, improve, and scale without losing quality.</p>
+  </div>
+
+  <div class="position">
+    <p><strong>Our position:</strong> The governed intermediary. Not raw AI (no accountability). Not legacy BPM (no intelligence). The point where intelligence meets governance, where prompts become pipelines, and where organisations become capable of doing things they could not do before — with humans in the loop, accountable for every outcome.</p>
+  </div>
+
+  <p class="closer">One test for any output: would a serious operator read this and think "this is rigorous, this is honest, this is something I can act on and be accountable for"? If not, it is not done.</p>
+  <p class="closer" style="margin-top:0.5rem;"><em>Control meets compassion. Start with the work. Keep the human accountable.</em></p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="blueprint"><span class="section-num">Section 05</span><br>Starter Architecture Blueprint</h2>
+<p class="lead">Four phases. 13 steps. Honest about what is hard. Real starting points that work.</p>
+
+<div class="callout stark">
+  <div class="label">Before You Start</div>
+  <p>Pick one workflow that you currently do manually, at least once a week, that produces a document or decision. That is your first pipeline. Do not try to pipeline your entire organisation first. Pick one workflow, make it excellent, then repeat.</p>
+</div>
+
+<h3>Phase 1 — Frame the Work (Days 1–3)</h3>
+
+<p><strong>Step 1: Write the work down precisely.</strong> Describe the workflow in one page. What triggers it? What information does it need? What does good output look like? Who uses the output? What happens if the output is wrong? This is your pipeline specification — before any AI is involved.</p>
+
+<p><strong>Step 2: Apply the Plumb-Line check.</strong> Before you design anything, run your workflow through the five decision layers. Is the work truth-seeking (epistemic)? Does the output match what you actually value (axiological)? Are you treating AI as a tool, partner, or collaborator (ontological)? Does the AI action actually cause the outcome you want (causal)? Is there a clear human who authorises the output (governance)?</p>
+
+<p><strong>Step 3: Define your output contract.</strong> Write three sentences: (1) The output is [type]. (2) It is correct when [conditions]. (3) It fails when [conditions]. This is your quality gate. Without it, you cannot tell if your pipeline is working.</p>
+
+<h3>Phase 2 — Build the Skill (Days 4–7)</h3>
+
+<p><strong>Step 4: Write a PEF 6+1 prompt.</strong> Use the six-plus-one framework: Role (who is the AI acting as), Evidence (what standards must be met), Framing (what is the context), Output (what should it produce), Negative examples (what should it avoid), Tone (how should it communicate), plus the +1 which is the Captain handoff point where human judgment is required.</p>
+
+<pre>
+<span class="comment"># PEF 6+1 Prompt Structure</span>
+<span class="kw">ROLE:</span>       <span class="str">You are a [domain expert] for [context].</span>
+<span class="kw">EVIDENCE:</span>  <span class="str">Use only information that [epistemic standard].</span>
+<span class="kw">FRAMING:</span>   <span class="str">The context is [situation]. The goal is [objective].</span>
+<span class="kw">OUTPUT:</span>    <span class="str">Produce [format] that [specification].</span>
+<span class="kw">NEGATIVE:</span>  <span class="str">Do not [failure mode 1]. Do not [failure mode 2].</span>
+<span class="kw">TONE:</span>      <span class="str">[Register]. [Audience]. [Length].</span>
+<span class="kw">+1 GATE:</span>   <span class="str">Flag for human review when [condition requiring judgment].</span>
+</pre>
+
+<p><strong>Step 5: Package it as a SKILL.md.</strong> A SKILL.md is a markdown file that makes your prompt reusable and callable. It has four parts: description (one sentence), trigger conditions (when should this skill be invoked), the prompt itself, and the output contract.</p>
+
+<pre>
+<span class="comment"># my-skill/SKILL.md</span>
+<span class="kw">---</span>
+<span class="str">name:</span> my-first-pipeline-skill
+<span class="str">description:</span> [One sentence. What it does and when to use it.]
+<span class="str">trigger:</span> [When should this skill be invoked?]
+<span class="kw">---</span>
+
+<span class="comment">## Prompt</span>
+[Your PEF 6+1 prompt here]
+
+<span class="comment">## Output Contract</span>
+- Format: [type]
+- Correct when: [conditions]
+- Fails when: [conditions]
+- Human gate: [when to escalate]
+</pre>
+
+<p><strong>Step 6: Test it manually three times.</strong> Run your skill on three real examples from your workflow. For each one: does the output meet the output contract? If yes twice out of three, proceed. If not, refine the prompt and repeat. Do not automate an untested skill.</p>
+
+<p><strong>Step 7: Register it in your skills library.</strong> Add an entry to your local MEMORY.md or skills index. One line: name, description, output type. This is the beginning of your institutional knowledge base.</p>
+
+<h3>Phase 3 — Build the Pipeline (Days 8–14)</h3>
+
+<p><strong>Step 8: Map the nine stages.</strong> Take your workflow and assign each stage (Sense, Frame, Route, Execute, Validate, Synthesise, Decide, Act, Audit) to either a skill invocation or a human gate. Not every workflow needs all nine stages. But every pipeline needs at least Validate and Decide as human gates.</p>
+
+<p><strong>Step 9: Choose your weave pattern.</strong> Is this a SID (single-input-design) or MID (multi-input-design) pipeline?</p>
+<ul>
+  <li><strong>SID:</strong> One trigger, one input stream, one output. Use for routine, high-frequency tasks.</li>
+  <li><strong>MID:</strong> Multiple input streams (e.g., data + context + constraints) merged into one governed output. Use for complex analysis, synthesis tasks, or intelligence briefings.</li>
+</ul>
+
+<p><strong>Step 10: Pick your harness — any harness.</strong> This is where harness-agnosticism matters. Your pipeline logic is defined in your SKILL.md files and your nine-stage map. The harness is just the mechanism that runs it.</p>
+
+<table>
+  <thead><tr><th>Harness</th><th>Best for</th><th>Entry cost</th></tr></thead>
+  <tbody>
+    <tr><td>Cowork (desktop)</td><td>Non-developers starting out. Single-user workflows.</td><td>Low</td></tr>
+    <tr><td>Claude Code (CLI)</td><td>Builders comfortable with a terminal. Multi-step automations.</td><td>Medium</td></tr>
+    <tr><td>n8n / Make / Zapier</td><td>No-code/low-code orchestration. Integrations with existing tools.</td><td>Low–Medium</td></tr>
+    <tr><td>Raw API (curl / Python)</td><td>Maximum control. Custom integrations. Any model.</td><td>Medium–High</td></tr>
+    <tr><td>LangChain / LlamaIndex</td><td>Complex multi-agent workflows. Developer-first.</td><td>High</td></tr>
+  </tbody>
+</table>
+
+<p><strong>Step 11: Wire the human gates.</strong> For each Validate, Decide, and Frame stage in your pipeline, define exactly: (a) what information the human sees, (b) what decision they make, (c) what happens if they approve vs. reject. Human gates are not interruptions to the pipeline — they are the mechanism that makes the pipeline trustworthy.</p>
+
+<h3>Phase 4 — Deploy and Monitor (Week 3+)</h3>
+
+<p><strong>Step 12: Run it live with a shadow protocol.</strong> For the first two weeks of live operation, run the pipeline in parallel with your existing manual process. Compare outputs. Do not replace the manual process until you have confirmed the pipeline produces equal or better results on at least 10 real cases.</p>
+
+<p><strong>Step 13: Build the audit trail.</strong> Every pipeline run should produce: (a) the input, (b) the skill invocations and their outputs, (c) the human gate decisions with timestamps, (d) the final output. Store these. This is your evidence infrastructure. It is how you debug, improve, and demonstrate accountability.</p>
+
+<h3>Common Questions — Answered Straight</h3>
+
+<table>
+  <thead><tr><th>Question</th><th>Answer</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>Do I need to know how to code?</td>
+      <td>No. Phase 1 and 2 require only structured writing. Phase 3 requires choosing a harness — Cowork and n8n require no code. Phase 4 benefits from basic scripting but is not required.</td>
+    </tr>
+    <tr>
+      <td>Which model should I use?</td>
+      <td>Start with whatever model you have access to. The skills are model-agnostic. If you are on Claude, use Claude. If you switch to GPT-4o next month, your SKILL.md files still work — adjust the prompt if needed, not the architecture.</td>
+    </tr>
+    <tr>
+      <td>What if the AI output is wrong?</td>
+      <td>That is what the human gates are for. A pipeline with properly configured human gates will surface errors before they cause harm. The audit trail tells you where in the pipeline the error occurred so you can fix it.</td>
+    </tr>
+    <tr>
+      <td>How long until I have a working pipeline?</td>
+      <td>For a simple SID workflow: 1–2 weeks of deliberate effort. For a complex MID pipeline with governance layers: 4–8 weeks. These are realistic estimates, not marketing numbers.</td>
+    </tr>
+    <tr>
+      <td>What is the biggest mistake beginners make?</td>
+      <td>Trying to automate everything at once. Pick one workflow. Make it excellent. The second pipeline is 40% faster than the first because you will have learned what matters.</td>
+    </tr>
+    <tr>
+      <td>How do I know when I'm ready to move up a rung?</td>
+      <td>When the current rung feels like maintenance rather than learning. When you are spending more time using skills than designing them, you are ready to become a skill creator. When you are spending more time configuring pipelines than building skills, you are ready to become a pipeline architect.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>What You Own at Each Phase</h3>
+<table>
+  <thead><tr><th>Phase</th><th>Deliverable</th><th>What It Enables</th></tr></thead>
+  <tbody>
+    <tr><td>Phase 1</td><td>Pipeline specification + output contract</td><td>Clarity on what you are building</td></tr>
+    <tr><td>Phase 2</td><td>Tested SKILL.md + skills library entry</td><td>Reusable, callable unit of work</td></tr>
+    <tr><td>Phase 3</td><td>Nine-stage pipeline map + harness configuration</td><td>Repeatable, governed workflow</td></tr>
+    <tr><td>Phase 4</td><td>Live pipeline + audit trail + monitoring cadence</td><td>Organisational capability, not just a tool</td></tr>
+  </tbody>
+</table>
+
+<!-- ============================================================ -->
+<h2 id="intentionality"><span class="section-num">Section 06</span><br>Intentionality by Design</h2>
+<p class="lead">Ten qualities. One standard. Every design decision in the estate is accountable to all of them.</p>
+
+<p>Intentionality by Design is not a checklist. It is a design standard — a commitment that every element of the WiseGen architecture is built to satisfy all ten qualities simultaneously, not to trade one off against another. A pipeline that is highly reliable but not desirable to use will not be used. A pipeline that is desirable but not reproducible will produce different results every time. All ten or none.</p>
+
+<div class="intent-grid">
+  <div class="intent-cell">
+    <div class="quality">Actionability</div>
+    <p>Every concept in the architecture has a concrete next step. The PEF 6+1 framework is actionable because it tells you exactly what to write. The nine-stage pipeline is actionable because each stage has a defined owner and output.</p>
+  </div>
+  <div class="intent-cell">
+    <div class="quality">Sensibility</div>
+    <p>The architecture makes intuitive sense to someone who understands the work, even if they have never built an AI system. The Captain Rule, the five Plumb-Line layers, the five-rung ladder — all are designed to be immediately legible to a domain expert.</p>
+  </div>
+  <div class="intent-cell">
+    <div class="quality">Interoperability</div>
+    <p>Skills connect to skills. Pipelines connect to pipelines. The SKILL.md standard, the SID/MID weave patterns, and the harness-agnostic design ensure that components built independently can work together.</p>
+  </div>
+  <div class="intent-cell">
+    <div class="quality">Implementability</div>
+    <p>Everything in the estate can actually be built. The SKILL.md format is implementable in any markdown editor. The nine-stage pipeline is implementable in any orchestration tool. The governance checks are implementable as prompt additions. No element requires capabilities that do not exist.</p>
+  </div>
+  <div class="intent-cell">
+    <div class="quality">Reproducibility</div>
+    <p>Given the same input and the same skill configuration, the pipeline produces the same category of output. The PEF 6+1 structure, the output contracts, and the epistemic guardrails are all designed to reduce variance. Deterministic infrastructure (AI-DOS) anchors the non-deterministic AI layer.</p>
+  </div>
+  <div class="intent-cell">
+    <div class="quality">Repeatability</div>
+    <p>The pipeline runs reliably more than once. Human gates are not one-time approvals — they are recurring quality checks. The shadow protocol in Phase 4 confirms repeatability before replacing manual processes.</p>
+  </div>
+  <div class="intent-cell">
+    <div class="quality">Reliability</div>
+    <p>The system does not break under normal conditions. AI-DOS provides the baseline assurance layer. Governance checks surface errors before they propagate. Audit trails allow diagnosis and recovery. Satellite/Beacon provides continuous monitoring.</p>
+  </div>
+  <div class="intent-cell">
+    <div class="quality">Viability</div>
+    <p>The architecture is sustainable as a real operating model. The five deployment estates include air-gapped options for regulated industries. The harness-agnostic design prevents vendor lock-in. The skills library compounds over time — each new skill adds value to existing pipelines.</p>
+  </div>
+  <div class="intent-cell">
+    <div class="quality">Feasibility</div>
+    <p>Achievable given realistic constraints. The five-rung ladder is calibrated to actual entry costs — Phase 1 requires no technical skills, Phase 2 requires one day of learning, Phase 3 requires one week of deliberate practice. No rung assumes capabilities the builder does not have.</p>
+  </div>
+  <div class="intent-cell">
+    <div class="quality">Desirability</div>
+    <p>People actually want to use it. The architecture is designed from domain expertise upward, not from technical capability downward. Non-developers are the primary audience, not an afterthought. The outputs — governed intelligence briefs, auditable pipelines, reliable workflows — are things organisations genuinely need.</p>
+  </div>
+</div>
+
+<h3>The One Test</h3>
+<div class="callout">
+  <div class="label">Intentionality Check</div>
+  <p>For any output, pipeline, skill, or design decision: would a serious operator read this and think <em>"this is rigorous, this is honest, this is something I can act on and be accountable for"</em>?</p>
+  <p style="margin:0;">If not, it is not done. Not "good enough." Not "version one." Not done. Return to the Plumb-Line. Identify which of the ten qualities is failing. Fix it. Then check again.</p>
+</div>
+
+<h3>How the Ten Qualities Map to the Architecture</h3>
+<table>
+  <thead><tr><th>Quality</th><th>Primary Architectural Home</th><th>Failure Mode If Missing</th></tr></thead>
+  <tbody>
+    <tr><td>Actionability</td><td>PEF 6+1, nine-stage map, rung ladder</td><td>Concepts with no next step → analysis paralysis</td></tr>
+    <tr><td>Sensibility</td><td>Captain Rule, Plumb-Line, builder vocabulary</td><td>Methodology only experts can use → adoption failure</td></tr>
+    <tr><td>Interoperability</td><td>SKILL.md standard, SID/MID weave, agnostic design</td><td>Siloed skills, non-composable pipelines → reinvention cost</td></tr>
+    <tr><td>Implementability</td><td>Phase-by-phase blueprint, harness options, entry costs</td><td>Architecture that cannot be built → shelfware</td></tr>
+    <tr><td>Reproducibility</td><td>Output contracts, epistemic guardrails, AI-DOS</td><td>Different results each run → inability to trust or improve</td></tr>
+    <tr><td>Repeatability</td><td>Human gates, shadow protocol, recurring checks</td><td>One-time successes, not operational capability</td></tr>
+    <tr><td>Reliability</td><td>AI-DOS baseline, governance checks, Satellite monitoring</td><td>Outages that cascade → loss of organisational trust</td></tr>
+    <tr><td>Viability</td><td>Agnostic design, compounding skills library, deployment estates</td><td>Dependency on a single vendor → strategic fragility</td></tr>
+    <tr><td>Feasibility</td><td>Realistic entry costs, non-developer framing, five rungs</td><td>Tooling that only CTOs can implement → excluded majority</td></tr>
+    <tr><td>Desirability</td><td>Domain-first design, output contracts, use-case grounding</td><td>Infrastructure that solves the wrong problem → abandonment</td></tr>
+  </tbody>
+</table>
+
+<hr class="light">
+
+<p style="font-size:0.82rem; color:var(--faint); text-align:center; margin-top:2rem;">WiseGen Forge Builder's Handbook v2.0 · Synthesised July 2026 across WiseGenForge 1.0, WiseGen Satellite v0.1, SIDweave v0.9.1, MIDweave SaP Charter, APE Intelligence TAIE/MAIE v0.9, AIDOS v0.8.1 · Harness-Agnostic · Platform-Agnostic · Model-Agnostic · Dr William Siew · Spark-a-life | APE Intelligence</p>
+
+</div>
+</body>
+</html>
