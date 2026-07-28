@@ -20,6 +20,15 @@ var/approvals/
 var/browser-profiles/
 outputs/
 
+# Intelligence briefs — only *-redacted.md files are permitted
+# Block everything in intelligence-briefs/ then un-ignore redacted versions
+docs/intelligence-briefs/*
+!docs/intelligence-briefs/*-redacted.md
+
+# Source uploads and raw intelligence runs
+**/SID-Run-*
+uploads/
+
 # IDE
 .vscode/
 .idea/

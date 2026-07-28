@@ -1,8 +1,49 @@
 # AGENTS.md
 
+## Governance protocol — mandatory for all agents
+
+### Pre-push gate (Captain's Gate)
+
+**No commit and no push without explicit human signoff.** This is non-negotiable.
+
+The required sequence for every change:
+
+1. **Stage and describe** — prepare changes and present a clear summary to the Captain
+2. **Security scan** — before requesting signoff, scan all staged content for:
+   - Personal names (individuals)
+   - Organisation names (companies, institutions)
+   - Email addresses, API keys, tokens, credentials
+   - Strategic intelligence, internal planning, unratified assessments
+3. **Captain reviews** — the human inspects, amends, or rejects
+4. **Captain says "push"** — only the explicit word authorises the push
+5. **Agent executes** — only after authorisation
+
+Failure to follow this sequence is a governance violation.
+
+### No personal names, no organisation names
+
+**Never commit or push content that contains the names of individuals or organisations** unless:
+- The name is the repository owner's own public identity (already published by them)
+- The Captain has explicitly authorised that specific name for public distribution
+
+This applies to:
+- Source code, comments, and documentation
+- Intelligence briefs, case studies, and strategic documents
+- Commit messages and PR descriptions
+- Any file added to the repository
+
+When in doubt, redact. Use `[Source redacted]`, `[Organisation redacted]`, or equivalent markers. The `.gitignore` contains patterns that block known unredacted intelligence brief filenames as an additional safeguard.
+
+### Intelligence brief handling
+
+- Only `*-redacted.md` files are permitted in `docs/intelligence-briefs/`
+- Unredacted originals must never enter the repository — they belong in the private Governed Intelligence Library
+- The `.gitignore` enforces this with filename pattern blocks
+- Before committing any intelligence brief, verify zero personal names and zero organisation names appear in the content
+
 ## Cursor Cloud specific instructions
 
-This repository is the **WiseGen estate front door** — the Spark-a-life GitHub profile README, documentation hub (GitHub Pages), and staging area for 7 software modules pending multi-repo split.
+This repository is the **WiseGen estate front door** — the profile README, documentation hub (GitHub Pages), and staging area for 7 software modules pending multi-repo split.
 
 ### Repository structure
 
