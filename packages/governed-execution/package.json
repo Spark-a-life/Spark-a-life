@@ -51,9 +51,9 @@
   ],
   "author": "Spark-a-life | APE Intelligence",
   "license": "MIT",
-  "homepage": "https://spark-a-life.github.io/Spark-a-life/",
+  "homepage": "https://github.com/Spark-a-life/Spark-a-life",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Spark-a-life/wisegen-governed-execution.git"
+    "url": "https://github.com/Spark-a-life/Spark-a-life/tree/main/packages/governed-execution"
   }
 }

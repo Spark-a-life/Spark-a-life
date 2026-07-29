@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://spark-a-life.github.io/Spark-a-life/sitemap.xml
+Sitemap: https://github.com/Spark-a-life/Spark-a-life/blob/main/docs/sitemap.xml

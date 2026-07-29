@@ -32,9 +32,9 @@ forge = "wisegen_forge.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/Spark-a-life/Spark-a-life"
-Repository = "https://github.com/Spark-a-life/wisegen-forge"
-Documentation = "https://spark-a-life.github.io/Spark-a-life/"
-Changelog = "https://github.com/Spark-a-life/wisegen-forge/blob/main/CHANGELOG.md"
+Repository = "https://github.com/Spark-a-life/Spark-a-life/tree/main/packages/forge"
+Documentation = "https://github.com/Spark-a-life/Spark-a-life#the-estate"
+Changelog = "https://github.com/Spark-a-life/Spark-a-life/blob/main/packages/forge/CHANGELOG.md"
 
 [tool.setuptools.packages.find]
 where = ["src"]

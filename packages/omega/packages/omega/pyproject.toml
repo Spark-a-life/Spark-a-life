@@ -23,8 +23,8 @@ dependencies = ["PyYAML>=6.0", "jsonschema>=4.0", "Jinja2>=3.1"]
 
 [project.urls]
 Homepage = "https://github.com/Spark-a-life/Spark-a-life"
-Repository = "https://github.com/Spark-a-life/wisegen-ape-omega"
-Changelog = "https://github.com/Spark-a-life/wisegen-ape-omega/blob/main/CHANGELOG.md"
+Repository = "https://github.com/Spark-a-life/Spark-a-life/tree/main/packages/omega"
+Changelog = "https://github.com/Spark-a-life/Spark-a-life/blob/main/packages/omega/packages/omega/CHANGELOG.md"
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "ruff>=0.5"]

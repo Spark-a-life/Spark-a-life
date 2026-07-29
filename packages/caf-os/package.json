@@ -23,7 +23,9 @@
     "LICENSE",
     "README.md"
   ],
-  "engines": { "node": ">=20.0.0" },
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "dev": "node src/cli.js",
     "api": "node src/api/server.js",
@@ -46,9 +48,9 @@
   ],
   "author": "Spark-a-life | APE Intelligence",
   "license": "MIT",
-  "homepage": "https://spark-a-life.github.io/Spark-a-life/",
+  "homepage": "https://github.com/Spark-a-life/Spark-a-life",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Spark-a-life/wisegen-caf-os.git"
+    "url": "https://github.com/Spark-a-life/Spark-a-life/tree/main/packages/caf-os"
   }
 }
