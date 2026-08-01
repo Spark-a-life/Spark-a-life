@@ -1,0 +1,10 @@
+fail_closed: true
+clarification:
+  block_on_p0: true
+  materiality_formula: impact_x_uncertainty_x_irreversibility_x_correction_cost
+execution:
+  external_actions_default: deny
+  raw_credentials_to_agents: deny
+  irreversible_actions_require_captain: true
+confidence:
+  factors: [evidence_coverage, assumption_burden, adviser_agreement, validation_status, domain_novelty]

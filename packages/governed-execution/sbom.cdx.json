@@ -1,0 +1,22 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:dd31fbca-8f24-4b0b-80bb-d9084a769db9",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-07-28T00:00:00Z",
+    "component": {
+      "type": "application",
+      "name": "wisegen-ape-governed-execution",
+      "version": "1.0.0",
+      "licenses": [{"license": {"id": "MIT"}}]
+    }
+  },
+  "components": [],
+  "dependencies": [
+    {
+      "ref": "wisegen-ape-governed-execution@1.0.0",
+      "dependsOn": []
+    }
+  ]
+}

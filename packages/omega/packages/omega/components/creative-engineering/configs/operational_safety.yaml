@@ -1,0 +1,12 @@
+default_risk_budget:
+  maximum_cost_usd: 8
+  maximum_tokens: 500000
+  maximum_runtime_seconds: 1500
+  maximum_external_calls: 20
+  maximum_retries: 5
+  maximum_consecutive_similar_actions: 3
+  maximum_destructive_tools: 0
+circuit_breaker:
+  amber_at_budget_ratio: 0.75
+  red_at_budget_ratio: 0.95
+  black_on_destructive_violation: true

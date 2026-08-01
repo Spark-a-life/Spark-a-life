@@ -1,0 +1,6 @@
+services:
+  omega:
+    build: .
+    volumes:
+      - ./outputs:/app/outputs
+    command: ["run", "examples/strategy_mission.yaml", "--output", "outputs/strategy_run.json"]

@@ -1,0 +1,149 @@
+{
+  "release": {
+    "name": "WiseGen MAIE HRBP Demand Intelligence",
+    "version": "0.1.0",
+    "date": "2026-07-28",
+    "owner": "Spark-a-life",
+    "licence": "Apache-2.0"
+  },
+  "target_baseline": {
+    "system": "WiseGen APE Intelligence OS",
+    "version": "0.1.0"
+  },
+  "estate": {
+    "id": "MAIE",
+    "human_gate": [
+      "employment-impacting recommendations",
+      "organisation-wide policy",
+      "performance or disciplinary decisions"
+    ]
+  },
+  "capabilities": [
+    {
+      "id": "maie.demand-signal-harvest",
+      "risk_ceiling": "medium",
+      "status": "certified"
+    },
+    {
+      "id": "maie.work-distribution-analysis",
+      "risk_ceiling": "medium",
+      "status": "certified"
+    },
+    {
+      "id": "maie.coverage-model-recommend",
+      "risk_ceiling": "high",
+      "status": "certified",
+      "human_approval_for": [
+        "all"
+      ],
+      "routing_dependency": "capability.evaluate.routing"
+    }
+  ],
+  "automatic_denials_added": [
+    "individual_performance_inference",
+    "individual_employee_identification",
+    "unaggregated_er_case_ingestion",
+    "headcount_reduction_directive",
+    "coverage_recommendation_without_route_certification"
+  ],
+  "verification": {
+    "scorer_tests": "11 passed",
+    "capability_schema": "3/3 conform",
+    "action_request_schema": "5/5 conform",
+    "captains_gate": "5/5 as designed",
+    "os_verify": "valid",
+    "os_tests": "pass"
+  },
+  "findings_against_baseline": [
+    "second_review declared for high tier is never read by the gate implementation",
+    "capability schema omits permitted_data_classifications and human_approval_for which the registry dereferences",
+    "registry previously held no MAIE capability, leaving the estate human gate unreachable"
+  ],
+  "trust_boundary": "Demand rubric is provisional: weights encode professional judgement and are not fitted against outcome data. Confidence is capped at 0.95. Sample portfolio is synthetic. No client data present.",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "6c34b1584a45459b4e45cb6a315ece0f91d5d8add2920d8da21dc08c0411987a"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "9584f6dd18b54b5cbfea6bad31b7d603df3849cc4e7c972fdb65b1f6dc38bdbc"
+    },
+    {
+      "path": "VERIFICATION.md",
+      "sha256": "ea0c0d93a4a356dfd480c47bdcaffac46695b4979f7c5667d6938acce44ab22d"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "6e06aa44c2999d3b25cde7ee8d8516630881bdd63a692d10ade0eaab4a13f049"
+    },
+    {
+      "path": "package.json",
+      "sha256": "efaa4095104a090d8c5aa3ab206a8ab529e2622b239693ec8bc15cafc6a085be"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "9350be3b5c479781f7dbcb4dee04d0e4f0a39f4990571ae9fdbb4948d5398664"
+    },
+    {
+      "path": "config/capabilities.maie.json",
+      "sha256": "aff2ae255f7ce91cf4ecce9be1abf77dc8c01a6f560475ca9d29e788be39391d"
+    },
+    {
+      "path": "config/demand-rubric.json",
+      "sha256": "30e66d22f02c1c824716714baf5cdb5f9ec48d158785be3aca619a254b682be5"
+    },
+    {
+      "path": "config/policies/captains-gate.maie-addendum.json",
+      "sha256": "797ff397d47ae5310a0058b5a0c46dfdd28f15634c5781d6c7a68099378aeba1"
+    },
+    {
+      "path": "examples/action-request-ceiling-breach.json",
+      "sha256": "b018910dea01548a5e753252e8380dc37fbc401422e70405bd1182d805e4539e"
+    },
+    {
+      "path": "examples/action-request-denied.json",
+      "sha256": "382cd0dde8c30e4d8355362ee34401c5312d1176119198b8d7d58ca1a1869c19"
+    },
+    {
+      "path": "examples/action-request-harvest.json",
+      "sha256": "21d5eec127a37d032801b8cd92f811b6b7a8265af04f7906af97ca4ebc8e6486"
+    },
+    {
+      "path": "examples/action-request-recommend.json",
+      "sha256": "e9aabcf49c6982117b7c9796b9a44744aaa7be8fadae1e70e12ff7e43aab5a3e"
+    },
+    {
+      "path": "examples/action-request-unapproved.json",
+      "sha256": "499450fc787c980abda799731b9e4ac62b540cdce32872c599fcaeac8d4a89a0"
+    },
+    {
+      "path": "examples/sample-portfolio.json",
+      "sha256": "f406657b943b5d3356460f40bcc9c6a6cdb784e345c07b7c44fea90b22277a74"
+    },
+    {
+      "path": "scripts/score-portfolio.mjs",
+      "sha256": "dfb82a96f8bce06c3d3c4b3cce9acb3128ca428aa0a150ff67fd2280fa829feb"
+    },
+    {
+      "path": "scripts/scorer.mjs",
+      "sha256": "1c2f3f744849e502f8ea0d7a2d3cbb5c0a3fb9984074e27f9268c2f9ad08186f"
+    },
+    {
+      "path": "scripts/verify-integration.mjs",
+      "sha256": "22e4498ddd40b70e1200b640fd11f831ba9a71a3da6a6664a2f0e1eb5c23f3a1"
+    },
+    {
+      "path": "tests/scorer.test.mjs",
+      "sha256": "8ee7f50013920b013eab1cb8a9d937ec962b7bab7b26ff8df22c3440aa4b336f"
+    },
+    {
+      "path": "docs/capability-design.md",
+      "sha256": "52e615aeeabe9f9e6eb3fed2b6f4ca1a78373aa52af078b4cda78f5402013f72"
+    },
+    {
+      "path": "docs/findings.md",
+      "sha256": "04f4bba1316ff12761b259966f2e8e7102db86af22aa6ee092855af3e2ec08b8"
+    }
+  ]
+}

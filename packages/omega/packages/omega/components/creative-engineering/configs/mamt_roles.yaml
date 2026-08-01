@@ -1,0 +1,37 @@
+roles:
+  creative_director:
+    purpose: Owns creative intent, audience fit and concept coherence.
+    allowed_tools: [brief_reader, prompt_compiler]
+    approval_threshold: medium
+  brand_steward:
+    purpose: Protects brand identity, tone, accessibility and channel suitability.
+    allowed_tools: [brand_rules, evaluation_rubric]
+    approval_threshold: medium
+  reference_engineer:
+    purpose: Reviews reference assets for provenance, relevance and constraints.
+    allowed_tools: [asset_registry, provenance_checker]
+    approval_threshold: high
+  prompt_compiler:
+    purpose: Converts creative contracts into model-specific prompt packs.
+    allowed_tools: [prompt_compiler]
+    approval_threshold: low
+  media_router:
+    purpose: Selects eligible model adapters and routes execution.
+    allowed_tools: [model_router]
+    approval_threshold: medium
+  evaluation_agent:
+    purpose: Scores output against rubrics and produces revision guidance.
+    allowed_tools: [evaluator]
+    approval_threshold: medium
+  safety_governor:
+    purpose: Enforces risk budgets, circuit breaker states and tool constraints.
+    allowed_tools: [runtime_governor, circuit_breaker]
+    approval_threshold: high
+  provenance_auditor:
+    purpose: Records source, consent, usage rights and witness-chain events.
+    allowed_tools: [witness_chain, provenance_checker]
+    approval_threshold: high
+  deployment_agent:
+    purpose: Packages approved outputs for target channels.
+    allowed_tools: [export_packager]
+    approval_threshold: high

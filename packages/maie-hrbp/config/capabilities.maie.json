@@ -1,0 +1,115 @@
+{
+  "overlay_id": "maie-hrbp-demand-intelligence",
+  "overlay_version": "0.1.0",
+  "target_registry_version": "1.0",
+  "note": "Drop-in capability entries for the MAIE estate. Merge into config/capabilities.json of the WiseGen APE Intelligence OS. Field shapes match schemas/capability.schema.json plus the runtime fields CapabilityRegistry.assertUsable requires (permitted_data_classifications, human_approval_for).",
+  "capabilities": [
+    {
+      "id": "maie.demand-signal-harvest",
+      "version": "1.0.0",
+      "owner_estate": "MAIE",
+      "purpose": "Ingest unit-aggregated workforce demand signals and produce a normalised, provenance-tagged demand record for a business unit.",
+      "status": "certified",
+      "permitted_runtimes": [
+        "local-deterministic"
+      ],
+      "permitted_data_classifications": [
+        "internal",
+        "confidential"
+      ],
+      "risk_ceiling": "medium",
+      "human_approval_for": [
+        "external_publication"
+      ],
+      "evaluation_suite": "tests/demand-signal-harvest.test.mjs",
+      "witness_chain": "required",
+      "input_constraints": {
+        "aggregation": "unit-level only",
+        "minimum_cell_size": 20,
+        "prohibited_fields": [
+          "employee_id",
+          "employee_name",
+          "case_narrative",
+          "performance_rating",
+          "medical_or_leave_reason",
+          "protected_characteristics"
+        ],
+        "rationale": "Individual-level employee relations data would require a highly-confidential ceiling that MAIE does not hold. Aggregating before ingestion keeps the capability inside its estate boundary and reduces PDPA exposure. Units below the minimum cell size are reported as insufficient rather than scored."
+      }
+    },
+    {
+      "id": "maie.work-distribution-analysis",
+      "version": "1.0.0",
+      "owner_estate": "MAIE",
+      "purpose": "Analyse how HRBP effort distributes across strategic partnering and operational delivery, and identify work that has leaked upward from lower service tiers.",
+      "status": "certified",
+      "permitted_runtimes": [
+        "local-deterministic"
+      ],
+      "permitted_data_classifications": [
+        "internal",
+        "confidential"
+      ],
+      "risk_ceiling": "medium",
+      "human_approval_for": [
+        "external_publication",
+        "individual_attribution"
+      ],
+      "evaluation_suite": "tests/work-distribution-analysis.test.mjs",
+      "witness_chain": "required",
+      "input_constraints": {
+        "unit_of_analysis": "role and work category, not named individuals",
+        "prohibited_uses": [
+          "individual productivity comparison",
+          "performance management input",
+          "disciplinary evidence"
+        ],
+        "rationale": "The capability exists to diagnose an operating model, not to appraise practitioners. Individual attribution requires human approval precisely because it converts a design diagnostic into a performance artefact."
+      }
+    },
+    {
+      "id": "maie.coverage-model-recommend",
+      "version": "1.0.0",
+      "owner_estate": "MAIE",
+      "purpose": "Recommend an HRBP coverage model per business unit from scored demand evidence, with an alternative, rationale, risk and confidence.",
+      "status": "certified",
+      "permitted_runtimes": [
+        "local-deterministic"
+      ],
+      "permitted_data_classifications": [
+        "internal",
+        "confidential"
+      ],
+      "risk_ceiling": "high",
+      "human_approval_for": [
+        "all"
+      ],
+      "evaluation_suite": "tests/coverage-model-recommend.test.mjs",
+      "witness_chain": "required",
+      "depends_on": [
+        "maie.demand-signal-harvest",
+        "maie.work-distribution-analysis"
+      ],
+      "routing_dependency": {
+        "harness": "capability.evaluate.routing",
+        "task_class": "extraction",
+        "requires_certified_route": true,
+        "rationale": "The capability may not select its own model. It consumes a route certified by the GAIE harness, which is what capability_self_certification forbids it from doing for itself."
+      },
+      "output_constraints": {
+        "recommends": [
+          "dedicated",
+          "pooled",
+          "shared-services"
+        ],
+        "never_outputs": [
+          "headcount reduction targets",
+          "named role eliminations",
+          "individual redeployment lists"
+        ],
+        "mandatory_caveat_when": "operational_share exceeds 0.5",
+        "rationale": "A coverage model is a design recommendation. Converting it into a headcount decision is a human act with employment consequences, and the estate's human gate names employment-impacting recommendations explicitly. The caveat exists because high operational share usually indicates tiering leakage rather than a capacity shortfall, and adding capacity would entrench the defect."
+      }
+    }
+  ]
+}

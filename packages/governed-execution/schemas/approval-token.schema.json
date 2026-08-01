@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wisegen.local/schemas/approval-token.schema.json",
+  "title": "Bound Approval Token Payload",
+  "type": "object",
+  "required": ["version", "nonce", "actionDigest", "requestId", "approver", "requiredRole", "issuedAt", "expiresAt"],
+  "properties": {
+    "version": {"const": 1},
+    "nonce": {"type": "string"},
+    "actionDigest": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "requestId": {"type": "string"},
+    "approver": {
+      "type": "object",
+      "required": ["id", "roles"],
+      "properties": {
+        "id": {"type": "string"},
+        "roles": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "requiredRole": {"type": "string"},
+    "issuedAt": {"type": "string", "format": "date-time"},
+    "expiresAt": {"type": "string", "format": "date-time"}
+  }
+}

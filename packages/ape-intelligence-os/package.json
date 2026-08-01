@@ -1,0 +1,54 @@
+{
+  "name": "@spark-a-life/ape-intelligence-os",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Governance-native operating architecture for human-AI intelligence systems",
+  "exports": {
+    ".": "./src/core/system.mjs",
+    "./cli": "./src/cli.mjs",
+    "./governance": "./src/governance/captains-gate.mjs",
+    "./witness": "./src/witness/chain.mjs"
+  },
+  "bin": {
+    "wisegen": "bin/wisegen"
+  },
+  "files": [
+    "src/",
+    "bin/",
+    "config/",
+    "schemas/",
+    "examples/",
+    "docs/",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "demo": "node src/cli.mjs demo",
+    "verify": "node src/cli.mjs verify",
+    "test": "node --test",
+    "gate": "node src/cli.mjs gate",
+    "registry": "node src/cli.mjs registry",
+    "estates": "node src/cli.mjs estates",
+    "lanes": "node src/cli.mjs lanes"
+  },
+  "keywords": [
+    "ai-governance",
+    "intelligence-os",
+    "captains-gate",
+    "witness-chain",
+    "estates",
+    "human-ai"
+  ],
+  "author": "Spark-a-life | APE Intelligence",
+  "license": "MIT",
+  "homepage": "https://github.com/Spark-a-life/Spark-a-life",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Spark-a-life/Spark-a-life/tree/main/packages/ape-intelligence-os"
+  }
+}

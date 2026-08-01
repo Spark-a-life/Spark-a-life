@@ -1,0 +1,128 @@
+mission:
+  id: fundraise-programme-expansion-500k
+  objective: Raise a governed funding round for programme expansion using a model-agnostic fundraising mission team.
+  programme_summary: Expand a practical AI enablement programme for SMEs, educators and community partners with governance-first delivery.
+  funding_goal: 500000
+  currency: SGD
+  audience: philanthropic funders, corporate partners, grant bodies and strategic sponsors
+  region: Singapore and Southeast Asia
+  timeframe: 6 months
+organisation:
+  name: Spark-a-life | APE Intelligence
+  voice: precise, warm, governance-first and practical
+  constraints:
+    - Use UK English.
+    - Do not imply guaranteed funding outcomes.
+    - Do not send external messages without human approval.
+governance:
+  jurisdiction: Singapore
+  fundraising_mode: philanthropic
+  public_appeal: false
+  foreign_charitable_purpose: false
+  personal_data_used: true
+  vulnerable_audience: false
+  egress_channels: [email, linkedin, deck, data_room, crm, internal_memo]
+  donor_acceptance_policy: Accept support only when funder conditions align with programme purpose, governance integrity and lawful use of funds.
+  required_approvals: [captain, compliance, finance, data_room]
+  disclosure_requirements:
+    - PDPA consent or legitimate-use review before personal outreach.
+    - Captain Gate approval before external egress.
+  restricted_terms:
+    - guaranteed funding
+    - risk-free
+    - automatic approval
+fundraising:
+  segments:
+    - AI literacy
+    - workforce transformation
+    - education
+    - SME capability
+    - responsible AI
+  minimum_fit_score: 0.62
+  use_of_funds:
+    - curriculum development
+    - programme delivery
+    - evaluation and impact measurement
+    - community partner enablement
+prospects:
+  - name: Responsible Technology Foundation
+    type: philanthropic foundation
+    region: Singapore and Southeast Asia
+    focus_areas: [responsible AI, education, workforce transformation]
+    giving_history: Supports programmes that combine education, technology and social outcomes.
+    relationship_signal: warm introduction possible through ecosystem partner
+    eligibility_notes: Open to capacity-building proposals with clear impact reporting.
+    restrictions: [requires evidence of governance controls]
+    estimated_amount: 180000
+    source: supplied example source card
+  - name: Enterprise Capability Grant Partner
+    type: grant body
+    region: Singapore
+    focus_areas: [SME capability, workforce transformation]
+    giving_history: Funds capability development and enterprise transformation initiatives.
+    relationship_signal: no prior relationship identified
+    eligibility_notes: Eligibility depends on applicant status and approved activity scope.
+    restrictions: [restricted use of funds, formal eligibility check required]
+    estimated_amount: 250000
+    source: supplied example source card
+  - name: General Arts Sponsor
+    type: corporate sponsor
+    region: Singapore
+    focus_areas: [arts, events, lifestyle]
+    giving_history: Sponsors public-facing events.
+    relationship_signal: cold lead
+    eligibility_notes: May not prioritise AI governance or workforce programmes.
+    restrictions: [brand activation requirement]
+    estimated_amount: 50000
+    source: supplied example source card
+evidence:
+  - id: ev-programme-design
+    title: Programme design summary
+    source: internal programme brief
+    kind: programme design
+    confidence: high
+    permitted_use: [memo, outreach, board_update]
+  - id: ev-governance-model
+    title: Governance-first delivery model
+    source: WiseGen architecture note
+    kind: governance policy
+    confidence: high
+    permitted_use: [memo, outreach, data_room]
+  - id: ev-impact-method
+    title: Impact measurement approach
+    source: internal evaluation method note
+    kind: impact evidence
+    confidence: medium
+    permitted_use: [memo, outreach, data_room]
+  - id: ev-budget-outline
+    title: Funding use and budget outline
+    source: internal budget model
+    kind: budget
+    confidence: medium
+    permitted_use: [memo, board_update, data_room]
+claims:
+  - text: The programme is designed around governance-first AI enablement and practical adoption.
+    evidence_ids: [ev-programme-design, ev-governance-model]
+    external_use: true
+  - text: Impact measurement will be built into the programme delivery model.
+    evidence_ids: [ev-impact-method]
+    external_use: true
+risk:
+  maximum_cost_usd: 2
+  maximum_tokens: 150000
+  maximum_runtime_seconds: 600
+  maximum_external_calls: 0
+  maximum_retries: 2
+  maximum_consecutive_similar_actions: 3
+  maximum_destructive_tools: 0
+  human_approval_required: true
+output:
+  adapter: local_deterministic
+  deliverables:
+    - prospect scoring table
+    - funder memo pack
+    - outreach draft pack
+    - data-room checklist
+    - creative prompt pack
+    - safeguard review
+    - witness-chain audit

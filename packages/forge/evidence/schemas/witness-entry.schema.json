@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wisegen.forge/schemas/witness-entry.schema.json",
+  "title": "WitnessEntry",
+  "description": "One tamper-evident link in a run's evidence chain. Each entry commits to its predecessor, so removal, reordering or rewriting is detectable by recomputation alone, without a trusted server.",
+  "type": "object",
+  "required": ["seq", "at", "actor", "event", "payload", "payload_digest", "prev_digest", "entry_digest"],
+  "additionalProperties": false,
+  "properties": {
+    "seq": { "type": "integer", "minimum": 1, "description": "Position in the chain, starting at 1." },
+    "at": { "type": "string", "format": "date-time", "description": "UTC timestamp, second precision." },
+    "actor": { "type": "string", "description": "Role id, service name, or 'captain' for a human decision." },
+    "event": { "type": "string", "description": "Dotted event name, for example agent.started or gate.decided." },
+    "payload": { "type": "object", "description": "Event body. Secrets are never written here; references only." },
+    "payload_digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "prev_digest": { "type": "string", "description": "Digest of the previous entry, or 'genesis' for the first." },
+    "entry_digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "SC02-SEQ01",
+  "sceneId": "SC02",
+  "description": "Two-character multi-angle dialogue sequence with profile turns",
+  "characterCount": 2,
+  "identityScope": "production",
+  "poseRotation": "high",
+  "dialogue": "high",
+  "cameraComplexity": "high",
+  "motionComplexity": "medium",
+  "occlusion": "low",
+  "realismPriority": "high",
+  "styleControl": "high",
+  "durationSeconds": 20,
+  "audioFirst": true,
+  "requiresLipSync": true,
+  "multiShot": true,
+  "budgetPriority": "low",
+  "latencyPriority": "low"
+}

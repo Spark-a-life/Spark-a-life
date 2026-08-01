@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wisegen-forge"
+version = "1.0.0"
+description = "Governed intent-to-system application factory"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Dr William Siew" }]
+keywords = ["ai-governance", "multi-agent", "application-factory", "captains-gate", "witness-chain"]
+license = {text = "Proprietary"}
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Libraries :: Application Frameworks",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["ruff>=0.5", "mypy>=1.8", "build>=1.2"]
+yaml = ["PyYAML>=6.0"]
+
+[project.scripts]
+forge = "wisegen_forge.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Spark-a-life/Spark-a-life"
+Repository = "https://github.com/Spark-a-life/Spark-a-life/tree/main/packages/forge"
+Documentation = "https://github.com/Spark-a-life/Spark-a-life#the-estate"
+Changelog = "https://github.com/Spark-a-life/Spark-a-life/blob/main/packages/forge/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+wisegen_forge = ["py.typed"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "S"]
+ignore = ["S101", "E501"]
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
+warn_unused_ignores = true

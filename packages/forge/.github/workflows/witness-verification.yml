@@ -1,0 +1,31 @@
+name: witness-verification
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-chain:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Produce a run
+        run: PYTHONPATH=src python -m wisegen_forge.cli demo
+      - name: Verify the chain
+        run: PYTHONPATH=src python -m wisegen_forge.cli verify --run .forge/demo
+      - name: Tamper detection must fail closed
+        run: |
+          PYTHONPATH=src python - <<'PY'
+          import pathlib, subprocess, sys
+          chain = pathlib.Path(".forge/demo/evidence/witness-chain.jsonl")
+          lines = chain.read_text().splitlines()
+          assert len(lines) > 3
+          lines[2] = lines[2].replace('"stage"', '"stage_tampered"', 1)
+          chain.write_text("\n".join(lines) + "\n")
+          r = subprocess.run([sys.executable, "-m", "wisegen_forge.cli", "verify", "--run", ".forge/demo"],
+                             capture_output=True, text=True, env={"PYTHONPATH": "src", "PATH": "/usr/bin:/bin"})
+          assert r.returncode != 0, "tampered chain verified clean, which is a critical failure"
+          print("tamper detected as expected")
+          PY

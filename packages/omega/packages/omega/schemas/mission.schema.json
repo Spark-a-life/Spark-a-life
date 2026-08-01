@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WiseGen Omega Mission",
+  "type": "object",
+  "required": [
+    "objective",
+    "success_criteria",
+    "captain"
+  ],
+  "properties": {
+    "mission_id": {
+      "type": "string"
+    },
+    "domain": {
+      "enum": [
+        "strategy",
+        "creative",
+        "fundraising",
+        "presentation",
+        "workspace"
+      ]
+    },
+    "objective": {
+      "type": "string",
+      "minLength": 5
+    },
+    "desired_outcome": {
+      "type": "string"
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "success_criteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "stakeholders": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "deadline": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "assumptions": {
+      "type": "array"
+    },
+    "evidence": {
+      "type": "array"
+    },
+    "claims": {
+      "type": "array"
+    },
+    "advisers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "captain": {
+      "type": "object",
+      "required": [
+        "decision"
+      ],
+      "properties": {
+        "decision": {
+          "enum": [
+            "APPROVE",
+            "APPROVE_WITH_CONDITIONS",
+            "DEFER",
+            "REJECT"
+          ]
+        },
+        "allow_declared_assumptions": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

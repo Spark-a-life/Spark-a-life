@@ -1,0 +1,9 @@
+# The Captain owns constitutional surfaces. These paths cannot merge without human review.
+/policies/constitutional/   @captain
+/agents/registry.yaml       @captain @policy-steward
+/src/wisegen_forge/witness.py      @captain @security-auditor
+/src/wisegen_forge/approval.py     @captain
+/src/wisegen_forge/policy.py       @policy-steward @captain
+/docs/governance/           @captain @policy-steward
+/deploy/                    @release-engineer @security-auditor
+*                           @captain

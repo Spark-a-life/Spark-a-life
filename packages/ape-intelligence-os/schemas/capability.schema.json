@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wisegen.local/schemas/capability.schema.json",
+  "title": "Governed Capability",
+  "type": "object",
+  "required": [
+    "id",
+    "version",
+    "owner_estate",
+    "purpose",
+    "status",
+    "permitted_runtimes",
+    "risk_ceiling",
+    "witness_chain"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "owner_estate": {
+      "enum": [
+        "MAIE",
+        "TAIE",
+        "PAIE",
+        "GAIE",
+        "SAIE"
+      ]
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "candidate",
+        "evaluating",
+        "certified",
+        "suspended",
+        "deprecated"
+      ]
+    },
+    "permitted_runtimes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "risk_ceiling": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "witness_chain": {
+      "enum": [
+        "required",
+        "optional",
+        "forbidden"
+      ]
+    }
+  }
+}

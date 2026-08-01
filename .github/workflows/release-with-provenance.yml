@@ -1,0 +1,61 @@
+name: Release with Sigstore Provenance
+
+on:
+  workflow_dispatch:
+    inputs:
+      module:
+        description: "Module to release (e.g. forge, omega, governed-execution)"
+        required: true
+        type: string
+      version:
+        description: "Version tag (e.g. v1.0.0)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  id-token: write
+  attestations: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    environment: release
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Package module
+        run: |
+          MODULE_DIR="packages/${{ inputs.module }}"
+          if [ ! -d "$MODULE_DIR" ]; then
+            echo "::error::Module directory $MODULE_DIR not found"
+            exit 1
+          fi
+          ARCHIVE="${{ inputs.module }}-${{ inputs.version }}.zip"
+          cd "$MODULE_DIR"
+          zip -r "../../$ARCHIVE" . -x '.git/*' 'node_modules/*' '__pycache__/*' '.pytest_cache/*' '*.egg-info/*'
+          cd ../..
+          sha256sum "$ARCHIVE" > "$ARCHIVE.sha256"
+
+      - name: Attest build provenance
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: "${{ inputs.module }}-${{ inputs.version }}.zip"
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ARCHIVE="${{ inputs.module }}-${{ inputs.version }}.zip"
+          TAG="${{ inputs.module }}-${{ inputs.version }}"
+          NOTES="packages/${{ inputs.module }}/CHANGELOG.md"
+
+          if [ -f "$NOTES" ]; then
+            gh release create "$TAG" "$ARCHIVE" "$ARCHIVE.sha256" \
+              --title "${{ inputs.module }} ${{ inputs.version }}" \
+              --notes-file "$NOTES"
+          else
+            gh release create "$TAG" "$ARCHIVE" "$ARCHIVE.sha256" \
+              --title "${{ inputs.module }} ${{ inputs.version }}" \
+              --generate-notes
+          fi

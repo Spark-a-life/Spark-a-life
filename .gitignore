@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+
+# WiseGen runtime
+.forge/
+var/witness/*.jsonl
+var/evidence-*.json
+var/state/
+var/approvals/
+var/browser-profiles/
+outputs/
+
+# Intelligence briefs — only *-redacted.md files are permitted
+# Block everything in intelligence-briefs/ then un-ignore redacted versions
+docs/intelligence-briefs/*
+!docs/intelligence-briefs/*-redacted.md
+
+# Source uploads and raw intelligence runs
+**/SID-Run-*
+uploads/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

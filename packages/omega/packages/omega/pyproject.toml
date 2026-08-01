@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wisegen-ape-omega"
+version = "2.1.0"
+description = "Governance-first, model-agnostic mission operating system integrating SDIA, MAMT, workspace-in-the-loop and delivery domains"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Spark-a-life | APE Intelligence"}]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Developers",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = ["PyYAML>=6.0", "jsonschema>=4.0", "Jinja2>=3.1"]
+
+[project.urls]
+Homepage = "https://github.com/Spark-a-life/Spark-a-life"
+Repository = "https://github.com/Spark-a-life/Spark-a-life/tree/main/packages/omega"
+Changelog = "https://github.com/Spark-a-life/Spark-a-life/blob/main/packages/omega/packages/omega/CHANGELOG.md"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+wisegen-omega = "wisegen_omega.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

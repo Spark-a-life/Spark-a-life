@@ -1,0 +1,46 @@
+{
+  "name": "@spark-a-life/routing-harness",
+  "version": "1.1.0",
+  "description": "Governed multi-model routing benchmark and certification harness for the WiseGen APE Intelligence OS (GAIE estate).",
+  "type": "module",
+  "exports": {
+    ".": "./src/harness.mjs",
+    "./cli": "./src/cli.mjs",
+    "./route": "./src/route.mjs"
+  },
+  "bin": {
+    "wisegen-route": "src/cli.mjs"
+  },
+  "files": [
+    "src/",
+    "config/",
+    "payloads/",
+    "var/",
+    "docs/",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "demo": "node src/cli.mjs demo",
+    "verify": "node src/cli.mjs verify",
+    "test": "node --test"
+  },
+  "keywords": [
+    "ai-governance",
+    "model-routing",
+    "benchmark",
+    "certification",
+    "witness-chain"
+  ],
+  "author": "Spark-a-life | APE Intelligence",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/Spark-a-life/Spark-a-life",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Spark-a-life/Spark-a-life/tree/main/packages/routing-harness"
+  }
+}

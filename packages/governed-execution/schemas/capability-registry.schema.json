@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wisegen.local/schemas/capability-registry.schema.json",
+  "title": "Capability Registry",
+  "type": "object",
+  "required": ["version", "capabilities"],
+  "properties": {
+    "version": {"type": "string"},
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "description", "adapter", "allowedRoles", "operations"],
+        "properties": {
+          "id": {"type": "string"},
+          "description": {"type": "string"},
+          "adapter": {"type": "string"},
+          "allowedRoles": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+          "operations": {"type": "object", "minProperties": 1}
+        }
+      }
+    }
+  }
+}

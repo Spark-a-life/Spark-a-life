@@ -1,0 +1,12 @@
+{
+  "id": "MAIE",
+  "name": "Management and Organisational Intelligence Estate",
+  "purpose": "Support governed organisational design, workforce, operating model and management decisions.",
+  "default_risk_tier": "medium",
+  "data_ceiling": "confidential",
+  "human_gate": [
+    "employment-impacting recommendations",
+    "organisation-wide policy",
+    "performance or disciplinary decisions"
+  ]
+}

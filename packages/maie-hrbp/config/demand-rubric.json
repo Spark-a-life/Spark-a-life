@@ -1,0 +1,100 @@
+{
+  "rubric_id": "hrbp-demand-index",
+  "rubric_version": "0.1.0",
+  "status": "provisional",
+  "calibration_warning": "The weights and band thresholds below are a defensible starting calibration, not an empirically validated model. They encode a professional judgement about relative importance and have not been fitted against outcome data. Treat the first deployment as a calibration exercise: score units, compare against practitioner judgement, and adjust. Publishing these numbers as though they were validated would be exactly the false precision the ratio critique objects to.",
+  "design_note": "Transposed from the CAF-OS capability router, which scores each shot across weighted dimensions and returns a recommended engine, an alternative, rationale, risk and confidence. Here the unit of analysis is a business unit and the recommendation is a coverage model. Headcount enters as a bounded modifier rather than a weighted dimension, which is the whole argument made structural.",
+  "dimensions": [
+    {
+      "id": "change_load",
+      "name": "Change load",
+      "weight": 0.25,
+      "scale": "0-10",
+      "definition": "Concurrent organisational change the unit is absorbing: restructures, leadership transitions, system implementations, integrations, operating model shifts.",
+      "evidence_sources": ["active change register", "leadership transition log", "programme portfolio"]
+    },
+    {
+      "id": "manager_capability_gap",
+      "name": "Manager capability gap",
+      "weight": 0.20,
+      "scale": "0-10",
+      "definition": "Inverse of people-management capability across the unit's manager population: tenure in role, prior people-management experience, span of control, escalation frequency.",
+      "evidence_sources": ["manager tenure distribution", "span analysis", "escalation frequency by manager cohort"]
+    },
+    {
+      "id": "er_intensity",
+      "name": "Employee relations intensity",
+      "weight": 0.20,
+      "scale": "0-10",
+      "definition": "Aggregated ER case rate per 100 staff per quarter, normalised against the organisation's own distribution rather than an external benchmark.",
+      "evidence_sources": ["aggregated ER case counts by unit"],
+      "constraint": "Unit-aggregated only. Case narratives and individual identifiers are prohibited inputs."
+    },
+    {
+      "id": "structural_ambiguity",
+      "name": "Structural ambiguity",
+      "weight": 0.15,
+      "scale": "0-10",
+      "definition": "Unclear decision rights, matrix or dual reporting, recently redrawn boundaries, contested accountabilities.",
+      "evidence_sources": ["org structure records", "reporting line audit", "decision rights mapping"]
+    },
+    {
+      "id": "workforce_volatility",
+      "name": "Workforce volatility",
+      "weight": 0.10,
+      "scale": "0-10",
+      "definition": "Combined hiring rate, attrition rate and contingent workforce proportion, measuring churn in the population the HRBP supports.",
+      "evidence_sources": ["hiring and attrition rates", "contingent workforce proportion"]
+    },
+    {
+      "id": "industrial_relations_load",
+      "name": "Industrial relations load",
+      "weight": 0.10,
+      "scale": "0-10",
+      "definition": "Active consultation obligations, collective agreement coverage, statutory notification exposure.",
+      "evidence_sources": ["consultation calendar", "collective agreement coverage", "statutory obligation register"]
+    }
+  ],
+  "population_modifier": {
+    "type": "bounded_adjustment",
+    "range": [-0.5, 0.5],
+    "method": "log-scaled headcount relative to the organisation's median unit size, clamped to the range",
+    "rationale": "Headcount is real but secondary. Capping its influence at half a point on a ten point index prevents a large stable unit from outranking a small unit in crisis, which is the failure mode the employee-to-HRBP ratio produces by construction."
+  },
+  "bands": [
+    {
+      "id": "dedicated",
+      "min": 7.0,
+      "max": 10.0,
+      "recommendation": "dedicated",
+      "description": "Sustained embedded HRBP coverage. Demand is high across several dimensions simultaneously."
+    },
+    {
+      "id": "pooled",
+      "min": 4.0,
+      "max": 6.99,
+      "recommendation": "pooled",
+      "description": "Shared HRBP coverage across two or more units with flex capacity for peaks."
+    },
+    {
+      "id": "shared-services",
+      "min": 0.0,
+      "max": 3.99,
+      "recommendation": "shared-services",
+      "description": "Tiered service delivery with escalation routes. Dedicated partnering is not warranted by current demand."
+    }
+  ],
+  "leakage_check": {
+    "input": "operational_share",
+    "definition": "Proportion of HRBP time spent on work that a shared services tier or manager self-service layer should absorb.",
+    "caution_threshold": 0.5,
+    "caution_text": "Operational share exceeds the caution threshold. High demand here may reflect tiering leakage rather than a capacity shortfall. Adding HRBP capacity without redesigning the delivery tiers is likely to entrench the defect. Review the operating model before acting on this recommendation.",
+    "rationale": "This is the substantive finding in most sizing reviews. Encoding it as a mandatory caveat prevents the tool from being used to justify headcount growth that a work redesign would have made unnecessary."
+  },
+  "confidence": {
+    "method": "product of data completeness and freshness factors, clamped to [0.2, 0.95]",
+    "completeness": "share of dimensions with evidence present",
+    "freshness": "1.0 within one quarter, 0.85 within two, 0.6 beyond two",
+    "ceiling_rationale": "Confidence is capped below 1.0 because the rubric itself is provisional. A model that reports certainty about an uncalibrated instrument is misreporting."
+  }
+}

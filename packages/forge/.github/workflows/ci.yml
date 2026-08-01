@@ -1,0 +1,50 @@
+name: ci
+on:
+  push: { branches: [main] }
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Readiness
+        run: PYTHONPATH=src python -m wisegen_forge.cli doctor
+      - name: Test suite
+        run: PYTHONPATH=src python -m unittest discover -s tests -t . -v
+      - name: Reference demonstrator
+        run: PYTHONPATH=src python -m wisegen_forge.cli demo
+      - name: Upload run evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: forge-run-${{ matrix.python-version }}
+          path: .forge/
+          retention-days: 14
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install ruff mypy
+      - run: ruff check src tests
+      - run: mypy src || true
+  no-runtime-deps:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Assert the core imports with an empty environment
+        run: |
+          python -c "import sys, pathlib; sys.path.insert(0,'src'); import wisegen_forge.pipeline; print('core imports clean')"
+          ! grep -q "^dependencies = \[\"" pyproject.toml

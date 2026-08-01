@@ -1,0 +1,9 @@
+node_modules/
+.env
+var/witness/*.jsonl
+var/approvals/*.json
+var/state/*.json
+var/browser-profiles/
+coverage/
+*.log
+.DS_Store

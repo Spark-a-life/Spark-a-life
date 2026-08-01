@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wisegen-workspace-in-the-loop"
+version = "0.1.0"
+description = "WiseGen APE Intelligence governed cognitive operating system with workspace-in-the-loop decision infrastructure."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Spark-a-life | APE Intelligence"}]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+wisegen-witl = "wisegen_witl.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["wisegen_witl*"]

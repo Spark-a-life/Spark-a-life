@@ -1,0 +1,21 @@
+stages:
+  - discovered
+  - qualified
+  - enriched
+  - memo_prepared
+  - outreach_drafted
+  - approved
+  - sent
+  - meeting_or_reply
+  - proposal
+  - submitted
+  - won
+  - lost
+  - nurture
+required_stage_fields:
+  discovered: [prospect_name, source]
+  qualified: [fit_score, eligibility_status]
+  enriched: [fit_score, evidence_ids, next_action]
+  memo_prepared: [memo_id, owner]
+  outreach_drafted: [draft_id, approval_status]
+  approved: [captain_gate_decision]

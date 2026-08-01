@@ -1,0 +1,69 @@
+{
+  "version": "1.0.0",
+  "profiles": [
+    {
+      "id": "kling",
+      "capabilities": [
+        "image-to-video",
+        "natural-motion",
+        "first-frame-conditioning",
+        "close-up"
+      ],
+      "knownRisks": [
+        "pose-drift",
+        "cross-shot-drift",
+        "occlusion"
+      ]
+    },
+    {
+      "id": "seedance",
+      "capabilities": [
+        "multi-shot",
+        "reference-binding",
+        "camera-grammar",
+        "dialogue-sequences"
+      ],
+      "knownRisks": [
+        "provider-version-variance",
+        "motion-fluidity"
+      ]
+    },
+    {
+      "id": "lora",
+      "capabilities": [
+        "trained-identity",
+        "trained-style",
+        "local-control"
+      ],
+      "knownRisks": [
+        "training-quality",
+        "workflow-complexity",
+        "temporal-consistency"
+      ]
+    },
+    {
+      "id": "avatar",
+      "capabilities": [
+        "presenter",
+        "translation",
+        "phoneme-alignment"
+      ],
+      "knownRisks": [
+        "staging-rigidity",
+        "limited-action"
+      ]
+    },
+    {
+      "id": "assembly",
+      "capabilities": [
+        "script-to-video",
+        "stock-assembly",
+        "social-export"
+      ],
+      "knownRisks": [
+        "generic-visual-language",
+        "weak-character-continuity"
+      ]
+    }
+  ]
+}

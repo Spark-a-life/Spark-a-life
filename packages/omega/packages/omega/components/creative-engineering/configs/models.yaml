@@ -1,0 +1,29 @@
+models:
+  muse_manual:
+    provider: meta
+    modality: [image, social]
+    execution_mode: manual_bridge
+    supports_references: true
+    supports_social_context: true
+    public_api_assumed: false
+  local_deterministic:
+    provider: local
+    modality: [text, audit]
+    execution_mode: deterministic
+    supports_references: false
+    supports_social_context: false
+    public_api_assumed: true
+  openai_image_manual:
+    provider: openai
+    modality: [image]
+    execution_mode: manual_or_external
+    supports_references: true
+    supports_social_context: false
+    public_api_assumed: false
+  flux_local_manual:
+    provider: local_or_hosted
+    modality: [image]
+    execution_mode: manual_or_external
+    supports_references: true
+    supports_social_context: false
+    public_api_assumed: false

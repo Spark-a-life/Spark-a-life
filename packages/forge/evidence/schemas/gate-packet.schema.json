@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wisegen.forge/schemas/gate-packet.schema.json",
+  "title": "GatePacket",
+  "description": "What a human reviewer receives at the Captain's Gate. The packet must answer, without further enquiry: what changed, why, by whom, on what model, through what tools, on what evidence, at what cost, and how to reverse it.",
+  "type": "object",
+  "required": ["id", "created_at", "ready_for_decision", "what_changed", "why", "evidence_passed", "evidence_failed", "cost", "reversal"],
+  "properties": {
+    "id": { "type": "string" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "ready_for_decision": { "type": "boolean", "description": "False whenever any blocking evidence failed. A packet that is not ready cannot be approved." },
+    "what_changed": { "type": "array", "items": { "type": "string" } },
+    "why": { "type": "string" },
+    "agents": { "type": "array", "items": { "type": "string" } },
+    "models": { "type": "array", "items": { "type": "object" } },
+    "tools_invoked": { "type": "array", "items": { "type": "string" } },
+    "evidence_passed": { "type": "array", "items": { "type": "string" } },
+    "evidence_failed": { "type": "array", "items": { "type": "string" } },
+    "residual_risks": { "type": "array", "items": { "type": "string" } },
+    "cost": { "type": "object", "description": "Metered spend by dimension. Currency defaults to SGD." },
+    "reversal": { "type": "string", "description": "The tested way back. An empty reversal blocks deployment." },
+    "branches": { "type": "array", "items": { "type": "object" }, "description": "Competing candidates, each separately costed and tested." },
+    "open_questions": { "type": "array", "items": { "type": "string" } }
+  }
+}

@@ -1,0 +1,6 @@
+node_modules/
+.DS_Store
+.env
+coverage/
+var/witness/*.jsonl
+!var/witness/.gitkeep

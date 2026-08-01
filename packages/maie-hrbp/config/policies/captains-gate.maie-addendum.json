@@ -1,0 +1,29 @@
+{
+  "addendum_id": "maie-hrbp-denials",
+  "addendum_version": "0.1.0",
+  "target_policy_version": "1.0",
+  "note": "Additional automatic denials for MAIE workforce work. Merge into the automatic_denials array of config/policies/captains-gate.json. These are action names: CaptainsGate denies any request whose `action` field matches.",
+  "automatic_denials_add": [
+    "individual_performance_inference",
+    "individual_employee_identification",
+    "unaggregated_er_case_ingestion",
+    "headcount_reduction_directive",
+    "coverage_recommendation_without_route_certification"
+  ],
+  "denial_rationale": {
+    "individual_performance_inference": "Deriving individual performance signal from demand or workload data converts an operating model diagnostic into an unreviewed appraisal instrument. The estate's human gate names performance decisions as non-delegable.",
+    "individual_employee_identification": "Re-identifying individuals from aggregated unit data defeats the aggregation control that keeps MAIE inside its confidential ceiling.",
+    "unaggregated_er_case_ingestion": "Employee relations case detail at individual level exceeds the MAIE data ceiling. Raising the ceiling is a deliberate governance decision, not a side effect of a convenient data feed.",
+    "headcount_reduction_directive": "The system may describe demand and recommend a coverage model. It may not issue an employment-reducing instruction. That decision belongs to an accountable human and, in Singapore, carries statutory and MOM notification consequences.",
+    "coverage_recommendation_without_route_certification": "A recommendation produced by an uncertified model route has no evidence trail behind its model selection, which breaks evidence-before-trust at the point where the output is most consequential."
+  },
+  "estate_gate_alignment": {
+    "estate": "MAIE",
+    "existing_human_gate": [
+      "employment-impacting recommendations",
+      "organisation-wide policy",
+      "performance or disciplinary decisions"
+    ],
+    "note": "These denials operationalise the estate's declared human gate. The gate names the categories; the denials name the actions that would breach them."
+  }
+}

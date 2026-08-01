@@ -1,0 +1,5 @@
+manager_id,manager_name,department,approves_onboarding,cost_centre
+M-071,Head of Engineering,Engineering,Yes,CC-ENG
+M-118,Head of Finance,Finance,Yes,CC-FIN
+M-204,Head of Operations,Operations,Yes,CC-OPS
+M-302,Head of People and Culture,People and Culture,Yes,CC-PPL

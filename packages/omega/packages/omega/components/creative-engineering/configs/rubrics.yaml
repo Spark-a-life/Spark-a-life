@@ -1,0 +1,12 @@
+rubric:
+  fidelity: 0.20
+  brand_fit: 0.15
+  audience_fit: 0.15
+  platform_readiness: 0.10
+  provenance_integrity: 0.15
+  safety: 0.15
+  accessibility: 0.10
+approval_thresholds:
+  approve: 0.82
+  revise: 0.60
+  block: 0.00

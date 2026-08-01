@@ -1,0 +1,9 @@
+layer: organisational
+version: 1.0.0
+owner: spark-a-life
+rules:
+  - id: data.restricted-masked-by-default
+    effect: require_approval
+    reason: "Restricted fields are masked unless the role holds an explicit need-to-know grant."
+    match:
+      action: capability:read_restricted_field

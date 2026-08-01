@@ -1,0 +1,125 @@
+{
+  "harness": {
+    "name": "WiseGen Model Routing Harness",
+    "version": "1.1.0",
+    "owner_estate": "GAIE",
+    "capability_id": "capability.evaluate.routing",
+    "witness_chain": "required"
+  },
+  "execution": {
+    "trials_per_payload": 5,
+    "concurrency": 4,
+    "request_timeout_ms": 60000,
+    "compliance_threshold": 0.98,
+    "latency_tiebreak_band": 0.10
+  },
+  "providers": {
+    "mock": {
+      "adapter": "mock",
+      "certifiable": false,
+      "note": "Scaffolding only. Evidence from this provider can never certify a route."
+    },
+    "anthropic": {
+      "adapter": "anthropic",
+      "base_url": "https://api.anthropic.com/v1/messages",
+      "api_key_env": "ANTHROPIC_API_KEY",
+      "certifiable": true
+    },
+    "openai": {
+      "adapter": "openai",
+      "base_url": "https://api.openai.com/v1/chat/completions",
+      "api_key_env": "OPENAI_API_KEY",
+      "certifiable": true
+    },
+    "xai": {
+      "adapter": "openai",
+      "base_url": "https://api.x.ai/v1/chat/completions",
+      "api_key_env": "XAI_API_KEY",
+      "certifiable": true
+    }
+  },
+  "models": {
+    "claude-sonnet": {
+      "provider": "anthropic",
+      "model_id": "claude-sonnet-4-6",
+      "structured_output": "forced_tool",
+      "price_per_mtok_in": null,
+      "price_per_mtok_out": null,
+      "price_note": "Set from the current Anthropic price list before certification runs."
+    },
+    "gpt-codex": {
+      "provider": "openai",
+      "model_id": "VERIFY-CURRENT-CODEX-MODEL-ID",
+      "structured_output": "json_schema",
+      "price_per_mtok_in": null,
+      "price_per_mtok_out": null,
+      "price_note": "Set model_id and pricing from the current OpenAI price list before certification runs."
+    },
+    "grok": {
+      "provider": "xai",
+      "model_id": "VERIFY-CURRENT-GROK-MODEL-ID",
+      "structured_output": "json_schema",
+      "price_per_mtok_in": null,
+      "price_per_mtok_out": null,
+      "price_note": "Set model_id and pricing from the current xAI price list before certification runs."
+    },
+    "mock-fast": {
+      "provider": "mock",
+      "model_id": "mock-fast",
+      "structured_output": "none",
+      "price_per_mtok_in": 1.0,
+      "price_per_mtok_out": 4.0
+    },
+    "mock-verbose": {
+      "provider": "mock",
+      "model_id": "mock-verbose",
+      "structured_output": "none",
+      "price_per_mtok_in": 3.0,
+      "price_per_mtok_out": 15.0
+    },
+    "mock-flaky": {
+      "provider": "mock",
+      "model_id": "mock-flaky",
+      "structured_output": "none",
+      "price_per_mtok_in": 0.5,
+      "price_per_mtok_out": 2.0
+    }
+  },
+  "task_classes": {
+    "extraction": {
+      "description": "Structured analysis and JSON extraction, e.g. MAIE HRBP demand scoring.",
+      "candidates": ["grok", "claude-sonnet", "gpt-codex"],
+      "mock_candidates": ["mock-fast", "mock-verbose", "mock-flaky"],
+      "primary_metric": "cost_per_validated_node",
+      "payload_set": "payloads/extraction-reference.json"
+    },
+    "interactive": {
+      "description": "Latency-sensitive conversational requests.",
+      "candidates": ["grok", "claude-sonnet", "gpt-codex"],
+      "mock_candidates": ["mock-fast", "mock-verbose", "mock-flaky"],
+      "primary_metric": "latency_p50",
+      "payload_set": "payloads/extraction-reference.json"
+    },
+    "build": {
+      "description": "Code generation against a Task Specification Card. Scored on test-pass rate by the Build Lifecycle Orchestrator, not by this harness.",
+      "candidates": ["claude-sonnet", "gpt-codex"],
+      "mock_candidates": [],
+      "primary_metric": "external_test_pass_rate",
+      "payload_set": null,
+      "status": "delegated",
+      "note": "This harness records build-lane routing intent only. Certification requires TSC test evidence from the Build Lifecycle Orchestrator."
+    }
+  },
+  "governance": {
+    "estate": "GAIE",
+    "risk_tier": "low",
+    "human_approval": false,
+    "witness_chain": true,
+    "automatic_denials": [
+      "certify_from_mock_evidence",
+      "certify_without_pricing_for_cost_metric",
+      "certify_below_minimum_trials"
+    ],
+    "minimum_trials_for_certification": 30
+  }
+}

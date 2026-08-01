@@ -1,0 +1,231 @@
+{
+  "version": "1.0.0",
+  "capabilities": [
+    {
+      "id": "notes.create",
+      "description": "Create a low-consequence demonstration note through an authorised HTTP interface.",
+      "adapter": "http-json",
+      "allowedRoles": [
+        "operator",
+        "administrator"
+      ],
+      "operations": {
+        "create": {
+          "method": "POST",
+          "path": "/api/notes",
+          "idempotent": true,
+          "maxRetries": 1,
+          "parameterAllowlist": [
+            "title",
+            "body"
+          ],
+          "postconditions": [
+            {
+              "type": "httpStatus",
+              "equals": 201
+            },
+            {
+              "type": "jsonPointerExists",
+              "pointer": "/id"
+            },
+            {
+              "type": "jsonPointerEqualsFromRequest",
+              "pointer": "/title",
+              "requestPath": "parameters.title"
+            }
+          ],
+          "parameterSchema": {
+            "type": "object",
+            "required": [
+              "title",
+              "body"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 5000
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "payments.transfer",
+      "description": "Submit a controlled demonstration payment instruction through an authorised HTTP interface.",
+      "adapter": "http-json",
+      "allowedRoles": [
+        "finance_operator",
+        "administrator"
+      ],
+      "operations": {
+        "submit": {
+          "method": "POST",
+          "path": "/api/transfers",
+          "idempotent": true,
+          "maxRetries": 0,
+          "parameterAllowlist": [
+            "amount",
+            "currency",
+            "beneficiary",
+            "purpose"
+          ],
+          "postconditions": [
+            {
+              "type": "httpStatus",
+              "equals": 201
+            },
+            {
+              "type": "jsonPointerEquals",
+              "pointer": "/status",
+              "equals": "ACCEPTED"
+            },
+            {
+              "type": "jsonPointerExists",
+              "pointer": "/transactionId"
+            }
+          ],
+          "parameterSchema": {
+            "type": "object",
+            "required": [
+              "amount",
+              "currency",
+              "beneficiary",
+              "purpose"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "amount": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 1000000
+              },
+              "currency": {
+                "type": "string",
+                "enum": [
+                  "SGD"
+                ]
+              },
+              "beneficiary": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "purpose": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 500
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "accounts.delete",
+      "description": "Destructive demonstration account operation that is denied by policy.",
+      "adapter": "http-json",
+      "allowedRoles": [
+        "administrator"
+      ],
+      "operations": {
+        "delete": {
+          "method": "DELETE",
+          "path": "/api/accounts/${parameters.accountId}",
+          "idempotent": false,
+          "maxRetries": 0,
+          "parameterAllowlist": [
+            "accountId"
+          ],
+          "postconditions": [],
+          "parameterSchema": {
+            "type": "object",
+            "required": [
+              "accountId"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "accountId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128,
+                "pattern": "^[A-Za-z0-9._-]+$"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "demo.browser-form",
+      "description": "Submit a local demonstration form through an isolated Chromium process using CDP over pipe.",
+      "adapter": "browser-cdp-pipe",
+      "allowedRoles": [
+        "operator",
+        "administrator"
+      ],
+      "operations": {
+        "submit": {
+          "idempotent": true,
+          "maxRetries": 1,
+          "parameterAllowlist": [
+            "name"
+          ],
+          "plan": [
+            {
+              "type": "setContentFile",
+              "filePath": "${BROWSER_DEMO_FILE}"
+            },
+            {
+              "type": "fill",
+              "selector": "#name",
+              "valueFrom": "parameters.name"
+            },
+            {
+              "type": "click",
+              "selector": "#submit"
+            }
+          ],
+          "observations": [
+            {
+              "name": "status",
+              "selector": "#status",
+              "property": "textContent"
+            }
+          ],
+          "postconditions": [
+            {
+              "type": "observationEqualsTemplate",
+              "observation": "status",
+              "template": "Submitted for ${parameters.name}"
+            }
+          ],
+          "allowedFilePrefixes": [
+            "${BROWSER_DEMO_ROOT}"
+          ],
+          "parameterSchema": {
+            "type": "object",
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

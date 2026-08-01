@@ -1,0 +1,41 @@
+mission:
+  id: sparkalife-linkedin-creative-001
+  objective: Create a social-first visual concept explaining Creative Engineering as governed AI-assisted creative production.
+  audience: C-suite leaders, SMEs, educators and policymakers
+  channel: LinkedIn and Instagram
+  industry: enterprise AI enablement
+brand:
+  name: Spark-a-life | APE Intelligence
+  voice: precise, warm, governance-first, practical
+  constraints:
+    - Use UK English where visible text is required.
+    - Avoid exaggerated claims about model capability.
+    - Do not imply Meta Muse has a public API.
+creative:
+  format: square social creative and vertical story concept
+  style: modern systems diagram blended with premium editorial visual language
+  message: Creativity becomes reliable when it is engineered through mission teams, governance, evaluation and human approval.
+  references:
+    - WiseGen MAMT architecture
+    - Creative Engineering lifecycle
+    - Captain's Gate governance pattern
+assets:
+  - id: brand-text-only
+    type: text
+    source: internally authored brand language
+    consent: owned
+    permitted_use: [prompting, social_concept, documentation]
+risk:
+  maximum_cost_usd: 8
+  maximum_tokens: 500000
+  maximum_runtime_seconds: 1500
+  maximum_external_calls: 20
+  maximum_retries: 5
+  maximum_consecutive_similar_actions: 3
+  human_approval_required: true
+output:
+  adapter: muse_manual
+  deliverables:
+    - Meta Muse manual prompt pack
+    - evaluation record
+    - witness-chain audit

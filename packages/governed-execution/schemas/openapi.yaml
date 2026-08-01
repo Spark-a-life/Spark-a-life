@@ -1,0 +1,65 @@
+openapi: 3.1.0
+info:
+  title: WiseGen APE Governed Execution Control API
+  version: 1.0.0
+  description: Local control API for policy-constrained and semantically verified enterprise actions.
+servers:
+  - url: http://127.0.0.1:8787
+paths:
+  /health:
+    get:
+      summary: Service health
+      responses:
+        '200':
+          description: Healthy
+  /v1/execute:
+    post:
+      summary: Execute or dispose a governed action
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./action-request.schema.json
+      responses:
+        '200': {description: Verified success}
+        '202': {description: Approval or step-up required}
+        '400': {description: Rejected request}
+        '403': {description: Policy blocked the action}
+        '409': {description: State uncertain}
+  /v1/approve:
+    post:
+      summary: Issue a token bound to an exact action
+      security:
+        - bearerAuth: []
+      responses:
+        '201': {description: Approval token issued}
+        '409': {description: Action does not require approval}
+  /v1/requests/{requestId}:
+    get:
+      summary: Read the latest durable execution state
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: requestId
+          required: true
+          schema: {type: string}
+      responses:
+        '200': {description: Execution state found}
+        '404': {description: Request state not found}
+  /v1/witness/verify:
+    get:
+      summary: Verify the Witness Chain
+      security:
+        - bearerAuth: []
+      responses:
+        '200': {description: Chain is valid}
+        '409': {description: Chain verification failed}
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

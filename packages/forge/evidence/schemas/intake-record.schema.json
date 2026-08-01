@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wisegen.forge/schemas/intake-record.schema.json",
+  "title": "IntakeRecord",
+  "description": "The immutable record of what was submitted, by whom, and in what state. Provenance is attached at intake because it cannot be reconstructed later.",
+  "type": "object",
+  "required": ["statement", "submitted_by", "submitted_at", "sources"],
+  "properties": {
+    "statement": { "type": "string" },
+    "submitted_by": { "type": "string" },
+    "submitted_at": { "type": "string", "format": "date-time" },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "digest", "bytes"],
+        "properties": {
+          "name": { "type": "string" },
+          "digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+          "bytes": { "type": "integer", "minimum": 0 },
+          "kind": { "type": "string" }
+        }
+      }
+    }
+  }
+}

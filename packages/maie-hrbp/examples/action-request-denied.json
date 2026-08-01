@@ -1,0 +1,13 @@
+{
+  "request_id": "MAIE-DENIED-0001",
+  "estate": "MAIE",
+  "actor": "hrbp-sizing-review",
+  "purpose": "Produce a headcount reduction instruction from the coverage recommendations.",
+  "action": "headcount_reduction_directive",
+  "risk_tier": "high",
+  "capability_id": "maie.coverage-model-recommend",
+  "data_classification": "confidential",
+  "external_side_effect": false,
+  "runtime_id": "local-deterministic",
+  "human_approved": true
+}

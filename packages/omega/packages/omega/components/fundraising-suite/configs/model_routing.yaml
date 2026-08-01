@@ -1,0 +1,40 @@
+models:
+  local_deterministic:
+    provider: local
+    class: deterministic
+    modality: [text, audit, structured]
+    execution_mode: deterministic
+    default_for_sensitive: true
+    public_api_assumed: true
+  manual_bridge:
+    provider: operator_controlled
+    class: manual_bridge
+    modality: [web, email_draft, social_draft, data_room]
+    execution_mode: manual_review
+    default_for_sensitive: false
+    public_api_assumed: false
+  high_reasoning:
+    provider: approved_cloud_or_local
+    class: high_reasoning
+    modality: [strategy, compliance, finance]
+    execution_mode: routed
+    default_for_sensitive: false
+    public_api_assumed: false
+  fast_drafting:
+    provider: approved_cloud_or_local
+    class: fast_drafting
+    modality: [email, linkedin, memo_formatting]
+    execution_mode: routed
+    default_for_sensitive: false
+    public_api_assumed: false
+routing_rules:
+  strategy: high_reasoning
+  sourcing: retrieval_synthesis
+  enrichment: high_reasoning
+  narrative: fast_drafting
+  compliance: high_reasoning
+  finance: high_reasoning
+  evidence: local_deterministic
+  tracker: local_deterministic
+  creative: fast_drafting
+  audit: local_deterministic

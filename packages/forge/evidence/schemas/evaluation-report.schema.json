@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wisegen.forge/schemas/evaluation-report.schema.json",
+  "title": "EvaluationReport",
+  "description": "The acceptance contract for one run. Completion is evidentiary: a blocking gate failure keeps the gate packet from becoming ready, regardless of what any agent reports.",
+  "type": "object",
+  "required": ["passed", "gates_run", "gates_failed", "blocking_failures", "results"],
+  "properties": {
+    "passed": { "type": "boolean" },
+    "gates_run": { "type": "integer", "minimum": 1 },
+    "gates_failed": { "type": "integer", "minimum": 0 },
+    "blocking_failures": { "type": "array", "items": { "type": "string" } },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["gate", "passed", "blocking", "detail"],
+        "properties": {
+          "gate": { "type": "string" },
+          "passed": { "type": "boolean" },
+          "blocking": { "type": "boolean" },
+          "detail": { "type": "string" },
+          "evidence": { "type": "object" }
+        }
+      }
+    }
+  }
+}

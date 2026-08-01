@@ -1,0 +1,59 @@
+{
+  "name": "@spark-a-life/ape-governed-execution",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Local-first governed execution control plane reference implementation for enterprise AI agents.",
+  "type": "module",
+  "exports": {
+    ".": "./src/runtime.js",
+    "./cli": "./src/cli.js",
+    "./server": "./src/server.js"
+  },
+  "bin": {
+    "wisegen-exec": "src/cli.js"
+  },
+  "files": [
+    "src/",
+    "examples/",
+    "var/",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
+    "SECURITY.md",
+    "VALIDATION_REPORT.md"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "demo": "node src/cli.js demo",
+    "serve": "node src/cli.js serve",
+    "run": "node src/cli.js run",
+    "approve": "node src/cli.js approve",
+    "verify:witness": "node src/cli.js verify-witness",
+    "test": "node --test --test-reporter=spec test/*.test.js",
+    "test:browser": "RUN_BROWSER_TESTS=1 node --test --test-reporter=spec test/browser-adapter.test.js",
+    "lint": "node scripts/lint.js",
+    "check": "npm run lint && npm test",
+    "keygen": "node scripts/keygen.js",
+    "clean": "node scripts/clean.js"
+  },
+  "keywords": [
+    "ai-governance",
+    "agentic-ai",
+    "control-plane",
+    "audit",
+    "cdp",
+    "enterprise-ai",
+    "local-first",
+    "witness-chain",
+    "captains-gate"
+  ],
+  "author": "Spark-a-life | APE Intelligence",
+  "license": "MIT",
+  "homepage": "https://github.com/Spark-a-life/Spark-a-life",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Spark-a-life/Spark-a-life/tree/main/packages/governed-execution"
+  }
+}

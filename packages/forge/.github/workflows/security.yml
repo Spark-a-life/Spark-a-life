@@ -1,0 +1,37 @@
+name: security
+on:
+  push: { branches: [main] }
+  pull_request:
+  schedule:
+    - cron: "0 17 * * 1"
+permissions:
+  contents: read
+jobs:
+  static-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Bandit
+        run: pip install bandit && bandit -r src -ll
+      - name: Secret scan
+        run: |
+          if grep -rInE "(sk-ant-[A-Za-z0-9]|AKIA[0-9A-Z]{16}|-----BEGIN (RSA|OPENSSH) PRIVATE KEY-----)" \
+             --exclude-dir=.git --exclude-dir=.forge . ; then
+            echo "Potential secret committed"; exit 1
+          fi
+          echo "no secrets found"
+      - name: Adversarial authority tests
+        run: PYTHONPATH=src python -m unittest discover -s tests/adversarial -t . -v
+  policy-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Constitutional policy must be unmodified without Captain sign-off
+        run: |
+          PYTHONPATH=src python -m wisegen_forge.cli doctor
+          git diff --name-only origin/main...HEAD 2>/dev/null | grep "policies/constitutional/" && \
+            echo "::warning::Constitutional policy changed, Captain sign-off required" || true

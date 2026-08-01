@@ -1,0 +1,9 @@
+layer: organisational
+version: 1.0.0
+owner: spark-a-life
+rules:
+  - id: retention.evidence-seven-years
+    effect: allow
+    reason: "Evidence, approvals and provenance are retained for seven years unless the customer specifies longer."
+    match:
+      action: capability:retain_evidence

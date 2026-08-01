@@ -1,0 +1,17 @@
+{
+  "requestId": "request_transfer_0002",
+  "actor": {
+    "id": "finance.morgan",
+    "roles": ["finance_operator"]
+  },
+  "capabilityId": "payments.transfer",
+  "operation": "submit",
+  "targetBaseUrl": "http://127.0.0.1:8899",
+  "parameters": {
+    "amount": 75000,
+    "currency": "SGD",
+    "beneficiary": "Demonstration Vendor",
+    "purpose": "This request must be blocked by policy"
+  },
+  "idempotencyKey": "idem_transfer_0002"
+}

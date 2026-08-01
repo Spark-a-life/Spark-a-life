@@ -1,0 +1,23 @@
+# Resource governance. An agent may not consume unlimited resource merely
+# because it is still technically active. Default currency is SGD.
+layer: organisational
+version: 1.0.0
+owner: spark-a-life
+currency: SGD
+project_defaults:
+  tokens: 250000
+  tool_calls: 400
+  seconds: 900
+  sgd: 25.0
+  escalate_at: 0.8
+actor_overrides:
+  gaie.backend-engineer:
+    sgd: 12.0
+  kaie.assurance-engineer:
+    sgd: 6.0
+rules:
+  - id: cost.escalate-before-halt
+    effect: require_approval
+    reason: "Crossing 80 percent of any budget dimension raises an escalation to the Captain before the hard cap halts execution."
+    match:
+      action: capability:extend_budget

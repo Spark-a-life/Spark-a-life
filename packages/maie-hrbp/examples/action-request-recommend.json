@@ -1,0 +1,20 @@
+{
+  "request_id": "MAIE-RECOMMEND-0001",
+  "estate": "MAIE",
+  "actor": "hrbp-sizing-review",
+  "purpose": "Recommend coverage models across the twelve-unit portfolio for the Q3 review.",
+  "action": "coverage_model_recommend",
+  "risk_tier": "high",
+  "capability_id": "maie.coverage-model-recommend",
+  "data_classification": "confidential",
+  "external_side_effect": false,
+  "runtime_id": "local-deterministic",
+  "human_approved": true,
+  "approval_reference": "HRD-2026-Q3-015",
+  "second_review_reference": "CHRO-2026-Q3-003",
+  "route_certification": {
+    "harness": "capability.evaluate.routing",
+    "task_class": "extraction",
+    "witness_index": 12
+  }
+}

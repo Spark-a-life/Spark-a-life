@@ -1,0 +1,10 @@
+{
+  "lanes": [
+    {"name": "Professor", "purpose": "Evidence quality, conceptual rigour, research grounding"},
+    {"name": "General", "purpose": "Execution feasibility, cadence, operating constraints"},
+    {"name": "CEO-Shadow", "purpose": "Commercial viability, strategic fit, business pathway"},
+    {"name": "Chief Librarian", "purpose": "Provenance, traceability, documentation discipline"},
+    {"name": "Red Team", "purpose": "Adversarial review, gaming risk, misuse, failure modes"},
+    {"name": "Captain", "purpose": "Decision authority and accountable synthesis"}
+  ]
+}

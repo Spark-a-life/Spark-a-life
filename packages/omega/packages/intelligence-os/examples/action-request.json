@@ -1,0 +1,14 @@
+{
+  "request_id": "example-taie-001",
+  "estate": "TAIE",
+  "actor": "authorised-analyst",
+  "purpose": "Verify a public strategic claim",
+  "action": "internal_assessment",
+  "risk_tier": "medium",
+  "capability_id": "research.source-verification",
+  "data_classification": "public",
+  "external_side_effect": false,
+  "human_approved": true,
+  "approval_reference": "owner-review-001",
+  "runtime_id": "local-deterministic"
+}

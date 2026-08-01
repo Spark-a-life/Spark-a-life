@@ -1,0 +1,71 @@
+roles:
+  captain_strategist:
+    purpose: Owns mission intent, target funding thesis, prioritisation, escalation and final decision logic.
+    allowed_tools: [mission_reader, strategy_planner, approval_gate, witness_chain]
+    approval_threshold: high
+    mission_scope: strategy and authority
+  prospect_researcher_sourcer:
+    purpose: Finds and qualifies funders, donors, investors, grant bodies, partners and strategic leads.
+    allowed_tools: [prospect_registry, source_capture, web_research_manual]
+    approval_threshold: medium
+    mission_scope: sourcing
+  enricher_intelligence_analyst:
+    purpose: Adds fit intelligence, priorities, relationship context, eligibility, past grants and decision-maker signals.
+    allowed_tools: [prospect_registry, evidence_register, scoring_engine]
+    approval_threshold: medium
+    mission_scope: enrichment
+  narrative_architect:
+    purpose: Converts mission, evidence, impact and organisational strengths into audience-fit fundraising language.
+    allowed_tools: [narrative_builder, evidence_register, creative_pack]
+    approval_threshold: medium
+    mission_scope: narrative
+  memo_writer:
+    purpose: Produces funder briefs, internal memos, board notes and proposal outlines.
+    allowed_tools: [memo_builder, evidence_register]
+    approval_threshold: medium
+    mission_scope: synthesis
+  financial_analyst:
+    purpose: Reviews budget, funding gap, use of funds, unit logic, sustainability and feasibility.
+    allowed_tools: [budget_checker, risk_register]
+    approval_threshold: high
+    mission_scope: financial logic
+  compliance_reviewer:
+    purpose: Checks eligibility, claims, privacy, restricted use, funder requirements and submission constraints.
+    allowed_tools: [claim_checker, safeguard_rules, approval_gate]
+    approval_threshold: high
+    mission_scope: compliance
+  outreach_drafter:
+    purpose: Drafts emails, LinkedIn messages, call scripts, reply variants and follow-up sequences.
+    allowed_tools: [outreach_builder, creative_pack, evidence_register]
+    approval_threshold: high
+    mission_scope: external communication
+  data_room_curator:
+    purpose: Organises pitch decks, budgets, impact evidence, policies, case studies and due diligence packs.
+    allowed_tools: [data_room_manifest, evidence_register]
+    approval_threshold: high
+    mission_scope: evidence operations
+  tracker_crm_steward:
+    purpose: Maintains pipeline status, next actions, deadlines, stage movement, contact history and owner accountability.
+    allowed_tools: [pipeline_tracker]
+    approval_threshold: medium
+    mission_scope: operations
+  creative_director:
+    purpose: Produces campaign creative direction, channel concepts, social copy and visual prompt packs within evidence boundaries.
+    allowed_tools: [creative_pack, narrative_builder, brand_rules]
+    approval_threshold: medium
+    mission_scope: creative engineering
+  safeguard_governor:
+    purpose: Enforces risk budgets, data-egress boundaries, consent checks, circuit breaker states and escalation rules.
+    allowed_tools: [runtime_governor, circuit_breaker, claim_checker, credential_broker]
+    approval_threshold: high
+    mission_scope: safeguards
+  evidence_librarian:
+    purpose: Maintains source integrity, claim mapping, data-room evidence and witness-chain traceability.
+    allowed_tools: [evidence_register, source_capture, witness_chain]
+    approval_threshold: high
+    mission_scope: evidence integrity
+  qa_evaluator:
+    purpose: Scores outputs against fundraising, safeguard, creative and implementation rubrics before Captain Gate.
+    allowed_tools: [rubric_evaluator, approval_gate]
+    approval_threshold: medium
+    mission_scope: evaluation

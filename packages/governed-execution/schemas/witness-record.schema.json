@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wisegen.local/schemas/witness-record.schema.json",
+  "title": "Witness Chain Record",
+  "type": "object",
+  "required": ["recordId", "sequence", "previousHash", "recordHash", "signature", "eventType", "occurredAt", "recordedAt", "payload"],
+  "properties": {
+    "recordId": {"type": "string"},
+    "sequence": {"type": "integer", "minimum": 1},
+    "previousHash": {"type": ["string", "null"]},
+    "recordHash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "signature": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "eventType": {"type": "string"},
+    "occurredAt": {"type": "string", "format": "date-time"},
+    "recordedAt": {"type": "string", "format": "date-time"},
+    "payload": {"type": "object"}
+  },
+  "additionalProperties": false
+}

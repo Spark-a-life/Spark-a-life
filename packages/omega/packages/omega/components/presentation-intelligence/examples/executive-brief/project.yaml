@@ -1,0 +1,50 @@
+project:
+  id: executive-brief
+  title: Governed Presentation Intelligence Pilot
+  owner: Sparkalife APE Intelligence
+
+intent:
+  decision: Approve a controlled pilot of the WiseGen Presentation Intelligence Playbook.
+  purpose: Demonstrate a repeatable route from intent and evidence to a governed executive artefact.
+  success_criteria:
+    - Produce a complete executive brief.
+    - Preserve source provenance.
+    - Meet the configured release quality threshold.
+    - Require human approval before release.
+  constraints:
+    - Local-first execution.
+    - No external API dependency for the reference run.
+  risks:
+    - Visually polished outputs may be mistaken for validated truth.
+    - Incomplete evidence may produce incomplete recommendations.
+
+audience:
+  primary: Executive sponsor
+  secondary:
+    - Programme owner
+    - Governance reviewer
+  knowledge_level: mixed
+  desired_action: Approve a scoped pilot and nominate an accountable reviewer.
+  tone: Concise, evidence-led and decision-oriented.
+
+evidence:
+  - id: E1
+    type: fact
+    title: Modular workflow
+    content: The workflow separates intent, evidence, reasoning, composition, verification and governance.
+    confidence: 1.0
+  - id: E2
+    type: fact
+    title: Deterministic local adapter
+    content: The reference implementation runs without external network calls.
+    confidence: 1.0
+  - id: E3
+    type: assumption
+    title: Pilot suitability
+    content: A controlled pilot is the most proportionate route to organisational adoption.
+    confidence: 0.7
+
+workflow:
+  template: executive-brief-v1
+  release_threshold: 0.8
+  require_human_approval: true

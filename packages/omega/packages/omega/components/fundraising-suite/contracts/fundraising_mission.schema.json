@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WiseGen MAMT Fundraising Mission Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["mission", "organisation", "governance", "fundraising", "prospects", "evidence", "claims", "risk", "output"],
+  "properties": {
+    "mission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "objective", "programme_summary", "funding_goal", "currency", "audience", "region"],
+      "properties": {
+        "id": {"type": "string", "minLength": 3, "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]*$"},
+        "objective": {"type": "string", "minLength": 10},
+        "programme_summary": {"type": "string", "minLength": 20},
+        "funding_goal": {"type": "number", "minimum": 1},
+        "currency": {"type": "string", "minLength": 3, "maxLength": 3},
+        "audience": {"type": "string", "minLength": 3},
+        "region": {"type": "string", "minLength": 2},
+        "timeframe": {"type": "string"}
+      }
+    },
+    "organisation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "voice", "constraints"],
+      "properties": {
+        "name": {"type": "string", "minLength": 2},
+        "voice": {"type": "string", "minLength": 5},
+        "constraints": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 3}}
+      }
+    },
+    "governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["jurisdiction", "fundraising_mode", "public_appeal", "foreign_charitable_purpose", "personal_data_used", "vulnerable_audience", "egress_channels", "donor_acceptance_policy", "required_approvals"],
+      "properties": {
+        "jurisdiction": {"type": "string", "minLength": 2},
+        "fundraising_mode": {"type": "string", "enum": ["charitable", "philanthropic", "grant", "investor", "corporate_sponsorship", "internal"]},
+        "public_appeal": {"type": "boolean"},
+        "foreign_charitable_purpose": {"type": "boolean"},
+        "personal_data_used": {"type": "boolean"},
+        "vulnerable_audience": {"type": "boolean"},
+        "egress_channels": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "enum": ["email", "linkedin", "deck", "data_room", "crm", "board_pack", "internal_memo"]}},
+        "donor_acceptance_policy": {"type": "string", "minLength": 10},
+        "required_approvals": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "enum": ["captain", "compliance", "finance", "data_room", "legal", "board"]}},
+        "disclosure_requirements": {"type": "array", "items": {"type": "string", "minLength": 3}},
+        "restricted_terms": {"type": "array", "items": {"type": "string", "minLength": 3}}
+      }
+    },
+    "fundraising": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["segments", "minimum_fit_score", "use_of_funds"],
+      "properties": {
+        "segments": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 2}},
+        "minimum_fit_score": {"type": "number", "minimum": 0, "maximum": 1},
+        "use_of_funds": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 3}}
+      }
+    },
+    "prospects": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "type", "region", "focus_areas", "eligibility_notes", "estimated_amount", "source"],
+        "properties": {
+          "name": {"type": "string", "minLength": 2},
+          "type": {"type": "string", "minLength": 2},
+          "region": {"type": "string", "minLength": 2},
+          "focus_areas": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 2}},
+          "giving_history": {"type": "string"},
+          "relationship_signal": {"type": "string"},
+          "eligibility_notes": {"type": "string", "minLength": 3},
+          "restrictions": {"type": "array", "items": {"type": "string", "minLength": 3}},
+          "estimated_amount": {"type": "number", "minimum": 0},
+          "source": {"type": "string", "minLength": 3}
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "title", "source", "kind", "confidence", "permitted_use"],
+        "properties": {
+          "id": {"type": "string", "minLength": 2, "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]*$"},
+          "title": {"type": "string", "minLength": 3},
+          "source": {"type": "string", "minLength": 3},
+          "kind": {"type": "string", "minLength": 3},
+          "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
+          "permitted_use": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 3}}
+        }
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["text", "evidence_ids", "external_use"],
+        "properties": {
+          "text": {"type": "string", "minLength": 5},
+          "evidence_ids": {"type": "array", "items": {"type": "string", "minLength": 2}},
+          "external_use": {"type": "boolean"}
+        }
+      }
+    },
+    "risk": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["maximum_cost_usd", "maximum_tokens", "maximum_runtime_seconds", "maximum_external_calls", "maximum_retries", "human_approval_required"],
+      "properties": {
+        "maximum_cost_usd": {"type": "number", "minimum": 0},
+        "maximum_tokens": {"type": "integer", "minimum": 1},
+        "maximum_runtime_seconds": {"type": "integer", "minimum": 1},
+        "maximum_external_calls": {"type": "integer", "minimum": 0},
+        "maximum_retries": {"type": "integer", "minimum": 0},
+        "maximum_consecutive_similar_actions": {"type": "integer", "minimum": 1},
+        "maximum_destructive_tools": {"type": "integer", "minimum": 0},
+        "human_approval_required": {"type": "boolean"}
+      }
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["adapter", "deliverables"],
+      "properties": {
+        "adapter": {"type": "string", "enum": ["local_deterministic", "manual_bridge"]},
+        "deliverables": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 3}}
+      }
+    }
+  }
+}

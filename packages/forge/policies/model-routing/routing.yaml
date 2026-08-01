@@ -1,0 +1,12 @@
+# Models are replaceable execution resources. Routing is by capability class,
+# risk tier, cost ceiling and availability, in that order.
+version: 1.0.0
+prefer_local: true
+default_capability: reasoning
+sgd_ceiling_per_task: 2.0
+rules:
+  - id: routing.critical-risk-local-first
+    effect: allow
+    reason: "Critical-risk work prefers a local or deterministic adapter unless the Captain approves otherwise."
+    match:
+      action: capability:model_selection

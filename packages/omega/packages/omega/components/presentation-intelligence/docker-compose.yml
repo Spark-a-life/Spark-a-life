@@ -1,0 +1,6 @@
+services:
+  wisegen-pip:
+    build: .
+    volumes:
+      - ./build:/app/build
+    command: ["run", "examples/executive-brief/project.yaml"]

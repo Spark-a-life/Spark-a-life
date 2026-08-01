@@ -1,0 +1,25 @@
+# Project layer. Narrowest scope, may restrict further but never widen.
+layer: project
+version: 1.0.0
+owner: captain
+rules:
+  - id: project.generation.permitted
+    effect: allow
+    reason: "Generation capabilities permitted for this engagement."
+    match:
+      actor: [gaie.data-engineer, gaie.backend-engineer, gaie.frontend-engineer, gaie.intent-compiler, kaie.architect]
+      action: [capability:generate_schema, capability:generate_application, capability:generate_tests, capability:generate_interface, capability:compile_intent, capability:compile_dataset, capability:design_architecture, capability:threat_model]
+
+  - id: project.assurance.permitted
+    effect: allow
+    reason: "Verification, security review and packaging permitted for this engagement."
+    match:
+      actor: [kaie.assurance-engineer, kaie.security-auditor, gaie.adversary, paie.release-engineer, saie.librarian, taie.solution-lead, paie.operator]
+      action: [capability:verify_candidate, capability:evaluate, capability:security_review, capability:adversarial_review, capability:package_release, capability:prepare_manifest, capability:record_learning, capability:promote_template, capability:package_handover, capability:attest_portability, capability:observe_runtime, capability:halt_execution]
+
+  - id: project.captain.decides
+    effect: allow
+    reason: "The Captain holds decision authority for this engagement."
+    match:
+      actor: kaie.captain
+      action: [capability:approve_release, capability:select_branch, capability:combine_branches, capability:reject, capability:escalate]

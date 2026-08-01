@@ -1,0 +1,16 @@
+{
+  "objective": "Evaluate candidate AI video concepts before production release.",
+  "initiator": "Spark-a-life | APE Intelligence",
+  "decision_authority": "Captain",
+  "constraints": ["No misleading brand implication", "Fit-for-purpose production quality", "Factual claims must be defensible"],
+  "assumptions": ["Evaluation before rendering reduces waste", "Brand risk can outweigh visual appeal"],
+  "hypotheses": ["A clear narrative with moderate visuals may outperform visually impressive but confusing content"],
+  "evidence": [
+    {"id": "ev1", "source": "Creative brief", "claim": "The video must explain agentic industrial branding to non-technical executives.", "reliability": 0.9, "relevance": 0.95},
+    {"id": "ev2", "source": "Brand constraint", "claim": "Avoid implying endorsement by brands not formally involved.", "reliability": 0.95, "relevance": 0.92}
+  ],
+  "options": [
+    {"id": "vid1", "name": "Precision Choreography", "description": "Human movement metaphor for silent engineering.", "features": {"narrative_clarity": 0.78, "visual_coherence": 0.84, "brand_fit": 0.80, "factuality": 0.86, "emotional_effect": 0.72, "accessibility": 0.70, "reputational_risk": 0.24, "production_efficiency": 0.76}, "evidence_ids": ["ev1", "ev2"]},
+    {"id": "vid2", "name": "Futuristic Factory Dream", "description": "Cinematic AI factory with dramatic lighting.", "features": {"narrative_clarity": 0.58, "visual_coherence": 0.90, "brand_fit": 0.62, "factuality": 0.60, "emotional_effect": 0.84, "accessibility": 0.56, "reputational_risk": 0.48, "production_efficiency": 0.64}, "evidence_ids": ["ev1"]}
+  ]
+}

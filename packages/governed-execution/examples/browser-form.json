@@ -1,0 +1,13 @@
+{
+  "requestId": "request_browser_0001",
+  "actor": {
+    "id": "operator.alex",
+    "roles": ["operator"]
+  },
+  "capabilityId": "demo.browser-form",
+  "operation": "submit",
+  "parameters": {
+    "name": "WiseGen APE Intelligence"
+  },
+  "idempotencyKey": "idem_browser_0001"
+}

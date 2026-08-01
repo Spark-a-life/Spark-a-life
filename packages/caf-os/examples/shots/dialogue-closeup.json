@@ -1,0 +1,20 @@
+{
+  "id": "SC01-SH03",
+  "sceneId": "SC01",
+  "description": "Restrained dialogue close-up with a slow push-in",
+  "characterCount": 1,
+  "identityScope": "scene",
+  "poseRotation": "low",
+  "dialogue": "high",
+  "cameraComplexity": "low",
+  "motionComplexity": "low",
+  "occlusion": "none",
+  "realismPriority": "high",
+  "styleControl": "medium",
+  "durationSeconds": 8,
+  "audioFirst": true,
+  "requiresLipSync": true,
+  "multiShot": false,
+  "budgetPriority": "medium",
+  "latencyPriority": "medium"
+}

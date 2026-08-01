@@ -1,0 +1,9 @@
+{
+  "risk_levels": {
+    "low": "Can proceed if logged and reversible.",
+    "medium": "Requires explicit Captain review before execution.",
+    "high": "Requires human approval, mitigation plan, and retrospective review."
+  },
+  "high_impact_domains": ["employment", "healthcare", "finance", "education", "legal", "public_sector"],
+  "default_gate_threshold": 0.34
+}
