@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 authors = [{ name = "Dr William Siew" }]
 keywords = ["ai-governance", "multi-agent", "application-factory", "captains-gate", "witness-chain"]
-license = {text = "MIT"}
+license = {text = "Proprietary"}
 classifiers = [
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3.10",
