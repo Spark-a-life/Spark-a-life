@@ -13,9 +13,9 @@ A labelled design and governance snapshot for private use. Integrity of the orig
 
 ### Provenance of `governance/AIOS_v1.2.md`
 
-The original uploaded file `AIOS v1.2.md` (1,886 lines, 63,543 bytes) was read in full during the publish-readiness review. It was not present on the repository agent VM used to create this branch (uploads were not copied across). The file in this tree is therefore a control-complete reconstruction from that review: quoted passages, the §27 / §30 / §31 field lists, the 16-step protocol map, and the packaged v1.1 kernel fragments, including the exact recovered §21–§23 text. It is canonical for derived files in this snapshot. If the Human Captain still holds the original 63,543-byte document, replace `governance/AIOS_v1.2.md` with that file (filename only may change) and re-check derived extracts against it.
+`governance/AIOS_v1.2.md` is the original uploaded `AIOS v1.2.md` (1,886 lines, 63,543 bytes, UTF-8, LF). It is the canonical specification for this snapshot. `governance/EXTERNAL_ACTION_PROTOCOL.md` is a generated extract of §26 and must not diverge from it.
 
-`archive/superseded/AIOS_v1.1.md` likewise reconstructs the packaged 1.1 kernel. Sections 21–23 match the recovered original tail exactly. Sections 1–20 are reconstructed from the review description of that kernel.
+`archive/superseded/AIOS_v1.1.md` is a reconstructed stand-in for the packaged 969-line v1.1 kernel from the original zip/bundle. The original 24,042-byte file was not available on this VM at archive time. Do not treat the archive copy as byte-identical to the zip.
 
 ## What is implemented here
 

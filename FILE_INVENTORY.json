@@ -13,7 +13,7 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "3b8497bf8ec32a667113179014e2931f3a424400127863a341900cb557fb665e"
+      "sha256": "7fbd6a7942729ce49e31632144c922e96fd2e2a390fc483e8bfd5f455826a217"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -25,7 +25,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "0cc245081025014c8a78bd28b03fce68440f1c12869ec14da779de4e0200d5f6"
+      "sha256": "473f2730aafd36efcd720218eb59c79b7aadbad7c5d3b00abd16dad1c78c4d41"
     },
     {
       "path": "SECURITY.md",
@@ -145,7 +145,7 @@
     },
     {
       "path": "governance/AIOS_v1.2.md",
-      "sha256": "abf787675399c38e3ab1ec7cbc15e645f148bff1b680b1191b118deafc3e2d4f"
+      "sha256": "d9217a0c79b039c7a37e8ef811aae03a01b867452add548a2f2ece5b1aca124f"
     },
     {
       "path": "governance/EVIDENCE_GOVERNANCE_AND_WITNESS_CHAIN.md",
@@ -153,7 +153,7 @@
     },
     {
       "path": "governance/EXTERNAL_ACTION_PROTOCOL.md",
-      "sha256": "70e922cf6bc35961ccc85181c2a55544fe9ae5a0981439d4750462b32cdbcc17"
+      "sha256": "d86a6efcac7a324ad7b292a92a4fa8f82502fd0499e3a6bfdee0e12f7dbefd79"
     },
     {
       "path": "governance/OUTPUT_SCHEMAS_AND_DECISION_REGISTERS.md",

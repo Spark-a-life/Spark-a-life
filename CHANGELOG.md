@@ -6,7 +6,7 @@
 Docs-only governance snapshot. Not a runtime. Not a complete product. Not approved for production external execution. Markdown files under `tests/` are acceptance specifications, not a passing regression suite. The OpenAPI file is a draft non-production schema and is non-functional until implemented.
 
 ### Added
-- Canonical specification `governance/AIOS_v1.2.md` (control-complete reconstruction of the review-time `AIOS v1.2.md`; replace with the original 63,543-byte file if still held).
+- Canonical specification `governance/AIOS_v1.2.md` (original `AIOS v1.2.md`: 1,886 lines, 63,543 bytes).
 - Sixteen-step External Action Protocol generated from v1.2 §26.
 - Prohibited action class, Layer 0, immutable `proposal_digest`, externally verifiable approval fields, and three-way reconciliation in derived docs and schemas.
 - Sanitised fictional examples under `actions/examples/`.
