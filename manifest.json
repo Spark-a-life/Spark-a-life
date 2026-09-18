@@ -1,0 +1,19 @@
+{
+  "package": "AIOS Governed Opportunity Intelligence",
+  "version": "1.2.0-alpha",
+  "date": "2026-09-18",
+  "status": "alpha",
+  "production_external_execution": false,
+  "canonical_protocols": [
+    "governance/AIOS_v1.2.md",
+    "governance/EXTERNAL_ACTION_PROTOCOL.md",
+    "governance/EVIDENCE_GOVERNANCE_AND_WITNESS_CHAIN.md",
+    "governance/OUTPUT_SCHEMAS_AND_DECISION_REGISTERS.md"
+  ],
+  "notes": [
+    "Docs-only governance snapshot. Not a runtime.",
+    "governance/AIOS_v1.2.md is canonical. EXTERNAL_ACTION_PROTOCOL.md is generated from §26 and must not diverge.",
+    "production_external_execution is false. Do not enable consequential external execution.",
+    "Personal and opportunity-specific confidential corpora are excluded by default."
+  ]
+}

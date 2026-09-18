@@ -1,0 +1,183 @@
+{
+  "version": "1.2.0-alpha",
+  "generated": "2026-09-18",
+  "note": "sha256 of every tracked file except this inventory",
+  "files": [
+    {
+      "path": ".env.example",
+      "sha256": "7087f38234ed46f41bcb430be7e44d2c22861dc860d135f175e6f482445550fa"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "38da3431074f09290a5edc4ea6f08cccf6905ee566c26079f3a20d135644583c"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "a9575ff813216973b23b3a2211211692e5983d06c14109deb74e0a30765b91d2"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "04837f359c13d92e90ffe7423fd5e981b9cc52c2fe73d4b9e56daa17879541af"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "7ff25b171cd6982dbf172d53bb34663ca8a04dfc7c7cc12b6ee78816228e179c"
+    },
+    {
+      "path": "README.md",
+      "sha256": "18e4a28990d282dd4e6eb4b3fe4b0493b6e82d07cb1535cd9cffa77bc9fa4237"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "33d1490667bfecc8cf673167b59efe7e667cb9940f55effbee068eb9e05ae955"
+    },
+    {
+      "path": "VERSION",
+      "sha256": "fbc2897834739c17c8943e64c21d2dab95c396eab816eb64aa0c84999bc7d7db"
+    },
+    {
+      "path": "actions/examples/amber-proposal.json",
+      "sha256": "8037c839c4c0799f598fe264ca5c8832b99fb5825b48dc1a703ce0bc6f81ea4a"
+    },
+    {
+      "path": "actions/examples/green-preflight.json",
+      "sha256": "34cef816f4e623428c03b92f16befd2919924ea75e57e94c58ba80c920106d62"
+    },
+    {
+      "path": "actions/examples/prohibited-proposal.json",
+      "sha256": "99f8bc9d3bf57e1ca367add8557ebdc70d00c3ab54f950876f7d579347a2377c"
+    },
+    {
+      "path": "actions/examples/prohibited-rejection.json",
+      "sha256": "d64ae59bf54203739ba00c9ae70d439303dacb003edb251146360804648d014d"
+    },
+    {
+      "path": "actions/examples/receipt-technical-success-business-pending.json",
+      "sha256": "84d0a4481c555f9056e886a647e8624e86a4a53e29c2c3083861638c3b16cfca"
+    },
+    {
+      "path": "actions/examples/red-approval.json",
+      "sha256": "ff79a34dc6a985575f87046d3091f05ddfbd9e0c599d067d5210b879fb3d303a"
+    },
+    {
+      "path": "actions/examples/red-proposal.json",
+      "sha256": "253e33f996c7aca53ce7c4c50e3274492692ac15517a8a0ea4adc87e91691e4f"
+    },
+    {
+      "path": "actions/examples/witness-green-no-approval.json",
+      "sha256": "bc131132dfb6bd83171a51b5ced91bb310e067d99aacb680fd6fd78d23eb6e9b"
+    },
+    {
+      "path": "actions/openapi/aios-action-gateway.yaml",
+      "sha256": "90c3439b9545818944d81db19acbc5a67f431673db405bdec84ed8dc048923d5"
+    },
+    {
+      "path": "actions/schemas/action-proposal.schema.json",
+      "sha256": "4dbee6537920f3efb817d99d3066c17055f869903ae3aa1c8a05c1d4502ce66e"
+    },
+    {
+      "path": "actions/schemas/action-receipt.schema.json",
+      "sha256": "020eaf2b48e25f5a234d584944abe15ce0465b3744769ae546f270b07de39f62"
+    },
+    {
+      "path": "actions/schemas/approval.schema.json",
+      "sha256": "8c2178db158ccf1af8d4e7f5dad6afd727e38cb295379a534b2b1cad97bcec40"
+    },
+    {
+      "path": "actions/schemas/witness-event.schema.json",
+      "sha256": "a2c8faaabbd7a7374fb54d1f42dc4f44f22622f86e630efd973d4553d7095784"
+    },
+    {
+      "path": "architecture/action-risk-model.md",
+      "sha256": "39ce0533f0a6d72beacaefac23854c432d4671fe608e4cdf2cde499c1f0672fd"
+    },
+    {
+      "path": "architecture/action-state-machine.md",
+      "sha256": "548e8335ee1ed310aa257c48dc7ab22f3eb4759a1090c818e3ddb6694fe066d0"
+    },
+    {
+      "path": "architecture/add-action-integration.md",
+      "sha256": "58232e90f49a7e4a399409d49639abcf945e60808baac147e14d653e9ece7de7"
+    },
+    {
+      "path": "architecture/adr/ADR-001-aios-remains-decision-layer.md",
+      "sha256": "75150a9a6e3539d29c27d0265e66d82e06e741d17f6f44340c5fd853eceeaf38"
+    },
+    {
+      "path": "architecture/adr/ADR-002-actions-do-not-authorise.md",
+      "sha256": "342972ffcdf559fcc3c048255be9ee50cdccf8d3609a9a9615848c3f3b8c8967"
+    },
+    {
+      "path": "architecture/adr/ADR-003-server-side-approval-binding.md",
+      "sha256": "49b07799d79a777f8b2bb6fd22cc904c1b04ca174a73fe4b230a97116eaf0353"
+    },
+    {
+      "path": "architecture/adr/ADR-004-single-canonical-protocol.md",
+      "sha256": "ef6dde3e0b9c5113f6e49835c51dcfa030f13338cbda85bc4b67cb1f7a1dc066"
+    },
+    {
+      "path": "architecture/adr/ADR-005-action-risk-classification.md",
+      "sha256": "5a5650fafbac01ef40c8950d841fe9826c5c8b76b8d035a7a8a704695b172bd6"
+    },
+    {
+      "path": "architecture/adr/ADR-006-tool-output-is-untrusted-evidence.md",
+      "sha256": "c2980fcb427952461aed3ca9f7df92c06f2dea3bcfbbda231ee2ea8c83107451"
+    },
+    {
+      "path": "architecture/adr/ADR-007-witness-chain-action-events.md",
+      "sha256": "044e5ac17ed3e7b16923b71949676a5004fbea150d6eb389fe8ff2f4fa7c9df4"
+    },
+    {
+      "path": "architecture/threat-model.md",
+      "sha256": "b4db8a6a243c93b50456a8dd9f88ce32cdb041f297bc5f08d2eb4cf424ae34c0"
+    },
+    {
+      "path": "archive/superseded/AIOS_v1.1.md",
+      "sha256": "182d0309bfba36b0b3c998774d73ceecd13942db00a5b59215c1f08617a09cec"
+    },
+    {
+      "path": "archive/superseded/CreateGPT_System_Instruction_v1.0.txt",
+      "sha256": "1352f27a89fe097a82a1257401852652221904c9f2874d72c9d95a56ec813798"
+    },
+    {
+      "path": "docs/deployment/RELEASE_GATE.md",
+      "sha256": "c2104b7a15a2ebfa56edfd0a02c9dc2ecff0886781e76b4df525fff72dfe45db"
+    },
+    {
+      "path": "governance/AIOS_v1.2.md",
+      "sha256": "abf787675399c38e3ab1ec7cbc15e645f148bff1b680b1191b118deafc3e2d4f"
+    },
+    {
+      "path": "governance/EVIDENCE_GOVERNANCE_AND_WITNESS_CHAIN.md",
+      "sha256": "df907447cadc7bf396a8fa99adf1c2f0180da3adde215ae645b25844f82d2838"
+    },
+    {
+      "path": "governance/EXTERNAL_ACTION_PROTOCOL.md",
+      "sha256": "70e922cf6bc35961ccc85181c2a55544fe9ae5a0981439d4750462b32cdbcc17"
+    },
+    {
+      "path": "governance/OUTPUT_SCHEMAS_AND_DECISION_REGISTERS.md",
+      "sha256": "818a16076c146e2f3400d4a722e1d81e885e4b751072e2e0228c6c476f872f2e"
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "064187bc620ae12b7c5e7cd0f062a37f42d2e43b433dc67176f62e79b08a8830"
+    },
+    {
+      "path": "prompts/system-instructions/CreateGPT_System_Instruction_v1.2.txt",
+      "sha256": "1e6673b9fb479e666746cd01a6e5ef8cb45580015039a00d64ee2ec5d9284b16"
+    },
+    {
+      "path": "tests/action-governance/ACTION_GOVERNANCE_TESTS.md",
+      "sha256": "fb75f41effe40741d5b1ca6afafbe559880b04023d04c5d2f3da8522565dd471"
+    },
+    {
+      "path": "tests/adversarial/ADVERSARIAL_ACTION_TESTS.md",
+      "sha256": "b8321d3f1b8d8a06248a9bf23ab662c2413409b0a9c07517b516352ec335baeb"
+    },
+    {
+      "path": "tests/regression/BASELINE_ACCEPTANCE_TESTS_v1.0.md",
+      "sha256": "4d2f4fedcf86c1a60bf6787dfacb79840d4730435ef048ad9ac9c7d9979bee9c"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+openapi: 3.1.0
+info:
+  title: AIOS Governed Action Gateway
+  version: 1.2.0-alpha
+  description: |
+    Draft non-production control-plane API for governed external actions.
+
+    This schema is non-functional until implemented. It does not enable
+    execution. There is no live Action Gateway, identity service or approval
+    service in this repository.
+
+    The server URL is a non-routable placeholder. Do not point a GPT or client
+    at a real host using this file.
+
+    Request and response bodies $ref the JSON Schema envelopes in
+    actions/schemas/, which follow governance/AIOS_v1.2.md §§27, 30 and 31.
+servers:
+  - url: https://example.invalid
+    description: Non-routable placeholder. Not a live host.
+paths:
+  /actions/preflight:
+    post:
+      operationId: preflightAction
+      summary: Assess whether a proposal is ready for Human Captain authorisation
+      description: |
+        No external execution. Returns policy, evidence, Layer 0, class and
+        gate findings. Green read-only may be recorded without an individual
+        approval object. Prohibited is refused.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/action-proposal.schema.json
+      responses:
+        "200":
+          description: Preflight result. No external effect.
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/witness-event.schema.json
+        "400":
+          description: Envelope invalid
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /actions/proposals:
+    post:
+      operationId: proposeAction
+      summary: Persist an immutable internal Action Proposal
+      description: Creates internal state but no external commitment.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/action-proposal.schema.json
+      responses:
+        "201":
+          description: Proposal created and digest recorded
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/action-proposal.schema.json
+        "400":
+          description: Envelope invalid
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /actions/{proposal_id}/execute:
+    post:
+      operationId: executeApprovedAction
+      summary: Execute an exactly approved proposal
+      description: |
+        Specified behaviour only. Not implemented in this snapshot.
+        Must fail closed unless server-side approval binds to the exact
+        proposal_digest, scope, policy version and validity window.
+      parameters:
+        - in: path
+          name: proposal_id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [approval]
+              properties:
+                approval:
+                  $ref: ../schemas/approval.schema.json
+                idempotency_key:
+                  type: string
+                  minLength: 8
+      responses:
+        "200":
+          description: Execution receipt (specified, not produced by a live gateway)
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/action-receipt.schema.json
+        "403":
+          description: Prohibited, unauthorised, or Layer 0 failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "409":
+          description: Proposal, approval, digest or integrity mismatch
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /actions/{proposal_id}/receipt:
+    get:
+      operationId: getActionReceipt
+      summary: Retrieve technical execution and Witness Chain receipt
+      parameters:
+        - in: path
+          name: proposal_id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Receipt retrieved
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/action-receipt.schema.json
+        "404":
+          description: Unknown proposal
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  schemas:
+    Error:
+      type: object
+      additionalProperties: false
+      required: [code, message]
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        proposal_id:
+          type: string
+        proposal_digest:
+          type: string
+        action_state:
+          type: string
