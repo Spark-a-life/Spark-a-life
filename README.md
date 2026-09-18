@@ -11,6 +11,12 @@ This branch places the AIOS source tree at the repository root. Merging it to `m
 
 A labelled design and governance snapshot for private use. Integrity of the original zip/bundle working tree was clean. This branch adds the v1.2 specification as canonical, archives v1.1, and aligns protocol, schemas, tests and docs so they do not contradict v1.2.
 
+### Provenance of `governance/AIOS_v1.2.md`
+
+The original uploaded file `AIOS v1.2.md` (1,886 lines, 63,543 bytes) was read in full during the publish-readiness review. It was not present on the repository agent VM used to create this branch (uploads were not copied across). The file in this tree is therefore a control-complete reconstruction from that review: quoted passages, the §27 / §30 / §31 field lists, the 16-step protocol map, and the packaged v1.1 kernel fragments, including the exact recovered §21–§23 text. It is canonical for derived files in this snapshot. If the Human Captain still holds the original 63,543-byte document, replace `governance/AIOS_v1.2.md` with that file (filename only may change) and re-check derived extracts against it.
+
+`archive/superseded/AIOS_v1.1.md` likewise reconstructs the packaged 1.1 kernel. Sections 21–23 match the recovered original tail exactly. Sections 1–20 are reconstructed from the review description of that kernel.
+
 ## What is implemented here
 
 Documents, JSON Schema envelopes, a draft OpenAPI path list with `$ref` bodies, sanitised fictional examples, markdown acceptance specifications, and a v1.2 system instruction.
