@@ -1,0 +1,7 @@
+{
+  "code": "PROHIBITED",
+  "message": "Action class PROHIBITED cannot be executed. Splitting a prohibited effect into smaller Amber Actions is also refused.",
+  "proposal_id": "prop-prohibited-001",
+  "proposal_digest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+  "action_state": "REJECTED"
+}

@@ -1,0 +1,26 @@
+{
+  "approval_id": "appr-red-001",
+  "approver_identity": "human-captain@example.invalid",
+  "proposal_id": "prop-red-001",
+  "proposal_version": 1,
+  "proposal_digest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "approved_scope": {
+    "action_type": "send_non_binding_enquiry",
+    "target_system": "email",
+    "target_entity": "briefings@example.invalid",
+    "recipient_or_affected_party": "briefings@example.invalid",
+    "data_scope": ["practice-name", "return-address", "request-for-public-pack"]
+  },
+  "decision": "APPROVED",
+  "conditions": [
+    "Exact approved text only.",
+    "No attachment.",
+    "No commercial terms."
+  ],
+  "issued_at": "2026-08-30T12:20:00Z",
+  "expires_at": "2026-08-30T16:00:00Z",
+  "single_use_or_reusable": "SINGLE_USE",
+  "revocation_status": "ACTIVE",
+  "policy_version": "aios-v1.2.0-alpha",
+  "approval_evidence_reference": "witness:approval-red-001"
+}

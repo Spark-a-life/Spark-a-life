@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/aios/action-receipt.schema.json",
+  "title": "AIOS Action Receipt",
+  "description": "v1.2 §31.1 receipt. Technical execution state and business outcome state are separate. approval_id may be null for Green-only events.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "receipt_id",
+    "case_id",
+    "proposal_id",
+    "proposal_digest",
+    "execution_attempt_id",
+    "idempotency_key",
+    "action_state",
+    "business_outcome_state",
+    "target_system",
+    "started_at",
+    "witness_chain_reference"
+  ],
+  "properties": {
+    "receipt_id": { "type": "string", "minLength": 1 },
+    "case_id": { "type": "string", "minLength": 1 },
+    "proposal_id": { "type": "string", "minLength": 1 },
+    "proposal_digest": {
+      "type": "string",
+      "minLength": 64,
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "approval_id": { "type": ["string", "null"] },
+    "execution_attempt_id": { "type": "string", "minLength": 1 },
+    "idempotency_key": { "type": "string", "minLength": 8 },
+    "action_state": {
+      "type": "string",
+      "enum": [
+        "PROPOSED",
+        "AWAITING_AUTHORISATION",
+        "AUTHORISED",
+        "REJECTED",
+        "EXPIRED",
+        "REVOKED",
+        "EXECUTING",
+        "SUCCEEDED",
+        "FAILED",
+        "PARTIALLY_SUCCEEDED",
+        "INDETERMINATE",
+        "ROLLED_BACK",
+        "IRREVERSIBLE"
+      ]
+    },
+    "business_outcome_state": {
+      "type": "string",
+      "enum": [
+        "NOT_ASSESSED",
+        "PENDING",
+        "OBSERVED",
+        "NOT_ACHIEVED",
+        "CONFLICTED",
+        "INDETERMINATE"
+      ]
+    },
+    "executing_workload_identity": { "type": "string" },
+    "credential_scope_reference": { "type": "string" },
+    "target_system": { "type": "string", "minLength": 1 },
+    "started_at": { "type": "string", "format": "date-time" },
+    "completed_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "external_reference": { "type": ["string", "null"] },
+    "response_summary": { "type": "string" },
+    "information_disclosed": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "observed_effect": { "type": "string" },
+    "error_or_variance": { "type": ["string", "null"] },
+    "rollback_state": { "type": ["string", "null"] },
+    "witness_chain_reference": { "type": "string", "minLength": 1 }
+  }
+}

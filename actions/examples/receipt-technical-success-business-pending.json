@@ -1,0 +1,23 @@
+{
+  "receipt_id": "rcpt-001",
+  "case_id": "case-fictional-northbridge-001",
+  "proposal_id": "prop-red-001",
+  "proposal_digest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "approval_id": "appr-red-001",
+  "execution_attempt_id": "exec-001",
+  "idempotency_key": "red-proposal-001",
+  "action_state": "SUCCEEDED",
+  "business_outcome_state": "PENDING",
+  "executing_workload_identity": "aios-gateway-not-implemented",
+  "credential_scope_reference": "scope:email.send.single",
+  "target_system": "email",
+  "started_at": "2026-08-30T12:21:00Z",
+  "completed_at": "2026-08-30T12:21:02Z",
+  "external_reference": "example-invalid-message-id:not-a-real-send",
+  "response_summary": "Fictional technical success. No live mail was sent. This repository has no gateway.",
+  "information_disclosed": ["practice-name", "return-address", "request-for-public-pack"],
+  "observed_effect": "Technical handler reported accepted. Whether a human read the enquiry is not yet observed.",
+  "error_or_variance": null,
+  "rollback_state": null,
+  "witness_chain_reference": "witness:event-red-001"
+}

@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/aios/action-proposal.schema.json",
+  "title": "AIOS Action Proposal",
+  "description": "v1.2 §27.1 envelope. Schema enums GREEN|AMBER|RED|PROHIBITED map to Green/Amber/Red/Prohibited. Canonical binding field is proposal_digest. additionalProperties is false so authorisation cannot be smuggled.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "case_id",
+    "action_type",
+    "action_class",
+    "purpose",
+    "target_system",
+    "target_entity",
+    "intended_effect",
+    "data_classification",
+    "reversibility",
+    "circuit_breaker_status",
+    "policy_version",
+    "proposal_id",
+    "proposal_version",
+    "proposal_digest",
+    "created_at",
+    "idempotency_key"
+  ],
+  "properties": {
+    "case_id": { "type": "string", "minLength": 1 },
+    "action_type": { "type": "string", "minLength": 1 },
+    "action_class": {
+      "type": "string",
+      "enum": ["GREEN", "AMBER", "RED", "PROHIBITED"]
+    },
+    "purpose": { "type": "string", "minLength": 1 },
+    "target_system": { "type": "string", "minLength": 1 },
+    "target_entity": { "type": "string", "minLength": 1 },
+    "recipient_or_affected_party": { "type": "string", "minLength": 1 },
+    "intended_effect": { "type": "string", "minLength": 1 },
+    "payload_reference": { "type": "string" },
+    "attachment_references": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "evidence_references": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "unknowns": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "data_classification": {
+      "type": "string",
+      "enum": ["PUBLIC", "INTERNAL", "CONFIDENTIAL", "RESTRICTED"]
+    },
+    "disclosure_summary": { "type": "string" },
+    "reversibility": {
+      "type": "string",
+      "enum": ["reversible", "partially_reversible", "irreversible", "unknown"]
+    },
+    "rollback_or_containment_plan": { "type": "string" },
+    "opportunity_quality_snapshot": { "type": "string" },
+    "risk_classification": {
+      "type": "string",
+      "enum": ["GREEN", "AMBER", "RED", "PROHIBITED"]
+    },
+    "circuit_breaker_status": {
+      "type": "string",
+      "enum": ["CLEAR", "TRIGGERED", "UNKNOWN"]
+    },
+    "policy_version": { "type": "string", "minLength": 1 },
+    "proposal_id": { "type": "string", "minLength": 1 },
+    "proposal_version": { "type": "integer", "minimum": 1 },
+    "proposal_digest": {
+      "type": "string",
+      "minLength": 64,
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "SHA-256 hex digest of the exact proposal. Canonical binding field. Not payload_hash."
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "expires_at": { "type": "string", "format": "date-time" },
+    "idempotency_key": { "type": "string", "minLength": 8 }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "action_class": { "enum": ["AMBER", "RED"] } },
+        "required": ["action_class"]
+      },
+      "then": {
+        "required": [
+          "recipient_or_affected_party",
+          "disclosure_summary",
+          "expires_at",
+          "opportunity_quality_snapshot"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": { "action_class": { "const": "RED" } },
+        "required": ["action_class"]
+      },
+      "then": {
+        "required": ["rollback_or_containment_plan"]
+      }
+    }
+  ]
+}
