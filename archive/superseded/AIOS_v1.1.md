@@ -2,10 +2,11 @@
 ## Organisation and Opportunity Intelligence Specification
 
 **Status:** Superseded by `governance/AIOS_v1.2.md`.  
-**Retention:** Archived as the packaged 1.1 kernel that shipped inside the original 1.2.0-alpha zip/bundle.  
+**Retention:** Reconstructed stand-in only.  
+**Provenance:** The packaged kernel in `AIOS_v1.2.0-alpha_repo.zip` / `AIOS_v1.2.0-alpha.bundle` was 969 lines / 24,042 bytes, no final newline, sha256 `8eb81d6906a2a9b19f6e07a314eafef9059aedc338d7d16121ab17ffda512b13`. That byte-identical file was not on this VM after a search of uploads, artifacts, git objects and prior-session transcripts. This copy is not the original. Do not treat it as byte-identical to the zip. Replace this file with the original if still held.  
 **Authority:** Do not treat this file as current canonical protocol.
 
-This archive preserves the opportunity-intelligence kernel that ends at §23. Version 1.2 retains that kernel and adds Layer 0, two assurance planes, and §§24–35.
+This stand-in records the opportunity-intelligence kernel shape that ends at §23. Version 1.2 retains that kernel and adds Layer 0, two assurance planes, and §§24–35.
 
 ---
 

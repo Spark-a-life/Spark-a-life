@@ -1,6 +1,6 @@
 {
   "version": "1.2.0-alpha",
-  "generated": "2026-09-18",
+  "generated": "2026-09-25",
   "note": "sha256 of every tracked file except this inventory",
   "files": [
     {
@@ -13,7 +13,7 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "7fbd6a7942729ce49e31632144c922e96fd2e2a390fc483e8bfd5f455826a217"
+      "sha256": "d39cf3e9045502ae1281eaf369dfad90845defda26317bfe8fd4ec3bba626123"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -25,7 +25,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "473f2730aafd36efcd720218eb59c79b7aadbad7c5d3b00abd16dad1c78c4d41"
+      "sha256": "b5ba924fb1ca0ea21d276038bfbdd7e0c20da9c8f42085af43f558e55cc9c924"
     },
     {
       "path": "SECURITY.md",
@@ -133,7 +133,7 @@
     },
     {
       "path": "archive/superseded/AIOS_v1.1.md",
-      "sha256": "182d0309bfba36b0b3c998774d73ceecd13942db00a5b59215c1f08617a09cec"
+      "sha256": "8f9bf059ff0eb3249fa6b71d7e5d9c1013d4c805ec3c262ff88b83daaa9fbf44"
     },
     {
       "path": "archive/superseded/CreateGPT_System_Instruction_v1.0.txt",

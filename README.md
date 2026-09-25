@@ -15,7 +15,7 @@ A labelled design and governance snapshot for private use. Integrity of the orig
 
 `governance/AIOS_v1.2.md` is the original uploaded `AIOS v1.2.md` (1,886 lines, 63,543 bytes, UTF-8, LF). It is the canonical specification for this snapshot. `governance/EXTERNAL_ACTION_PROTOCOL.md` is a generated extract of §26 and must not diverge from it.
 
-`archive/superseded/AIOS_v1.1.md` is a reconstructed stand-in for the packaged 969-line v1.1 kernel from the original zip/bundle. The original 24,042-byte file was not available on this VM at archive time. Do not treat the archive copy as byte-identical to the zip.
+`archive/superseded/AIOS_v1.1.md` is a reconstructed stand-in for the packaged 969-line / 24,042-byte v1.1 kernel (sha256 `8eb81d6906a2a9b19f6e07a314eafef9059aedc338d7d16121ab17ffda512b13`). A further search of this VM, uploads, artifacts, git objects and prior-session transcripts did not recover the original. Do not treat the archive copy as byte-identical to the zip. Replace it with the original if still held.
 
 ## What is implemented here
 

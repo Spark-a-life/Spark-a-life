@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.0-alpha - 2026-09-25 (follow-up)
+
+### Honest status
+Re-searched this VM, uploads, artifacts, git objects and prior-session transcripts for the original packaged `AIOS_v1.1.md` (969 lines / 24,042 bytes, sha256 `8eb81d6906a2a9b19f6e07a314eafef9059aedc338d7d16121ab17ffda512b13`). Not recovered. Archive header, README and this changelog now state reconstructed stand-in explicitly. No runtime change. `production_external_execution` remains false.
+
 ## 1.2.0-alpha - 2026-09-18 (this snapshot)
 
 ### Honest status
@@ -16,7 +21,7 @@ Docs-only governance snapshot. Not a runtime. Not a complete product. Not approv
 - `.env.example` with placeholder names only.
 
 ### Changed
-- Packaged v1.1 kernel moved to `archive/superseded/AIOS_v1.1.md`.
+- v1.1 kernel archived at `archive/superseded/AIOS_v1.1.md` as a reconstructed stand-in; the original 969-line / 24,042-byte packaged file was not available.
 - v1.0 GPT instruction moved to `archive/superseded/`.
 - Evidence vocabulary aligned to v1.2 states.
 - Formal Decision Record now includes Evidence assurance, Authority assurance and Permitted next action.
