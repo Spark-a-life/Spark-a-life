@@ -15,7 +15,7 @@ This pack lives under `portfolio/` so that `governance/AIOS_v1.2.md` remains the
 
 ## What this pack is
 
-A four-artefact review plus a small kernel of shared contracts. The four artefacts are sibling practice materials, not one product:
+A four-artefact review plus a small kernel of shared contracts, plus a Human Captain coordination plan. The four artefacts are sibling practice materials, not one product:
 
 | Artefact | What it actually is | Publish posture |
 | --- | --- | --- |
@@ -39,6 +39,7 @@ portfolio/
   LICENSE                   All Rights Reserved
   EVALUATION.md             Verdicts, evidence, blockers, sequenced actions
   INTEROP.md                Kernel, adapters, data classes, trust boundaries
+  PLAN.md                   Coordination plan a Human Captain can execute
   FILE_INVENTORY.json       sha256 of tracked pack files
   kernel/                   Shared vocabulary and JSON Schema envelopes
   artifacts/salwise-local-ai-pap2-v1.2/     Vendored package + STATUS

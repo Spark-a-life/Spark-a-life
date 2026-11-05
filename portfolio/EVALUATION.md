@@ -286,6 +286,8 @@ Desirability of Salwise is `NOT_MEASURED` until Will screens real effort. Desira
 
 ## Sequenced action items
 
+Coordination of these actions, including owners, dependencies, and stop conditions, is specified in `PLAN.md`. Verdicts and evidence in this file remain canonical. If `PLAN.md` and this file disagree, stop and ask the Human Captain.
+
 Owner means the Human Captain unless another name is listed. "This week" means the next bounded increment, not a calendar promise.
 
 ### This week

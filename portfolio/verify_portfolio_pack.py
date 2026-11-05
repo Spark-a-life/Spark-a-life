@@ -25,6 +25,7 @@ REQUIRED_PATHS = [
     "LICENSE",
     "EVALUATION.md",
     "INTEROP.md",
+    "PLAN.md",
     "kernel/VOCABULARY.md",
     "kernel/DATA_CLASSES.md",
     "kernel/INTERFACES.md",
@@ -144,6 +145,7 @@ def main() -> int:
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     checks.append(check("README warns not to merge to profile main", "Do not merge this branch to profile" in readme))
     checks.append(check("README states docs-only", "Docs-only" in readme))
+    checks.append(check("README lists PLAN.md", "PLAN.md" in readme))
 
     aios_v12 = ROOT.parent / "governance" / "AIOS_v1.2.md"
     checks.append(check("parent AIOS v1.2 remains at repository root", aios_v12.is_file()))

@@ -101,6 +101,8 @@ Vendored as `artifacts/claude-sensemaking-meta-prompt/source.md`. It is a proced
 
 ## Feasible shared implementation later
 
+Sequencing, owners, and stop conditions for that order are in `PLAN.md`. This file remains the kernel specification. `PLAN.md` must not add envelopes or a router.
+
 If a later increment implements anything, implement the envelopes first, as JSON files written by humans or scripts. Do not implement a router.
 
 Suggested order:

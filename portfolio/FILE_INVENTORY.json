@@ -8,13 +8,13 @@
   "files": [
     {
       "path": "EVALUATION.md",
-      "bytes": 15636,
-      "sha256": "522203437e9e3e8beb7398a91b76b57747950e73b56c9d118008c07d1755b3a1"
+      "bytes": 15870,
+      "sha256": "33f1b868a09667e6260a514f9d52032283d69b054ef8516a6624ada277a28bc3"
     },
     {
       "path": "INTEROP.md",
-      "bytes": 5905,
-      "sha256": "d24b222e4465c87e15a99fb9d7be9784fba386100651fc16f20ec689df7cdfc1"
+      "bytes": 6069,
+      "sha256": "3543655b7dff0048a43b5c0f3ecda6d256e22ad26c7787d752f9278e3e61c56f"
     },
     {
       "path": "LICENSE",
@@ -22,9 +22,14 @@
       "sha256": "8dd05d36a4ca3d3f81bd14f42be2654d9852300488eba0347ea777076f00569b"
     },
     {
+      "path": "PLAN.md",
+      "bytes": 46221,
+      "sha256": "056c8b54eaf9d4b6683e3afb9d947337a3f3defa9af74a9a4487b1d6b62d5df1"
+    },
+    {
       "path": "README.md",
-      "bytes": 3200,
-      "sha256": "e32884a2a260ed2b96ee5ded512a9abd921414ec7a536cc92905f7a6dd760263"
+      "bytes": 3314,
+      "sha256": "ccbbbf0769da9b36ce8aa8fd565e618dd592123e90367b7e8767fae8f3064160"
     },
     {
       "path": "artifacts/adaptive-learning-tutor-v1.0/STATUS.md",
@@ -248,8 +253,8 @@
     },
     {
       "path": "verify_portfolio_pack.py",
-      "bytes": 9583,
-      "sha256": "208e454fc8148899af4b95ab854c1e622285f8eb39b1e69dc6f374f9639f3879"
+      "bytes": 9668,
+      "sha256": "7b6d82ef4ba061b510ac6e2f85ffad6054a2d069bc92a1289f358edd3659d1d7"
     }
   ]
 }
