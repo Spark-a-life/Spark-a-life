@@ -1,0 +1,11 @@
+{
+  "scope": "Mechanical package checks only",
+  "initial_run": {
+    "passed": 13,
+    "total": 14,
+    "failed_check": "No em dash in current v1.2 Markdown files",
+    "cause": "An exact source-document title contained the prohibited punctuation.",
+    "repair": "Changed the display title to a comma-separated reference while retaining source identity in the source map.",
+    "runtime_or_model_effect": "NONE"
+  }
+}

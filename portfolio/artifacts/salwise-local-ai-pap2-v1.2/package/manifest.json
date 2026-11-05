@@ -1,0 +1,85 @@
+{
+  "package": "Salwise Local AI Productivity PaP2",
+  "version": "1.2",
+  "status": "REVIEWED_EXECUTION_CANDIDATE",
+  "runtime_status": "NOT_ASSESSED",
+  "authority": "NONE_CONFERRED",
+  "hash_scope": "Files listed below; manifest excludes itself and confers no authenticity or approval",
+  "files": [
+    {
+      "path": "START_HERE.md",
+      "bytes": 3010,
+      "sha256": "6e316849223fe25e86b8af1816df0b5034841e57f5eb302573ed57c284f581a3"
+    },
+    {
+      "path": "Salwise_Local_AI_Productivity_PaP2_v1.2.md",
+      "bytes": 30349,
+      "sha256": "107c3fcf94b25a56cb14993569c802b12623bb9daa9f8edd415c04c0344f69bf"
+    },
+    {
+      "path": "Salwise_Local_AI_v1.2_Review.md",
+      "bytes": 12381,
+      "sha256": "b5fd54454076d4f1cdbeb4f6cc520731577aeb286300f1615726dcde7b4f4e60"
+    },
+    {
+      "path": "Salwise_Pando_Research_and_Local_Actions_v1.2.md",
+      "bytes": 9414,
+      "sha256": "e6347984cda465451a93d8e23543434f72626d6fe1ee1d0d5d99e0d2cfe1d19e"
+    },
+    {
+      "path": "Salwise_Local_AI_Sources_and_Reuse_v1.2.md",
+      "bytes": 4853,
+      "sha256": "ae92a34dd5a77708c7648692de3d060fb66666eaf913aa9a38661b7a3e610167"
+    },
+    {
+      "path": "Salwise_Local_AI_30_Attribute_Profile_v1.2.json",
+      "bytes": 32165,
+      "sha256": "cfbf15dadbbe54b31621283f6dbc41d81f4786e899f3a3ea0bcff9c52011fe7a"
+    },
+    {
+      "path": "Salwise_30_Attribute_Source_Extract_v1.2.json",
+      "bytes": 12823,
+      "sha256": "5a08b07ff1f8992da6c90f8def8e91069de19de75512b10b23f8dc20db272793"
+    },
+    {
+      "path": "Salwise_Local_AI_Quality_Crosswalk_v1.2.json",
+      "bytes": 5559,
+      "sha256": "4a1dc27487a8fa539c4549e7acb5ec0d54c7c481d3590f6b756c0eb9c83c6380"
+    },
+    {
+      "path": "Salwise_Local_AI_Review_Scenarios_v1.2.json",
+      "bytes": 8199,
+      "sha256": "2d81fa3663fb57b3cf2a97c4dfc2d74f64ba7585a43de351bb58ef5a0810fb55"
+    },
+    {
+      "path": "Salwise_Local_Model_Task_ENQ001_v1.2.md",
+      "bytes": 1128,
+      "sha256": "28bfd561b0d79f14c85b220c501e2d70aa7f23da58bbc725419f83fcd7084c00"
+    },
+    {
+      "path": "fixtures/enq001_input.json",
+      "bytes": 477,
+      "sha256": "459675872b1d4df48a44d8a61cda26764e4c1eda65fc616587803deebf1bc1ba"
+    },
+    {
+      "path": "references/enq001_frozen_reference.json",
+      "bytes": 1120,
+      "sha256": "70bef63172afa3322a7b0d4a0f2c980aa9b517dcd8da05180f14b42bf06ffd51"
+    },
+    {
+      "path": "check_v1_2_package.py",
+      "bytes": 5787,
+      "sha256": "544c63dabbc0fe75b5a2386a43bb4c565623def02cffb5036733d15aadb526f2"
+    },
+    {
+      "path": "Salwise_Local_AI_v1.2_Checks.json",
+      "bytes": 3410,
+      "sha256": "95bb4bdf340e27baa6db1c37aab9d76d870bfef049dece3f1163991827e885da"
+    },
+    {
+      "path": "Salwise_Local_AI_v1.2_Check_History.json",
+      "bytes": 420,
+      "sha256": "204183133c85008156279f5344ee0d870d0d913a78f7b5ca92518cd5f5c05bd0"
+    }
+  ]
+}

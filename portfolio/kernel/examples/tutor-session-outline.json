@@ -1,0 +1,17 @@
+{
+  "intent": "outline",
+  "topic": "wine appreciation",
+  "learner_age_band": "adult",
+  "alcohol_consumption_exercises": false,
+  "data_class": "PUBLIC",
+  "rubric_observed": {
+    "A": "N/O",
+    "B": "N/O",
+    "C": "N/O",
+    "D": "N/O",
+    "E": "N/O"
+  },
+  "persistent_memory_claimed": false,
+  "certification_claimed": false,
+  "progress_log_exported": false
+}

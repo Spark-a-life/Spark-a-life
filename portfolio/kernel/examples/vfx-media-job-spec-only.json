@@ -1,0 +1,12 @@
+{
+  "job_id": "SPEC-ONLY-NOT-A-SHOT",
+  "status": "NOT_IMPLEMENTED",
+  "colourspace": "unspecified-do-not-assume-linear-ACEScg",
+  "frame_count": 33,
+  "temporal_rule_f_minus_1_mod_8": true,
+  "spatial_conditioner": "depth",
+  "qc_method": "none-stub-returns-0.021-is-not-a-method",
+  "data_class": "FICTIONAL",
+  "action_class_if_executed": "PROHIBITED",
+  "notes": "Reserved example. No worker exists. Execution is Prohibited while QC is a stub."
+}

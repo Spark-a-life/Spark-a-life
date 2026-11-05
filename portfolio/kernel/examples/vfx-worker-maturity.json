@@ -1,0 +1,9 @@
+{
+  "path": "scripts/comfy_agentic_worker.py",
+  "declared": true,
+  "implemented_on_disk": false,
+  "verified_by_run": false,
+  "declared_in": "vfx_ai_pipeline_integration_manual.md section 3",
+  "disk_sha256": null,
+  "notes": "Exists only as a fenced code block. calculate_structural_divergence returns 0.021 and would always pass a 0.03 threshold."
+}

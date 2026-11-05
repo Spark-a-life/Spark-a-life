@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/portfolio/evidence-envelope.schema.json",
+  "title": "Portfolio Evidence Envelope",
+  "description": "Portable claim record. Epistemic states follow AIOS v1.2. Maturity is about our artefacts, not about the world. additionalProperties is false so approval cannot be smuggled.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "claim",
+    "evidence_state",
+    "maturity",
+    "data_class",
+    "authority",
+    "source_ref",
+    "recorded_at"
+  ],
+  "properties": {
+    "claim": { "type": "string", "minLength": 1 },
+    "evidence_state": {
+      "type": "string",
+      "enum": [
+        "Verified Fact",
+        "Corroborated Claim",
+        "Single-Source Claim",
+        "Declared by Interested Party",
+        "Reasoned Inference",
+        "Unverified Hypothesis",
+        "Contradicted",
+        "Stale",
+        "Unavailable"
+      ]
+    },
+    "maturity": {
+      "type": "string",
+      "enum": ["Declared", "Implemented", "Verified", "Authorised"]
+    },
+    "data_class": {
+      "type": "string",
+      "enum": ["FICTIONAL", "PUBLIC", "INTERNAL", "CONFIDENTIAL", "RESTRICTED", "REGULATED"]
+    },
+    "authority": {
+      "type": "string",
+      "enum": ["NONE_CONFERRED", "HUMAN_CAPTAIN", "NAMED_ACCEPTANCE_OWNER", "LEARNER"]
+    },
+    "authority_name": { "type": "string" },
+    "source_ref": { "type": "string", "minLength": 1 },
+    "source_sha256": {
+      "type": "string",
+      "minLength": 64,
+      "maxLength": 64,
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "recorded_at": { "type": "string", "minLength": 1 },
+    "confidence": {
+      "type": "string",
+      "enum": ["High", "Medium", "Low"]
+    },
+    "limitation": { "type": "string" },
+    "adapter": {
+      "type": "string",
+      "enum": ["aios", "salwise", "tutor", "vfx", "review_prompt", "kernel"]
+    }
+  }
+}

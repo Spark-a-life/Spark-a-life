@@ -1,0 +1,103 @@
+{
+  "profile_version": "1.2",
+  "check_type": "MECHANICAL_DOCUMENT_CONSISTENCY",
+  "candidate_sha256": "107c3fcf94b25a56cb14993569c802b12623bb9daa9f8edd415c04c0344f69bf",
+  "checks": [
+    {
+      "check": "Exactly 30 non-empty source-mapped entries",
+      "result": "PASS",
+      "scope": "Package structure and declared content only"
+    },
+    {
+      "check": "Unique IDs retain SAL-Q01 to SAL-Q30",
+      "result": "PASS",
+      "scope": "Package structure and declared content only"
+    },
+    {
+      "check": "Original IDs names clusters checks evidence and statuses preserved",
+      "result": "PASS",
+      "scope": "Package structure and declared content only"
+    },
+    {
+      "check": "Five source clusters with six entries each",
+      "result": "PASS",
+      "scope": "Package structure and declared content only"
+    },
+    {
+      "check": "No runtime pass or invented result references",
+      "result": "PASS",
+      "scope": "Package structure and declared content only"
+    },
+    {
+      "check": "Milestone and applicability fields valid",
+      "result": "PASS",
+      "scope": "Package structure and declared content only"
+    },
+    {
+      "check": "Eight source overlays retained without corporate-gate import",
+      "result": "PASS",
+      "scope": "Package structure and declared content only"
+    },
+    {
+      "check": "All 15 requested priorities mapped to known standards",
+      "result": "PASS",
+      "scope": "Package structure and declared content only"
+    },
+    {
+      "check": "Prompt includes every assurance ID as a matrix row",
+      "result": "PASS",
+      "scope": "Package structure and declared content only"
+    },
+    {
+      "check": "Goal journey frozen task and stopping conditions explicit",
+      "result": "PASS",
+      "scope": "Package structure and declared content only"
+    },
+    {
+      "check": "Orchestrator and local task context explicitly separated",
+      "result": "PASS",
+      "scope": "Package structure and declared content only"
+    },
+    {
+      "check": "18 desk-review cases explicitly not agent executions",
+      "result": "PASS",
+      "scope": "Package structure and declared content only"
+    },
+    {
+      "check": "All scenario standard IDs resolve",
+      "result": "PASS",
+      "scope": "Package structure and declared content only"
+    },
+    {
+      "check": "Seven SaaP moves retained as adaptive reasoning checks",
+      "result": "PASS",
+      "scope": "Package structure and declared content only"
+    },
+    {
+      "check": "Starter task is distinguished from demonstrated user need",
+      "result": "PASS",
+      "scope": "Package structure and declared content only"
+    },
+    {
+      "check": "Fictional input and frozen reference identities and core facts agree",
+      "result": "PASS",
+      "scope": "Package structure and declared content only"
+    },
+    {
+      "check": "Minimal local task contains the exact fictional source and no policy annex",
+      "result": "PASS",
+      "scope": "Package structure and declared content only"
+    },
+    {
+      "check": "No prohibited em dash in v1.2 Markdown files",
+      "result": "PASS",
+      "scope": "Package structure and declared content only"
+    }
+  ],
+  "passed": 18,
+  "total": 18,
+  "runtime_integration": "NOT_RUN",
+  "model_behaviour": "NOT_RUN",
+  "human_productivity": "NOT_MEASURED",
+  "independent_assurance": "NOT_ESTABLISHED"
+}

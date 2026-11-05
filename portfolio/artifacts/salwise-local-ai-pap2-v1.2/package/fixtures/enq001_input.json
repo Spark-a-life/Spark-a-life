@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ENQ-001",
+  "fixture_version": "1.2",
+  "data_class": "FICTIONAL",
+  "source_text": "Cedar Learning requests a 3.5-hour beginner workshop for 20 staff on building one n8n enquiry workflow. Participants must use invented data, test webhooks and draft responses only. They must not use real accounts or API keys, and the workflow must not send messages. Delivery date, delivery mode, budget, device specifications and network availability are not supplied."
+}
