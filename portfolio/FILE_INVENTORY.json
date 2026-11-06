@@ -1,0 +1,270 @@
+{
+  "package": "Spark-a-life portfolio evaluation and architecture pack",
+  "version": "1.0.0-eval",
+  "generated": "2026-11-05",
+  "note": "sha256 of every tracked file under portfolio/ except this inventory",
+  "runtime": false,
+  "production_external_execution": false,
+  "files": [
+    {
+      "path": "EVALUATION.md",
+      "bytes": 15870,
+      "sha256": "33f1b868a09667e6260a514f9d52032283d69b054ef8516a6624ada277a28bc3"
+    },
+    {
+      "path": "INTEROP.md",
+      "bytes": 6069,
+      "sha256": "3543655b7dff0048a43b5c0f3ecda6d256e22ad26c7787d752f9278e3e61c56f"
+    },
+    {
+      "path": "JOURNEY.md",
+      "bytes": 24463,
+      "sha256": "b0565b44819831145937e0b8694e622922885000a93dfebab769343ffcb6f15e"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 557,
+      "sha256": "8dd05d36a4ca3d3f81bd14f42be2654d9852300488eba0347ea777076f00569b"
+    },
+    {
+      "path": "PLAN.md",
+      "bytes": 46348,
+      "sha256": "e6df7fd3f6f1d8d9d0d4ddd2b947de4447eac63f5e938d3cccd7d23eb0b8b7e1"
+    },
+    {
+      "path": "PLAYBOOK.md",
+      "bytes": 20526,
+      "sha256": "eaa288c6803717e7902b691805213eda9e9c00fbefe451e850ad86809e518a11"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3477,
+      "sha256": "16989820468cb46ecd929ea8cc7f2b5d009d38a3090e7fc3212cea48267bd3ea"
+    },
+    {
+      "path": "artifacts/adaptive-learning-tutor-v1.0/STATUS.md",
+      "bytes": 2466,
+      "sha256": "4c2654aed4629aef8b3e6ad2b6ddadc727d1d70c20ceaae3aea25f68e2e3ebda"
+    },
+    {
+      "path": "artifacts/adaptive-learning-tutor-v1.0/package/SKILL.md",
+      "bytes": 6147,
+      "sha256": "37e71266b58c236783a95e2c73620af7f3155cbe86168cc0d4c2d68a1812e125"
+    },
+    {
+      "path": "artifacts/adaptive-learning-tutor-v1.0/package/references/ASSESSMENT.md",
+      "bytes": 770,
+      "sha256": "fae118b3d1bd61ff6ae630b826ab6cdb55b4a80a082ee8a2a46e995b681af278"
+    },
+    {
+      "path": "artifacts/adaptive-learning-tutor-v1.0/package/references/CURRICULUM.md",
+      "bytes": 802,
+      "sha256": "d701517da7ccc82aaeeb8b93d132b9387e498c9dded9de0804966b650cf6e0d2"
+    },
+    {
+      "path": "artifacts/adaptive-learning-tutor-v1.0/package/references/PLAN.md",
+      "bytes": 921,
+      "sha256": "dde79983e4d90e00af9adceabefce540b554dfdee7a9077d80b36810c166e2b0"
+    },
+    {
+      "path": "artifacts/adaptive-learning-tutor-v1.0/package/references/QA_TESTS.md",
+      "bytes": 1385,
+      "sha256": "410b05e9cc287196c46d37df55612cc1ed42db9d802a0e8f4d593dd96a15ad4a"
+    },
+    {
+      "path": "artifacts/adaptive-learning-tutor-v1.0/package/references/RESOURCE_POLICY.md",
+      "bytes": 1283,
+      "sha256": "c4a8505aa6ca7445c7811e677ea805af447ccb060b48a215ccfbc8d4ff2e2aa9"
+    },
+    {
+      "path": "artifacts/adaptive-learning-tutor-v1.0/package/references/WINE_EXAMPLE.md",
+      "bytes": 1570,
+      "sha256": "1f7e670090d0ea28b4e877e959ba2f1361e69acbd2ac8535b8a63da09a0bfde3"
+    },
+    {
+      "path": "artifacts/claude-sensemaking-meta-prompt/STATUS.md",
+      "bytes": 2270,
+      "sha256": "3963e6e7e97ff08468446cf37897a497246005c1ddee493b61a5ce590fa9fdcc"
+    },
+    {
+      "path": "artifacts/claude-sensemaking-meta-prompt/source.md",
+      "bytes": 3096,
+      "sha256": "a2dc1991a82eef9880c15a11e0f8488a010fabd71ad13e5e927f147048855dfe"
+    },
+    {
+      "path": "artifacts/salwise-local-ai-pap2-v1.2/SANITISATION.md",
+      "bytes": 1338,
+      "sha256": "4869a0e617f0c9589ef6adb21c235cc9b8e501749e99fd4505dcc1df1c7e482d"
+    },
+    {
+      "path": "artifacts/salwise-local-ai-pap2-v1.2/STATUS.md",
+      "bytes": 3208,
+      "sha256": "9f186c71b55fd8521f3238ab66b8ddbd02f0c01b256270e09c4ae5ab00a1d626"
+    },
+    {
+      "path": "artifacts/salwise-local-ai-pap2-v1.2/package/START_HERE.md",
+      "bytes": 3010,
+      "sha256": "6e316849223fe25e86b8af1816df0b5034841e57f5eb302573ed57c284f581a3"
+    },
+    {
+      "path": "artifacts/salwise-local-ai-pap2-v1.2/package/Salwise_30_Attribute_Source_Extract_v1.2.json",
+      "bytes": 12823,
+      "sha256": "5a08b07ff1f8992da6c90f8def8e91069de19de75512b10b23f8dc20db272793"
+    },
+    {
+      "path": "artifacts/salwise-local-ai-pap2-v1.2/package/Salwise_Local_AI_30_Attribute_Profile_v1.2.json",
+      "bytes": 32165,
+      "sha256": "cfbf15dadbbe54b31621283f6dbc41d81f4786e899f3a3ea0bcff9c52011fe7a"
+    },
+    {
+      "path": "artifacts/salwise-local-ai-pap2-v1.2/package/Salwise_Local_AI_Productivity_PaP2_v1.2.md",
+      "bytes": 30349,
+      "sha256": "107c3fcf94b25a56cb14993569c802b12623bb9daa9f8edd415c04c0344f69bf"
+    },
+    {
+      "path": "artifacts/salwise-local-ai-pap2-v1.2/package/Salwise_Local_AI_Quality_Crosswalk_v1.2.json",
+      "bytes": 5559,
+      "sha256": "4a1dc27487a8fa539c4549e7acb5ec0d54c7c481d3590f6b756c0eb9c83c6380"
+    },
+    {
+      "path": "artifacts/salwise-local-ai-pap2-v1.2/package/Salwise_Local_AI_Review_Scenarios_v1.2.json",
+      "bytes": 8199,
+      "sha256": "2d81fa3663fb57b3cf2a97c4dfc2d74f64ba7585a43de351bb58ef5a0810fb55"
+    },
+    {
+      "path": "artifacts/salwise-local-ai-pap2-v1.2/package/Salwise_Local_AI_Sources_and_Reuse_v1.2.md",
+      "bytes": 4853,
+      "sha256": "ae92a34dd5a77708c7648692de3d060fb66666eaf913aa9a38661b7a3e610167"
+    },
+    {
+      "path": "artifacts/salwise-local-ai-pap2-v1.2/package/Salwise_Local_AI_v1.2_Check_History.json",
+      "bytes": 420,
+      "sha256": "204183133c85008156279f5344ee0d870d0d913a78f7b5ca92518cd5f5c05bd0"
+    },
+    {
+      "path": "artifacts/salwise-local-ai-pap2-v1.2/package/Salwise_Local_AI_v1.2_Checks.json",
+      "bytes": 3410,
+      "sha256": "95bb4bdf340e27baa6db1c37aab9d76d870bfef049dece3f1163991827e885da"
+    },
+    {
+      "path": "artifacts/salwise-local-ai-pap2-v1.2/package/Salwise_Local_AI_v1.2_Review.md",
+      "bytes": 12381,
+      "sha256": "b5fd54454076d4f1cdbeb4f6cc520731577aeb286300f1615726dcde7b4f4e60"
+    },
+    {
+      "path": "artifacts/salwise-local-ai-pap2-v1.2/package/Salwise_Local_Model_Task_ENQ001_v1.2.md",
+      "bytes": 1128,
+      "sha256": "28bfd561b0d79f14c85b220c501e2d70aa7f23da58bbc725419f83fcd7084c00"
+    },
+    {
+      "path": "artifacts/salwise-local-ai-pap2-v1.2/package/Salwise_Pando_Research_and_Local_Actions_v1.2.md",
+      "bytes": 9414,
+      "sha256": "e6347984cda465451a93d8e23543434f72626d6fe1ee1d0d5d99e0d2cfe1d19e"
+    },
+    {
+      "path": "artifacts/salwise-local-ai-pap2-v1.2/package/check_v1_2_package.py",
+      "bytes": 5787,
+      "sha256": "544c63dabbc0fe75b5a2386a43bb4c565623def02cffb5036733d15aadb526f2"
+    },
+    {
+      "path": "artifacts/salwise-local-ai-pap2-v1.2/package/fixtures/enq001_input.json",
+      "bytes": 477,
+      "sha256": "459675872b1d4df48a44d8a61cda26764e4c1eda65fc616587803deebf1bc1ba"
+    },
+    {
+      "path": "artifacts/salwise-local-ai-pap2-v1.2/package/manifest.json",
+      "bytes": 2888,
+      "sha256": "db158260bcd88828328afa7ef9e496daf51a3e14dc5b798163f73854b4442f26"
+    },
+    {
+      "path": "artifacts/salwise-local-ai-pap2-v1.2/package/references/enq001_frozen_reference.json",
+      "bytes": 1120,
+      "sha256": "70bef63172afa3322a7b0d4a0f2c980aa9b517dcd8da05180f14b42bf06ffd51"
+    },
+    {
+      "path": "artifacts/vfx-ai-pipeline-manual/CLAIMED_VS_DISK.md",
+      "bytes": 989,
+      "sha256": "eeabace11bc7b930bd4140c1568c50cd15c3893d99b0a9429f93b8424197b940"
+    },
+    {
+      "path": "artifacts/vfx-ai-pipeline-manual/SOURCE_SHA256.txt",
+      "bytes": 65,
+      "sha256": "c0284168ef0583addf9156f09847280155c788bac2aaea867248d6ad8c86c469"
+    },
+    {
+      "path": "artifacts/vfx-ai-pipeline-manual/STATUS.md",
+      "bytes": 4610,
+      "sha256": "b7ad749fd3b8f7d573929d494484f9267ae9350fc20c68e9c7e72e7c2a6068b9"
+    },
+    {
+      "path": "kernel/DATA_CLASSES.md",
+      "bytes": 3183,
+      "sha256": "9024b7413ac20edd74718c9e30656de65ed3483ce1c43ea94efefb9035aa9726"
+    },
+    {
+      "path": "kernel/INTERFACES.md",
+      "bytes": 3180,
+      "sha256": "c343d30402a04d23da8ea45d44712eac5ff8c6d1a5e713558887ca9225df0131"
+    },
+    {
+      "path": "kernel/VOCABULARY.md",
+      "bytes": 4243,
+      "sha256": "d505e63d6889cd315645e00b3c633f1bffacae641d4571e5070292ff92588227"
+    },
+    {
+      "path": "kernel/examples/enq001-envelope.json",
+      "bytes": 618,
+      "sha256": "3a5d9858fb77ca97c0828d7a610d51e6d4ab6b3dc93a19f2451c7820ecce6ebf"
+    },
+    {
+      "path": "kernel/examples/enq001-local-task.json",
+      "bytes": 1310,
+      "sha256": "6d97502ea76fe2c54c1969b04f2bfe0584a3a30e99eb3f6d664a68ed7914be5c"
+    },
+    {
+      "path": "kernel/examples/tutor-session-outline.json",
+      "bytes": 370,
+      "sha256": "a1e1b6440b67c78d1684424cdae87233ab69fc4230cced1a82d4e8c81b2143c8"
+    },
+    {
+      "path": "kernel/examples/vfx-media-job-spec-only.json",
+      "bytes": 451,
+      "sha256": "623be2a210de4754256aac8fe672bcb6dc88025f1c64d7b059efc6e137d5fa93"
+    },
+    {
+      "path": "kernel/examples/vfx-worker-maturity.json",
+      "bytes": 355,
+      "sha256": "60cf3586efe89cdc37053e90fd49d0fa1dbc40f9988d2cf8097bd6913c2bac10"
+    },
+    {
+      "path": "kernel/schemas/evidence-envelope.schema.json",
+      "bytes": 1921,
+      "sha256": "ad7205600462cdb25cb217fa4daa8527a076703aad39e9b4dfbd83a3b52a6277"
+    },
+    {
+      "path": "kernel/schemas/local-task-contract.schema.json",
+      "bytes": 1463,
+      "sha256": "ed0878ec13c64b40c213909dc9e6a02ae22a713504e9ecbee332f028c568c4c7"
+    },
+    {
+      "path": "kernel/schemas/maturity-claim.schema.json",
+      "bytes": 817,
+      "sha256": "833a634a6999caba031eb4d770e9fe01e417b1adb3c6e365f7d68d64b05b7593"
+    },
+    {
+      "path": "kernel/schemas/media-job-spec.schema.json",
+      "bytes": 1522,
+      "sha256": "5b39bcfcb83a80ba12d87fd40e6598061a19031e0d4d809e5c1ea83cccb025d8"
+    },
+    {
+      "path": "kernel/schemas/skill-session.schema.json",
+      "bytes": 1410,
+      "sha256": "8c21e087ac36fe57e662cb38ced2c52ecd5beb2f1e336c38318f223abdb88145"
+    },
+    {
+      "path": "verify_portfolio_pack.py",
+      "bytes": 11577,
+      "sha256": "b79da2daebb97932ec4f287925352e5aeb2c2b55ff5d05b7d7b85eb1ae432251"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/portfolio/maturity-claim.schema.json",
+  "title": "Maturity Claim",
+  "description": "Separates a path named in a document from a path on disk from a path that was executed.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "path",
+    "declared",
+    "implemented_on_disk",
+    "verified_by_run",
+    "notes"
+  ],
+  "properties": {
+    "path": { "type": "string", "minLength": 1 },
+    "declared": { "type": "boolean" },
+    "implemented_on_disk": { "type": "boolean" },
+    "verified_by_run": { "type": "boolean" },
+    "declared_in": { "type": "string" },
+    "disk_sha256": {
+      "type": ["string", "null"],
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "notes": { "type": "string" }
+  }
+}

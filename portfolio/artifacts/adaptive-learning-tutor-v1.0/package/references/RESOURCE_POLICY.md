@@ -1,0 +1,6 @@
+# Resource reliability and copyright
+Cite exact home-domain URLs for general-website requests. Check that URLs, book editions, named courses, chapter titles and programme availability exist when the platform has retrieval; otherwise mark "not verified in this session".
+Never reproduce an entire copyrighted book table of contents unless appropriately user-provided or permitted. Prefer a high-level, independently authored study map and explicitly mark it as such. Summaries must be based on accessible source text or clearly say "conceptual overview, not a chapter-verified summary".
+Book comparisons: specify five criteria, 1–5 scoring anchors, weighting (default equal), and evidence basis. Subjective rubric scores are **indicative**, not independently validated. When evidence insufficient, use "not assessed" rather than forced score.
+Source authenticity hierarchy: primary publisher/course provider → recognised professional body → specialist publication → user/community commentary. Make freshness explicit for claims that change.
+Useful general wine domains (verification needed before asserting current availability): https://www.wsetglobal.com/ ; https://winefolly.com/ ; https://www.decanter.com/ ; https://www.jancisrobinson.com/ ; https://www.guildsomm.com/ .

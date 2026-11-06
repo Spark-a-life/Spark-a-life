@@ -1,0 +1,242 @@
+[
+  {
+    "attribute_id": "SAL-Q01",
+    "attribute": "Modularity",
+    "cluster": "Structural integrity",
+    "source_acceptance_check": "Disable Stage and Studio and complete an authorised decision-only draft without importing their runtimes.",
+    "source_required_evidence": "Dependency graph and isolation test results",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q02",
+    "attribute": "Composability",
+    "cluster": "Structural integrity",
+    "source_acceptance_check": "Run a case with one engine and a case with multiple engines through the same case/evidence contract; no media dependency for unrelated work.",
+    "source_required_evidence": "Composition tests and case reconstruction",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q03",
+    "attribute": "Configurability",
+    "cluster": "Structural integrity",
+    "source_acceptance_check": "Accept supported context configuration and reject unknown or unauthorised policy changes without editing core logic.",
+    "source_required_evidence": "Versioned configuration schema and negative tests",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q04",
+    "attribute": "Extensibility",
+    "cluster": "Structural integrity",
+    "source_acceptance_check": "Register a second adapter through a declared capability contract; unsupported requirements cause an explicit downgrade or block.",
+    "source_required_evidence": "Adapter contract tests and capability mismatch results",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q05",
+    "attribute": "Maintainability",
+    "cluster": "Structural integrity",
+    "source_acceptance_check": "A suitably authorised maintainer can reproduce setup, run tests, diagnose a planted defect and locate the repair owner using the documented process.",
+    "source_required_evidence": "Clean-checkout maintenance exercise and time record",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q06",
+    "attribute": "Compatibility",
+    "cluster": "Structural integrity",
+    "source_acceptance_check": "Exercise the explicitly supported OS/tool/file-version matrix and reject or document unsupported/lossy conversions.",
+    "source_required_evidence": "Compatibility matrix, unit/coordinate checks and actual test results",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q07",
+    "attribute": "Implementability",
+    "cluster": "Operational fitness",
+    "source_acceptance_check": "A scoped recommendation has a named implementation owner, executable work, required authority and observable completion evidence.",
+    "source_required_evidence": "Work order, actual execution and acceptance evidence",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q08",
+    "attribute": "Operability",
+    "cluster": "Operational fitness",
+    "source_acceptance_check": "Complete the applicable quotation-to-contract-to-delivery-to-invoice workflow under the actual legal entity and current operational go-live controls.",
+    "source_required_evidence": "Entity-linked operational rehearsal and reconciliation",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q09",
+    "attribute": "Manageability",
+    "cluster": "Operational fitness",
+    "source_acceptance_check": "Measure routine administration, review and exception handling against a predeclared burden allowance; retain failed attempts.",
+    "source_required_evidence": "Time logs, escalation outcomes and chosen limits",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q10",
+    "attribute": "Deployability",
+    "cluster": "Operational fitness",
+    "source_acceptance_check": "Install on each declared supported host from a clean state, measure elapsed effort and recover from an interrupted setup.",
+    "source_required_evidence": "Pinned install manifest, host matrix and install/recovery logs",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q11",
+    "attribute": "Usability",
+    "cluster": "Operational fitness",
+    "source_acceptance_check": "Representative users complete the intended task and correctly distinguish a scenario, evidence, readiness and authority to act.",
+    "source_required_evidence": "Task completion, comprehension errors and user review records",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q12",
+    "attribute": "Availability",
+    "cluster": "Operational fitness",
+    "source_acceptance_check": "Meet declared service/access windows for critical functions and identify which functions remain available without network or external providers.",
+    "source_required_evidence": "Service target, uptime observations and disconnection exercise",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q13",
+    "attribute": "Reliability",
+    "cluster": "Continuity and scale",
+    "source_acceptance_check": "Evaluate declared eligible tasks against a predefined quality rubric, reporting failures by severity and attempted-task denominator.",
+    "source_required_evidence": "Versioned test set, execution results, incidents and uncertainty",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q14",
+    "attribute": "Repeatability",
+    "cluster": "Continuity and scale",
+    "source_acceptance_check": "Repeat the documented workflow under comparable conditions and report variability, acceptance and rework rather than assuming identical outputs.",
+    "source_required_evidence": "Repeated workflow trials and condition records",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q15",
+    "attribute": "Reproducibility",
+    "cluster": "Continuity and scale",
+    "source_acceptance_check": "Reconstruct decisions and replay eligible technical runs from pinned inputs, environment and model/provider identity within declared tolerances.",
+    "source_required_evidence": "Input/output hashes, environment fingerprints, seeds/settings and replay results",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q16",
+    "attribute": "Scalability",
+    "cluster": "Continuity and scale",
+    "source_acceptance_check": "Exercise declared concurrency, queue and data-volume limits while preserving tenancy, cancellation, resource bounds and acceptable latency.",
+    "source_required_evidence": "Load-test results, queue telemetry and limit settings",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q17",
+    "attribute": "Resilience",
+    "cluster": "Continuity and scale",
+    "source_acceptance_check": "Inject provider timeout, optional-engine loss and stale observation; unrelated authorised work continues or an honest manual path is available.",
+    "source_required_evidence": "Fault-injection results and degraded-mode evidence",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q18",
+    "attribute": "Recoverability",
+    "cluster": "Continuity and scale",
+    "source_acceptance_check": "Restore required records and assets from a backup in a clean environment; reconcile partial effects and recheck current authority before resuming.",
+    "source_required_evidence": "Timed restore, integrity checks and reconciliation/revocation results",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q19",
+    "attribute": "Interoperability",
+    "cluster": "Integration and assurance",
+    "source_acceptance_check": "Round-trip declared schemas and supported assets between actual tools with explicit units, coordinates, versions and conversion-loss reporting.",
+    "source_required_evidence": "Interchange fixtures, schema validation and semantic comparison",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q20",
+    "attribute": "Portability",
+    "cluster": "Integration and assurance",
+    "source_acceptance_check": "Move a core workflow to another supported host/provider through an adapter, measuring changes and listing functionality that cannot transfer.",
+    "source_required_evidence": "Migration exercise, dependency inventory and capability deltas",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q21",
+    "attribute": "Traceability",
+    "cluster": "Integration and assurance",
+    "source_acceptance_check": "Reconstruct each material output and decision from case identity, source revisions, actual tool actions and outcome references; label inferred mechanisms.",
+    "source_required_evidence": "Case evidence graph and trace audit",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q22",
+    "attribute": "Auditability",
+    "cluster": "Integration and assurance",
+    "source_acceptance_check": "An authorised reviewer can examine who did what and why; test unauthorised rewrite/erase attempts against the actual storage and trust-anchor design.",
+    "source_required_evidence": "Access checks, retained records and tamper/rewrite test results",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q23",
+    "attribute": "Observability",
+    "cluster": "Integration and assurance",
+    "source_acceptance_check": "Observe attempts, outcomes, failures, time and actual costs with currency and measurement basis; unknown cost remains unknown.",
+    "source_required_evidence": "Telemetry sample, reconciliation and alert exercises",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q24",
+    "attribute": "Verifiability",
+    "cluster": "Integration and assurance",
+    "source_acceptance_check": "Run planted defects and appropriate semantic/technical checks against predeclared claims; report which claims remain beyond the checks.",
+    "source_required_evidence": "Claim-to-test mapping, defect results and residual limitations",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q25",
+    "attribute": "Controllability",
+    "cluster": "Governance and longevity",
+    "source_acceptance_check": "Bind approval to exact action revision and scope; reject revocation and expiry before effect; demonstrate effective cancellation and bounded retries.",
+    "source_required_evidence": "Actual host authority tests and side-effect cancellation evidence",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q26",
+    "attribute": "Explainability",
+    "cluster": "Governance and longevity",
+    "source_acceptance_check": "Explain the recommendation using eligible evidence, assumptions, alternatives, uncertainty, dissent and conditions that would change the decision.",
+    "source_required_evidence": "Decision rationale and stakeholder comprehension review",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q27",
+    "attribute": "Accountability",
+    "cluster": "Governance and longevity",
+    "source_acceptance_check": "Identify actual decision, execution, validation and repair owners and verify their entitlements and challenge routes without assuming role names confer authority.",
+    "source_required_evidence": "Role/mandate records, entitlement checks and repair exercise",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q28",
+    "attribute": "Adaptability",
+    "cluster": "Governance and longevity",
+    "source_acceptance_check": "Apply the same contracts to a materially different bounded case while revisiting domain competence, evidence and constraints.",
+    "source_required_evidence": "Cross-context trial and documented changes/limits",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q29",
+    "attribute": "Affordability",
+    "cluster": "Governance and longevity",
+    "source_acceptance_check": "Measure total attributable delivery, review, correction, upkeep and setup costs against an explicit value case; keep capacity, quality and risk benefits distinct.",
+    "source_required_evidence": "Cost/value record, pilot comparison and disclosed assumptions",
+    "source_system_wide_status": "NOT_ASSESSED"
+  },
+  {
+    "attribute_id": "SAL-Q30",
+    "attribute": "Sustainability",
+    "cluster": "Governance and longevity",
+    "source_acceptance_check": "Assess recurring upkeep, founder workload, support succession and dependency-change burden over a declared operating window.",
+    "source_required_evidence": "Workload records, ownership/backup plan and upgrade/regression exercise",
+    "source_system_wide_status": "NOT_ASSESSED"
+  }
+]

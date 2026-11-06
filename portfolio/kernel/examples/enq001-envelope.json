@@ -1,0 +1,13 @@
+{
+  "claim": "ENQ-001 is a fictional training-enquiry fixture, not a live client record.",
+  "evidence_state": "Verified Fact",
+  "maturity": "Verified",
+  "data_class": "FICTIONAL",
+  "authority": "NONE_CONFERRED",
+  "source_ref": "portfolio/artifacts/salwise-local-ai-pap2-v1.2/package/fixtures/enq001_input.json",
+  "source_sha256": "459675872b1d4df48a44d8a61cda26764e4c1eda65fc616587803deebf1bc1ba",
+  "recorded_at": "2026-11-05",
+  "confidence": "High",
+  "limitation": "Fictional labelling is verified from the file. Usefulness of the task as Will's actual bottleneck is NOT_MEASURED.",
+  "adapter": "salwise"
+}

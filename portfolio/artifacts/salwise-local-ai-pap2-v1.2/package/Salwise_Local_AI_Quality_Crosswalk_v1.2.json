@@ -1,0 +1,164 @@
+{
+  "profile_version": "1.2",
+  "relationship": "Additional user priorities mapped to the unchanged 30 source attributes; not a replacement or a new 30-item taxonomy.",
+  "status": "ACCEPTANCE_OBLIGATIONS_NOT_DEMONSTRATED_RESULTS",
+  "priorities": [
+    {
+      "quality": "Actionability",
+      "related_standard_ids": [
+        "SAL-Q07",
+        "SAL-Q26",
+        "SAL-Q27"
+      ],
+      "acceptance_observation": "Each next action has an actual owner or explicit missing owner, input, output, scope and observable done condition.",
+      "runtime_status": "NOT_ASSESSED",
+      "actual_result_ref": null
+    },
+    {
+      "quality": "Sensibility",
+      "related_standard_ids": [
+        "SAL-Q09",
+        "SAL-Q29",
+        "SAL-Q30"
+      ],
+      "acceptance_observation": "Compare the existing process and the smallest adequate change; reject features whose upkeep or review burden exceeds their benefit.",
+      "runtime_status": "NOT_ASSESSED",
+      "actual_result_ref": null
+    },
+    {
+      "quality": "Interoperability",
+      "related_standard_ids": [
+        "SAL-Q19"
+      ],
+      "acceptance_observation": "Exercise the real provider request/response contract and retain source IDs, versions and error semantics.",
+      "runtime_status": "NOT_ASSESSED",
+      "actual_result_ref": null
+    },
+    {
+      "quality": "Implementability",
+      "related_standard_ids": [
+        "SAL-Q07",
+        "SAL-Q10"
+      ],
+      "acceptance_observation": "Produce an executable configuration or patch and target-host evidence, or a precise blocker and completed independent work.",
+      "runtime_status": "NOT_ASSESSED",
+      "actual_result_ref": null
+    },
+    {
+      "quality": "Reproducibility",
+      "related_standard_ids": [
+        "SAL-Q15",
+        "SAL-Q21"
+      ],
+      "acceptance_observation": "Replay eligible runs from preserved fictional inputs, versions, settings, commands and declared tolerances.",
+      "runtime_status": "NOT_ASSESSED",
+      "actual_result_ref": null
+    },
+    {
+      "quality": "Repeatability",
+      "related_standard_ids": [
+        "SAL-Q14"
+      ],
+      "acceptance_observation": "Repeat comparable tasks and report factual consistency, variation, failures and rework.",
+      "runtime_status": "NOT_ASSESSED",
+      "actual_result_ref": null
+    },
+    {
+      "quality": "Reliability",
+      "related_standard_ids": [
+        "SAL-Q13",
+        "SAL-Q17",
+        "SAL-Q24"
+      ],
+      "acceptance_observation": "Assess routine and failure cases with frozen references and explicit denominators; do not generalise a small pass set.",
+      "runtime_status": "NOT_ASSESSED",
+      "actual_result_ref": null
+    },
+    {
+      "quality": "Viability",
+      "related_standard_ids": [
+        "SAL-Q29",
+        "SAL-Q30",
+        "SAL-Q05"
+      ],
+      "acceptance_observation": "Show a defensible total-cost and maintenance case against the current alternative before routine adoption.",
+      "runtime_status": "NOT_ASSESSED",
+      "actual_result_ref": null
+    },
+    {
+      "quality": "Feasibility",
+      "related_standard_ids": [
+        "SAL-Q06",
+        "SAL-Q07",
+        "SAL-Q10"
+      ],
+      "acceptance_observation": "Verify actual memory, model/context, tools, permissions and available time on the intended device.",
+      "runtime_status": "NOT_ASSESSED",
+      "actual_result_ref": null
+    },
+    {
+      "quality": "Desirability",
+      "related_standard_ids": [
+        "SAL-Q11",
+        "SAL-Q26"
+      ],
+      "acceptance_observation": "Obtain Will's observed judgement that the output addresses a real need and reduces burden; a creator's score is insufficient.",
+      "runtime_status": "NOT_ASSESSED",
+      "actual_result_ref": null
+    },
+    {
+      "quality": "Portability",
+      "related_standard_ids": [
+        "SAL-Q20",
+        "SAL-Q06"
+      ],
+      "acceptance_observation": "Separate transferable files from host-specific operation and test another host before claiming support.",
+      "runtime_status": "NOT_ASSESSED",
+      "actual_result_ref": null
+    },
+    {
+      "quality": "Credibility",
+      "related_standard_ids": [
+        "SAL-Q21",
+        "SAL-Q24",
+        "SAL-Q26"
+      ],
+      "acceptance_observation": "Trace material claims to eligible evidence, disclose uncertainty and avoid maturity claims beyond actual checks.",
+      "runtime_status": "NOT_ASSESSED",
+      "actual_result_ref": null
+    },
+    {
+      "quality": "Stability",
+      "related_standard_ids": [
+        "SAL-Q13",
+        "SAL-Q17",
+        "SAL-Q18"
+      ],
+      "acceptance_observation": "Retain a known working revision and run regression, restart and recovery checks before replacing it.",
+      "runtime_status": "NOT_ASSESSED",
+      "actual_result_ref": null
+    },
+    {
+      "quality": "Accountability",
+      "related_standard_ids": [
+        "SAL-Q27",
+        "SAL-Q25"
+      ],
+      "acceptance_observation": "Keep decision, execution, review and repair ownership explicit, with actual permissions and a correction route.",
+      "runtime_status": "NOT_ASSESSED",
+      "actual_result_ref": null
+    },
+    {
+      "quality": "Evolvability",
+      "related_standard_ids": [
+        "SAL-Q04",
+        "SAL-Q28",
+        "SAL-Q05",
+        "SAL-Q15"
+      ],
+      "acceptance_observation": "Turn failures into versioned regression cases; test candidate changes, support rollback and qualify transfers without autonomous policy expansion.",
+      "runtime_status": "NOT_ASSESSED",
+      "actual_result_ref": null
+    }
+  ]
+}

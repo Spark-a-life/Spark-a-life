@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/portfolio/local-task-contract.schema.json",
+  "title": "Local Task Contract",
+  "description": "Salwise-style compact contract for a local model. Policy stays with the executor.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "fixture_id",
+    "data_class",
+    "source_text",
+    "known",
+    "missing_information",
+    "constraints",
+    "draft_only",
+    "model_execution",
+    "human_acceptance"
+  ],
+  "properties": {
+    "fixture_id": { "type": "string", "minLength": 1 },
+    "fixture_version": { "type": "string" },
+    "data_class": {
+      "type": "string",
+      "enum": ["FICTIONAL", "PUBLIC", "INTERNAL", "CONFIDENTIAL", "RESTRICTED", "REGULATED"]
+    },
+    "source_text": { "type": "string", "minLength": 1 },
+    "known": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "missing_information": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "constraints": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "fatal_errors": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "draft_only": { "type": "boolean" },
+    "model_execution": {
+      "type": "string",
+      "enum": ["NOT_RUN", "PARTIAL", "COMPLETE"]
+    },
+    "human_acceptance": {
+      "type": "string",
+      "enum": ["NOT_MEASURED", "ACCEPTED", "REJECTED"]
+    }
+  }
+}

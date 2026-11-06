@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/portfolio/skill-session.schema.json",
+  "title": "Skill Session",
+  "description": "Adaptive Learning Tutor session note. Not a certificate and not a Witness Chain.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "intent",
+    "topic",
+    "data_class",
+    "persistent_memory_claimed",
+    "certification_claimed"
+  ],
+  "properties": {
+    "intent": {
+      "type": "string",
+      "enum": [
+        "outline",
+        "expand",
+        "resources",
+        "plan",
+        "assess",
+        "answer-key",
+        "case-study",
+        "track"
+      ]
+    },
+    "topic": { "type": "string", "minLength": 1 },
+    "learner_age_band": {
+      "type": ["string", "null"],
+      "enum": ["minor", "adult", "unspecified", null]
+    },
+    "alcohol_consumption_exercises": {
+      "type": "boolean"
+    },
+    "data_class": {
+      "type": "string",
+      "enum": ["FICTIONAL", "PUBLIC", "INTERNAL", "CONFIDENTIAL", "RESTRICTED", "REGULATED"]
+    },
+    "rubric_observed": {
+      "type": "object",
+      "additionalProperties": {
+        "type": ["integer", "string"],
+        "enum": [0, 1, 2, 3, 4, "N/O"]
+      }
+    },
+    "persistent_memory_claimed": { "type": "boolean" },
+    "certification_claimed": { "type": "boolean" },
+    "progress_log_exported": { "type": "boolean" }
+  }
+}

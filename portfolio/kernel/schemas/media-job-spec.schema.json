@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/portfolio/media-job-spec.schema.json",
+  "title": "Media Job Spec",
+  "description": "Reserved contract for a future VFX worker. Not executable in this snapshot. additionalProperties is false.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "job_id",
+    "status",
+    "colourspace",
+    "frame_count",
+    "spatial_conditioner",
+    "qc_method",
+    "data_class",
+    "action_class_if_executed"
+  ],
+  "properties": {
+    "job_id": { "type": "string", "minLength": 1 },
+    "status": {
+      "type": "string",
+      "enum": ["SPEC_ONLY", "BLOCKED", "NOT_IMPLEMENTED"]
+    },
+    "colourspace": {
+      "type": "string",
+      "description": "Must name the actual working space. linear ACEScg is not ACEScc."
+    },
+    "frame_count": { "type": "integer", "minimum": 1 },
+    "temporal_rule_f_minus_1_mod_8": { "type": "boolean" },
+    "spatial_conditioner": {
+      "type": "string",
+      "enum": ["depth", "camera_track", "structural_pass", "unspecified"]
+    },
+    "qc_method": {
+      "type": "string",
+      "description": "Named metric. A hardcoded return value is not a method."
+    },
+    "data_class": {
+      "type": "string",
+      "enum": ["FICTIONAL", "PUBLIC", "INTERNAL", "CONFIDENTIAL", "RESTRICTED", "REGULATED"]
+    },
+    "action_class_if_executed": {
+      "type": "string",
+      "enum": ["GREEN", "AMBER", "RED", "PROHIBITED"]
+    },
+    "notes": { "type": "string" }
+  }
+}
