@@ -743,3 +743,4 @@ Do not run ComfyUI, kubectl, Nuke, or a tutor model as part of coordination done
 | Pack licence | `portfolio/LICENSE` |
 | Canonical governance | `governance/AIOS_v1.2.md` |
 | Current-state journey to plan lock | `portfolio/JOURNEY.md` |
+| Shareable how-to (plain English) | `portfolio/PLAYBOOK.md` |

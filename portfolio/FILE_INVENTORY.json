@@ -28,13 +28,18 @@
     },
     {
       "path": "PLAN.md",
-      "bytes": 46285,
-      "sha256": "0ddc911559268197c2501ca1a40d7884d038b29e5c74470b66f055cce3ff4900"
+      "bytes": 46348,
+      "sha256": "e6df7fd3f6f1d8d9d0d4ddd2b947de4447eac63f5e938d3cccd7d23eb0b8b7e1"
+    },
+    {
+      "path": "PLAYBOOK.md",
+      "bytes": 20526,
+      "sha256": "eaa288c6803717e7902b691805213eda9e9c00fbefe451e850ad86809e518a11"
     },
     {
       "path": "README.md",
-      "bytes": 3397,
-      "sha256": "6b9b061ce92348b866389510cfdd611f52ab6dd08ca29cab66f28326243c571c"
+      "bytes": 3477,
+      "sha256": "16989820468cb46ecd929ea8cc7f2b5d009d38a3090e7fc3212cea48267bd3ea"
     },
     {
       "path": "artifacts/adaptive-learning-tutor-v1.0/STATUS.md",
@@ -258,8 +263,8 @@
     },
     {
       "path": "verify_portfolio_pack.py",
-      "bytes": 11480,
-      "sha256": "0b2d21fc076ee3934851b72e11c954907a3f58c35e5c9c324ad00886aac60ad6"
+      "bytes": 11577,
+      "sha256": "b79da2daebb97932ec4f287925352e5aeb2c2b55ff5d05b7d7b85eb1ae432251"
     }
   ]
 }
