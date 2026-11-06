@@ -742,3 +742,4 @@ Do not run ComfyUI, kubectl, Nuke, or a tutor model as part of coordination done
 | A4 tests as specs | `portfolio/artifacts/adaptive-learning-tutor-v1.0/package/references/QA_TESTS.md` |
 | Pack licence | `portfolio/LICENSE` |
 | Canonical governance | `governance/AIOS_v1.2.md` |
+| Current-state journey to plan lock | `portfolio/JOURNEY.md` |

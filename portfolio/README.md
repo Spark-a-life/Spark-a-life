@@ -40,6 +40,7 @@ portfolio/
   EVALUATION.md             Verdicts, evidence, blockers, sequenced actions
   INTEROP.md                Kernel, adapters, data classes, trust boundaries
   PLAN.md                   Coordination plan a Human Captain can execute
+  JOURNEY.md                Sequenced path from current disk/PR state to plan lock
   FILE_INVENTORY.json       sha256 of tracked pack files
   kernel/                   Shared vocabulary and JSON Schema envelopes
   artifacts/salwise-local-ai-pap2-v1.2/     Vendored package + STATUS

@@ -26,6 +26,7 @@ REQUIRED_PATHS = [
     "EVALUATION.md",
     "INTEROP.md",
     "PLAN.md",
+    "JOURNEY.md",
     "kernel/VOCABULARY.md",
     "kernel/DATA_CLASSES.md",
     "kernel/INTERFACES.md",
@@ -51,6 +52,14 @@ SCHEMA_EXAMPLES = [
     ("kernel/schemas/skill-session.schema.json", "kernel/examples/tutor-session-outline.json"),
     ("kernel/schemas/media-job-spec.schema.json", "kernel/examples/vfx-media-job-spec-only.json"),
 ]
+KERNEL_SCHEMA_FILES = [
+    "evidence-envelope.schema.json",
+    "maturity-claim.schema.json",
+    "local-task-contract.schema.json",
+    "skill-session.schema.json",
+    "media-job-spec.schema.json",
+]
+ACTION_PROPOSAL_REL = Path("actions") / "schemas" / "action-proposal.schema.json"
 VFX_FORBIDDEN = [
     "artifacts/vfx-ai-pipeline-manual/vfx_ai_pipeline_integration_manual.md",
     "artifacts/vfx-ai-pipeline-manual/scripts/comfy_agentic_worker.py",
@@ -123,11 +132,44 @@ def main() -> int:
                 json_fail.append(f"{path.relative_to(ROOT)}: {exc}")
     checks.append(check("all JSON files parse", json_ok, "; ".join(json_fail)))
 
+    schema_dir = ROOT / "kernel" / "schemas"
+    found_schemas = {p.name for p in schema_dir.glob("*.json")} if schema_dir.is_dir() else set()
+    expected_schemas = set(KERNEL_SCHEMA_FILES)
+    checks.append(check(
+        "exactly five kernel envelopes; no sixth schema file",
+        found_schemas == expected_schemas,
+        "found=" + ",".join(sorted(found_schemas)),
+    ))
+    for name in KERNEL_SCHEMA_FILES:
+        schema_path = schema_dir / name
+        if not schema_path.is_file():
+            checks.append(check(f"kernel schema additionalProperties false: {name}", False, "missing"))
+            continue
+        schema = load_json(schema_path)
+        checks.append(check(
+            f"kernel schema additionalProperties false: {name}",
+            schema.get("additionalProperties") is False,
+        ))
+
     for schema_rel, example_rel in SCHEMA_EXAMPLES:
         schema = load_json(ROOT / schema_rel)
         instance = load_json(ROOT / example_rel)
         ok, detail = try_jsonschema(schema, instance)
         checks.append(check(f"schema example: {example_rel}", ok, detail))
+
+    action_proposal = ROOT.parent / ACTION_PROPOSAL_REL
+    checks.append(check("ActionProposal remains at parent AIOS path", action_proposal.is_file()))
+    if action_proposal.is_file():
+        ap_schema = load_json(action_proposal)
+        checks.append(check(
+            "ActionProposal additionalProperties remains false",
+            ap_schema.get("additionalProperties") is False,
+        ))
+    forked_action_proposal = schema_dir / "action-proposal.schema.json"
+    checks.append(check(
+        "ActionProposal not forked into portfolio kernel",
+        not forked_action_proposal.exists(),
+    ))
 
     secret_hits = []
     emdash_hits = []
@@ -146,6 +188,7 @@ def main() -> int:
     checks.append(check("README warns not to merge to profile main", "Do not merge this branch to profile" in readme))
     checks.append(check("README states docs-only", "Docs-only" in readme))
     checks.append(check("README lists PLAN.md", "PLAN.md" in readme))
+    checks.append(check("README lists JOURNEY.md", "JOURNEY.md" in readme))
 
     aios_v12 = ROOT.parent / "governance" / "AIOS_v1.2.md"
     checks.append(check("parent AIOS v1.2 remains at repository root", aios_v12.is_file()))
