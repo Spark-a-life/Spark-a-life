@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "hub": "Spark-a-life/Spark-a-life",
+  "revision": "2026-11-14",
+  "status": "M0_STUBS_ONLY",
+  "doctrine": "AI proposes. Evidence informs. Captains verify. Humans decide.",
+  "packs": [
+    {
+      "id": "solve-saap",
+      "path": "packs/solve-saap",
+      "role": "method",
+      "runtime": "markdown + any chat, or paper",
+      "populationStatus": "stub",
+      "sourceCandidate": "SOLVE_Sensemaking_Learning_Repo_v0.1.0",
+      "sha256": null,
+      "admission": "HOLD_UNTIL_G2"
+    },
+    {
+      "id": "connected-practice",
+      "path": "packs/connected-practice",
+      "role": "decision_demo",
+      "runtime": "static HTML + JSON fixtures",
+      "populationStatus": "stub",
+      "sourceCandidate": "eaa-connected-index-v2 + routine/offset records",
+      "sha256": null,
+      "admission": "HOLD_UNTIL_G2"
+    },
+    {
+      "id": "grounded-pilot",
+      "path": "packs/grounded-pilot",
+      "role": "captain_training",
+      "runtime": "Python 3.10+ stdlib + SQLite FTS5",
+      "populationStatus": "stub",
+      "sourceCandidate": "WiseGen_Grounded_Pilot_v0_1_2_Candidate_Execution_Pack",
+      "sha256": null,
+      "admission": "HOLD_UNTIL_G2",
+      "estateNote": "Teaching fixture only. Do not import review chains into wisegen-witness."
+    }
+  ],
+  "siblings": {
+    "aios": "planned — decision kernel docs/schemas",
+    "wisegenModules": "planned — one repo per publishable module after RELEASE_GATE",
+    "privateEstate": "never mirrored in this hub"
+  }
+}
